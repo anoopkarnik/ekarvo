@@ -1,0 +1,51 @@
+import { NextRequest, NextResponse } from "next/server";
+import { guardRoute } from "@/server/routeGuard";
+import { openAgentStream } from "@/lib/backend/client";
+
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
+type RouteContext = { params: Promise<{ agentId: string }> };
+
+export async function POST(req: NextRequest, ctx: RouteContext) {
+  const guard = await guardRoute(req, "/api/ai/agents/[agentId]/stream");
+  if (!guard.ok) {
+    return NextResponse.json({ error: guard.error }, { status: guard.status });
+  }
+  const { session } = guard;
+
+  const { agentId } = await ctx.params;
+  if (agentId.startsWith("launchpad_")) return NextResponse.json({ error: "Use the project's Launchpad to request guidance." }, { status: 403 });
+  let input: Record<string, unknown> = {};
+  try {
+    input = (await req.json()) as Record<string, unknown>;
+  } catch {
+    return NextResponse.json({ error: "invalid_json" }, { status: 400 });
+  }
+
+  const upstream = await openAgentStream({
+    userId: session.user.id,
+    orgId: null,
+    agentId,
+    input,
+    signal: req.signal,
+  });
+
+  if (!upstream.ok || !upstream.body) {
+    return NextResponse.json(
+      { error: "backend_error", status: upstream.status },
+      { status: 502 },
+    );
+  }
+
+  // Re-stream SSE through to the client without buffering.
+  return new Response(upstream.body, {
+    status: 200,
+    headers: {
+      "Content-Type": "text/event-stream",
+      "Cache-Control": "no-cache",
+      "Connection": "keep-alive",
+      "X-Accel-Buffering": "no",
+    },
+  });
+}

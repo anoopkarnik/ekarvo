@@ -1,0 +1,863 @@
+- generic [active] [ref=f14e1]:
+  - link "Skip to main content" [ref=f14e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=f14e4]:
+    - generic [aria-hidden]:
+      - img:
+        - generic: Browser
+        - generic:
+          - generic: Intake
+          - generic: Work arrives
+        - generic:
+          - generic: Pulse
+          - generic: Forecast · Decide
+        - generic:
+          - generic: Approval
+          - generic: Policy gate
+        - generic:
+          - generic: Drive
+          - generic: Execute
+        - generic:
+          - generic: Systems
+          - generic: CRM · ERP
+        - generic:
+          - generic: Verify
+          - generic: Read back · Confirm
+        - generic: Evidence linked
+    - banner [ref=f14e5]:
+      - link "EKARVO" [ref=f14e6] [cursor=pointer]:
+        - /url: "#scene-01"
+      - navigation "Primary navigation" [ref=f14e7]:
+        - link "Platform" [ref=f14e8] [cursor=pointer]:
+          - /url: "#scene-05"
+        - link "Pulse" [ref=f14e9] [cursor=pointer]:
+          - /url: "#scene-06"
+        - link "Drive" [ref=f14e10] [cursor=pointer]:
+          - /url: "#scene-07"
+        - link "Workflows" [ref=f14e11] [cursor=pointer]:
+          - /url: "#scene-08"
+        - link "Capabilities" [ref=f14e12] [cursor=pointer]:
+          - /url: "#scene-10"
+        - link "Governance" [ref=f14e13] [cursor=pointer]:
+          - /url: "#scene-11"
+      - button "Talk to EKARVO" [ref=f14e15] [cursor=pointer]
+    - button "Pause ambient motion" [disabled] [ref=f14e16]:
+      - generic [ref=f14e20]: Pause motion
+    - main [ref=f14e21]:
+      - region "EKARVO Hero" [ref=f14e22]:
+        - generic [ref=f14e24]:
+          - paragraph [ref=f14e25]: Autonomous Enterprise Operations
+          - heading "SEE THE WORK. MOVE THE WORK." [level=1] [ref=f14e26]: SEE THE WORK.MOVE THE WORK.
+          - paragraph [ref=f14e27]: EKARVO connects operating intelligence with autonomous execution so enterprises understand operations, decide, execute across systems, and verify every outcome.
+          - generic [ref=f14e28]:
+            - button "Explore the Platform" [ref=f14e29] [cursor=pointer]
+            - button "Talk to EKARVO" [ref=f14e33] [cursor=pointer]
+        - generic [ref=f14e38]:
+          - generic [ref=f14e39]:
+            - generic [ref=f14e40]: Understand
+            - paragraph [ref=f14e41]: Unify demand, capacity, and performance signals across every queue.
+          - generic [ref=f14e42]:
+            - generic [ref=f14e43]: Decide
+            - paragraph [ref=f14e44]: Simulate staffing and automation interventions before acting.
+          - generic [ref=f14e45]:
+            - generic [ref=f14e46]: Execute
+            - paragraph [ref=f14e47]: Run governed digital workers across APIs, browsers, voice, and documents.
+          - generic [ref=f14e48]:
+            - generic [ref=f14e49]: Verify
+            - paragraph [ref=f14e50]: Confirm system-of-record outcomes with complete audit evidence.
+      - region "Operational Fragmentation" [ref=f14e51]:
+        - generic [ref=f14e52]:
+          - generic [ref=f14e53]:
+            - generic [ref=f14e54]:
+              - paragraph [ref=f14e55]: Operational Fragmentation
+              - heading "WORK DOESN'T LIVE IN ONE SYSTEM." [level=2] [ref=f14e56]: WORK DOESN'T LIVEIN ONE SYSTEM.
+              - paragraph [ref=f14e57]: Neither do the people, decisions, and processes required to complete it.
+            - generic [ref=f14e58]:
+              - generic [ref=f14e59]: Demand arrives across portals, queues, and service channels.
+              - generic [ref=f14e60]: Capacity and skills are tracked in separate planning tools.
+              - generic [ref=f14e61]: Performance is measured after delivery windows have already closed.
+              - generic [ref=f14e62]: Decisions travel through meetings, messages, and spreadsheets.
+              - generic [ref=f14e63]: Execution depends on people manually connecting the dots.
+          - generic [ref=f14e64]:
+            - generic [ref=f14e65]:
+              - generic [ref=f14e66]:
+                - paragraph [ref=f14e67]: Cross-Domain Continuity Gap
+                - heading "Inspect how work stalls across seven disconnected operational domains" [level=3] [ref=f14e68]
+              - button "Simulate Enterprise Peak Volume" [ref=f14e69] [cursor=pointer]
+            - generic [ref=f14e70]:
+              - button "Demand Capacity blind spot" [ref=f14e71] [cursor=pointer]:
+                - generic [ref=f14e72]: Demand
+                - generic [ref=f14e73]: Capacity blind spot
+              - button "Workforce Manual handoff required" [ref=f14e74] [cursor=pointer]:
+                - generic [ref=f14e75]: Workforce
+                - generic [ref=f14e76]: Manual handoff required
+              - button "Capacity Static schedules" [ref=f14e77] [cursor=pointer]:
+                - generic [ref=f14e78]: Capacity
+                - generic [ref=f14e79]: Static schedules
+              - button "Performance Measured after the fact" [ref=f14e80] [cursor=pointer]:
+                - generic [ref=f14e81]: Performance
+                - generic [ref=f14e82]: Measured after the fact
+              - button "Quality Small sample audits" [ref=f14e83] [cursor=pointer]:
+                - generic [ref=f14e84]: Quality
+                - generic [ref=f14e85]: Small sample audits
+              - button "Knowledge Policy drift" [ref=f14e86] [cursor=pointer]:
+                - generic [ref=f14e87]: Knowledge
+                - generic [ref=f14e88]: Policy drift
+              - button "Execution Outcome unconfirmed" [ref=f14e89] [cursor=pointer]:
+                - generic [ref=f14e90]: Execution
+                - generic [ref=f14e91]: Outcome unconfirmed
+            - generic [ref=f14e92]:
+              - generic [ref=f14e93]:
+                - generic [ref=f14e94]:
+                  - generic [ref=f14e95]: "Origin: Demand (Incoming work across digital channels, APIs, and service queues)"
+                  - generic [ref=f14e96]: "Next Stage: Capacity"
+                - generic [ref=f14e98]:
+                  - generic [ref=f14e99]: Demand
+                  - generic [ref=f14e101]: "Handoff Gap: Capacity blind spot"
+                  - generic [ref=f14e103]: Capacity
+                - paragraph [ref=f14e104]: Work arrives across customer portals, service desks, and partner feeds without live visibility into which teams or systems have available capacity.
+              - generic [ref=f14e105]:
+                - generic [ref=f14e106]: "Operational Friction: Delayed intake routing"
+                - generic [ref=f14e107]: THE COST IS IN THE GAPS.
+                - paragraph [ref=f14e108]: "Active queue impact: 1,420 items awaiting cross-system action"
+      - region "The Handoff Gap" [ref=f14e109]:
+        - generic [ref=f14e110]:
+          - generic [ref=f14e111]:
+            - generic [ref=f14e112]:
+              - paragraph [ref=f14e113]: The Handoff Gap
+              - heading "WE ADDED MORE TOOLS. THE HANDOFFS REMAINED." [level=2] [ref=f14e114]: WE ADDED MORE TOOLS.THE HANDOFFS REMAINED.
+            - paragraph [ref=f14e116]: Dashboards reveal performance. Planning tools allocate resources. Task automation completes predefined steps. AI assistants draft text. Each solves a real problem, yet connecting insight, decisions, execution, and outcomes still requires someone in the middle.
+          - generic [ref=f14e117]:
+            - generic [ref=f14e118]:
+              - generic [ref=f14e119]:
+                - button "Previous tool category" [ref=f14e120] [cursor=pointer]
+                - button "Next tool category" [ref=f14e123] [cursor=pointer]
+                - generic [ref=f14e126]: "Selected Category: Analytics (SEE)"
+              - button "Inspect Cross-Tool Handoffs" [ref=f14e127] [cursor=pointer]
+            - generic [ref=f14e128]:
+              - button "Analytics SEE Know what happened. Surfaces historical throughput, service level trends, and regional backlog patterns. Where It Stops Insight stops at the dashboard. Operations leaders still have to interpret the chart and reallocate work manually." [ref=f14e129] [cursor=pointer]:
+                - generic [ref=f14e130]:
+                  - generic [ref=f14e131]: Analytics
+                  - heading "SEE" [level=3] [ref=f14e133]
+                  - paragraph [ref=f14e134]: Know what happened.
+                  - paragraph [ref=f14e135]: Surfaces historical throughput, service level trends, and regional backlog patterns.
+                - generic [ref=f14e136]:
+                  - generic [ref=f14e137]: Where It Stops
+                  - paragraph [ref=f14e138]: Insight stops at the dashboard. Operations leaders still have to interpret the chart and reallocate work manually.
+              - button "Planning PLAN Prepare resources and schedules. Models headcount requirements and builds shift rosters ahead of time. Where It Stops Plans do not execute work. When intraday exceptions surge, static schedules cannot clear the backlog on their own." [ref=f14e139] [cursor=pointer]:
+                - generic [ref=f14e140]:
+                  - generic [ref=f14e141]: Planning
+                  - heading "PLAN" [level=3] [ref=f14e143]
+                  - paragraph [ref=f14e144]: Prepare resources and schedules.
+                  - paragraph [ref=f14e145]: Models headcount requirements and builds shift rosters ahead of time.
+                - generic [ref=f14e146]:
+                  - generic [ref=f14e147]: Where It Stops
+                  - paragraph [ref=f14e148]: Plans do not execute work. When intraday exceptions surge, static schedules cannot clear the backlog on their own.
+              - button "Automation REPEAT Execute predefined tasks. Completes deterministic keystrokes and single-screen form transfers. Where It Stops Stalls when interfaces change, exceptions arise, or cross-system judgment is required." [ref=f14e149] [cursor=pointer]:
+                - generic [ref=f14e150]:
+                  - generic [ref=f14e151]: Automation
+                  - heading "REPEAT" [level=3] [ref=f14e153]
+                  - paragraph [ref=f14e154]: Execute predefined tasks.
+                  - paragraph [ref=f14e155]: Completes deterministic keystrokes and single-screen form transfers.
+                - generic [ref=f14e156]:
+                  - generic [ref=f14e157]: Where It Stops
+                  - paragraph [ref=f14e158]: Stalls when interfaces change, exceptions arise, or cross-system judgment is required.
+              - button "AI Assistants ASSIST Help people reason and draft. Drafts responses, summarizes documents, and answers employee questions. Where It Stops Produces text in a chat window, leaving the employee to copy, paste, execute across systems, and verify the result." [ref=f14e159] [cursor=pointer]:
+                - generic [ref=f14e160]:
+                  - generic [ref=f14e161]: AI Assistants
+                  - heading "ASSIST" [level=3] [ref=f14e163]
+                  - paragraph [ref=f14e164]: Help people reason and draft.
+                  - paragraph [ref=f14e165]: Drafts responses, summarizes documents, and answers employee questions.
+                - generic [ref=f14e166]:
+                  - generic [ref=f14e167]: Where It Stops
+                  - paragraph [ref=f14e168]: Produces text in a chat window, leaving the employee to copy, paste, execute across systems, and verify the result.
+          - generic [ref=f14e169]:
+            - paragraph [ref=f14e170]: The Missing Layer
+            - heading "WHO CONNECTS THE DECISION TO THE ACTION?" [level=3] [ref=f14e171]: WHO CONNECTS THE DECISIONTO THE ACTION?
+            - paragraph [ref=f14e172]:
+              - text: The missing capability is not another isolated point tool.
+              - strong [ref=f14e173]: It is a continuous operating model.
+      - region "Closed-Loop Operating Model" [ref=f14e174]:
+        - generic [ref=f14e175]:
+          - generic [ref=f14e176]:
+            - paragraph [ref=f14e177]: Closed-Loop Architecture
+            - heading "WHAT IF THE SYSTEM COULD CLOSE THE LOOP?" [level=2] [ref=f14e178]: WHAT IF THE SYSTEMCOULD CLOSE THE LOOP?
+          - generic [ref=f14e179]:
+            - generic [ref=f14e180]:
+              - button "Operating Intelligence UNDERSTAND" [ref=f14e181] [cursor=pointer]:
+                - generic [ref=f14e182]: Operating Intelligence
+                - generic [ref=f14e183]: UNDERSTAND
+              - button "Scenario Simulation DECIDE" [ref=f14e184] [cursor=pointer]:
+                - generic [ref=f14e185]: Scenario Simulation
+                - generic [ref=f14e186]: DECIDE
+              - button "Autonomous Execution EXECUTE" [ref=f14e187] [cursor=pointer]:
+                - generic [ref=f14e188]: Autonomous Execution
+                - generic [ref=f14e189]: EXECUTE
+              - button "Outcome Assurance VERIFY" [ref=f14e190] [cursor=pointer]:
+                - generic [ref=f14e191]: Outcome Assurance
+                - generic [ref=f14e192]: VERIFY
+            - generic [ref=f14e193]:
+              - generic [ref=f14e194]:
+                - generic [ref=f14e195]: Operating Intelligence
+                - generic [ref=f14e196]: Understand the operation.
+              - generic [ref=f14e197]: Unify fragmented demand, capacity, performance, and quality signals into one live operational model across teams and systems.
+          - generic [ref=f14e198]:
+            - generic [ref=f14e199]:
+              - paragraph [ref=f14e200]: Unified Enterprise Platform
+              - heading "INTRODUCING EKARVO." [level=3] [ref=f14e201]
+              - paragraph [ref=f14e202]: An industry-agnostic enterprise platform that connects operating intelligence with governed autonomous execution.
+            - button "Explore Pulse & Drive" [ref=f14e203] [cursor=pointer]
+      - region "Platform Architecture" [ref=f14e204]:
+        - generic [ref=f14e205]:
+          - generic [ref=f14e206]:
+            - generic [ref=f14e207]:
+              - paragraph [ref=f14e208]: Two Platforms, One Operating Model
+              - heading "INTELLIGENCE MEETS EXECUTION." [level=2] [ref=f14e209]: INTELLIGENCEMEETS EXECUTION.
+            - paragraph [ref=f14e210]: Deploy EKARVO Pulse and EKARVO Drive independently or together as a single closed-loop operating system across any enterprise function.
+          - generic [ref=f14e211]:
+            - generic [ref=f14e212]:
+              - generic [ref=f14e213]:
+                - generic [ref=f14e214]:
+                  - generic [ref=f14e215]: EKARVO PULSE
+                  - generic [ref=f14e216]: 12 CAPABILITY MODULES
+                - heading "PULSE" [level=3] [ref=f14e217]
+                - paragraph [ref=f14e218]: The Operating Intelligence Platform
+                - paragraph [ref=f14e219]: Understand demand, anticipate capacity constraints, benchmark performance, develop workforce readiness, and identify high-impact operational improvements.
+                - generic [ref=f14e220]:
+                  - generic [ref=f14e221]: "Plan: Forecast · Capacity · Allocate · Simulate"
+                  - generic [ref=f14e222]: "Operate: Command · Perform · Quality · Economics"
+                  - generic [ref=f14e223]: "Develop & Optimize: Academy · Coach · Discover · Optimize"
+              - generic [ref=f14e224]:
+                - generic [ref=f14e225]: Pulse knows where to act.
+                - button "Explore Pulse" [ref=f14e226] [cursor=pointer]
+            - generic:
+              - generic: Closed Loop
+              - generic: Insight to Action
+            - generic [ref=f14e230]:
+              - generic [ref=f14e231]:
+                - generic [ref=f14e232]:
+                  - generic [ref=f14e233]: EKARVO DRIVE
+                  - generic [ref=f14e234]: 15 CAPABILITY MODULES
+                - heading "DRIVE" [level=3] [ref=f14e235]
+                - paragraph [ref=f14e236]: The Autonomous Execution Platform
+                - paragraph [ref=f14e237]: Design, coordinate, and execute multi-step workflows across enterprise applications, external portals, documents, and communication channels.
+                - generic [ref=f14e238]:
+                  - generic [ref=f14e239]: "Design: Studio · Agents · Knowledge"
+                  - generic [ref=f14e240]: "Execute: Voice · Browser · Connect · Document · Interact · Desktop"
+                  - generic [ref=f14e241]: "Orchestrate & Assure: Flow · Context · Control · Verify · Runtime"
+              - generic [ref=f14e242]:
+                - generic [ref=f14e243]: Drive makes the work happen.
+                - button "Explore Drive" [ref=f14e244] [cursor=pointer]
+      - region "EKARVO Pulse" [ref=f14e248]:
+        - generic [ref=f14e249]:
+          - generic [ref=f14e250]:
+            - generic [ref=f14e251]:
+              - paragraph [ref=f14e252]: Operating Intelligence · EKARVO Pulse
+              - heading "KNOW THE OPERATION. CHANGE THE OUTCOME." [level=2] [ref=f14e253]: KNOW THE OPERATION.CHANGE THE OUTCOME.
+              - paragraph [ref=f14e254]: Unify signals across your organization. Forecast upcoming demand, understand performance drivers, develop workforce capability, and pinpoint the next operational improvement.
+            - generic [ref=f14e255]: 12 connected capability modules
+          - tablist "Pulse Operating Modes" [ref=f14e256]:
+            - tab "PLAN Forecast · Capacity · Allocate · Simulate See what is coming." [selected] [ref=f14e257] [cursor=pointer]:
+              - generic [ref=f14e258]:
+                - generic [ref=f14e259]: PLAN
+                - generic [ref=f14e260]: Forecast · Capacity · Allocate · Simulate
+              - generic [ref=f14e261]: See what is coming.
+            - tab "OPERATE Command · Perform · Quality · Economics See what needs attention." [ref=f14e262] [cursor=pointer]:
+              - generic [ref=f14e263]:
+                - generic [ref=f14e264]: OPERATE
+                - generic [ref=f14e265]: Command · Perform · Quality · Economics
+              - generic [ref=f14e266]: See what needs attention.
+            - tab "DEVELOP Academy · Coach Build the workforce the operation needs." [ref=f14e267] [cursor=pointer]:
+              - generic [ref=f14e268]:
+                - generic [ref=f14e269]: DEVELOP
+                - generic [ref=f14e270]: Academy · Coach
+              - generic [ref=f14e271]: Build the workforce the operation needs.
+            - tab "OPTIMIZE Discover · Optimize Find what matters. Improve what works." [ref=f14e272] [cursor=pointer]:
+              - generic [ref=f14e273]:
+                - generic [ref=f14e274]: OPTIMIZE
+                - generic [ref=f14e275]: Discover · Optimize
+              - generic [ref=f14e276]: Find what matters. Improve what works.
+          - generic [ref=f14e277]:
+            - generic [ref=f14e278]:
+              - generic [ref=f14e279]:
+                - generic [ref=f14e280]: PULSE WORKSPACE · PLAN
+                - heading "See what is coming. Forecast demand, model workforce capacity, allocate work, and test scenarios before making commitments." [level=3] [ref=f14e281]
+              - generic [ref=f14e282]: "Modules: Forecast / Capacity / Allocate / Simulate"
+            - generic [ref=f14e283]:
+              - generic [ref=f14e284]:
+                - generic [ref=f14e285]:
+                  - generic [ref=f14e286]:
+                    - heading "Demand Forecast vs. Qualified Workforce Capacity" [level=4] [ref=f14e287]
+                    - paragraph [ref=f14e288]: Compare forecasted arrival volume against available human and digital capacity across teams.
+                  - generic [ref=f14e289]: "SLA Exposure: 27.6%"
+                - img "Forecast vs Capacity Chart" [ref=f14e291]:
+                  - generic [ref=f14e294]: "White: Forecasted Demand (1,220 units)"
+                  - generic [ref=f14e295]: "Teal: Allocated Capacity (Unadjusted baseline plan)"
+                - generic [ref=f14e296]:
+                  - generic [ref=f14e297]: CAPACITY ALLOCATION MATRIX
+                  - table [ref=f14e299]:
+                    - rowgroup [ref=f14e300]:
+                      - row [ref=f14e301]:
+                        - columnheader "Operating Group" [ref=f14e302]
+                        - columnheader "Qualified Capability" [ref=f14e303]
+                        - columnheader "Demand" [ref=f14e304]
+                        - columnheader "Allocated" [ref=f14e305]
+                        - columnheader "SLA Exposure" [ref=f14e306]
+                    - rowgroup [ref=f14e307]:
+                      - row [ref=f14e308]:
+                        - cell "Core Operations Group A" [ref=f14e309]
+                        - cell "Multi-System Exception Resolution" [ref=f14e310]
+                        - cell "580" [ref=f14e311]
+                        - cell "420" [ref=f14e312]
+                        - cell "27.6%" [ref=f14e313]
+                      - row [ref=f14e314]:
+                        - cell "Operations Group B" [ref=f14e315]
+                        - cell "Standard Intake & Validation" [ref=f14e316]
+                        - cell "390" [ref=f14e317]
+                        - cell "390" [ref=f14e318]
+                        - cell "4.2%" [ref=f14e319]
+                      - row [ref=f14e320]:
+                        - cell "Digital Worker Fleet (Drive)" [ref=f14e321]
+                        - cell "Autonomous Cross-System Execution" [ref=f14e322]
+                        - cell "250" [ref=f14e323]
+                        - cell "250" [ref=f14e324]
+                        - cell "1.5%" [ref=f14e325]
+              - generic [ref=f14e326]:
+                - generic [ref=f14e327]:
+                  - generic [ref=f14e328]: SIMULATE AN INTERVENTION
+                  - paragraph [ref=f14e331]: Select an operating option below to test how capacity rebalancing and autonomous workflow delegation change service level exposure before committing changes.
+                  - generic [ref=f14e332]:
+                    - button "Unadjusted baseline plan Maintain current static schedule (27.6% SLA exposure in Group A)." [ref=f14e333] [cursor=pointer]:
+                      - generic [ref=f14e334]: Unadjusted baseline plan
+                      - generic [ref=f14e335]: Maintain current static schedule (27.6% SLA exposure in Group A).
+                    - button "Rebalance cross-trained capacity Reassign 85 cross-qualified specialists from Group B to Group A." [ref=f14e336] [cursor=pointer]:
+                      - generic [ref=f14e337]: Rebalance cross-trained capacity
+                      - generic [ref=f14e338]: Reassign 85 cross-qualified specialists from Group B to Group A.
+                    - button "Combine capacity plan with Drive execution Delegate 145 repeatable multi-system verification tasks to Drive." [ref=f14e339] [cursor=pointer]:
+                      - generic [ref=f14e340]: Combine capacity plan with Drive execution
+                      - generic [ref=f14e341]: Delegate 145 repeatable multi-system verification tasks to Drive.
+                - generic [ref=f14e342]:
+                  - generic [ref=f14e343]: PROJECTED SIMULATION OUTCOME
+                  - paragraph [ref=f14e344]: Current operating schedule without cross-team rebalancing or autonomous workflow delegation.
+                  - generic [ref=f14e345]:
+                    - generic [ref=f14e346]:
+                      - text: "Backlog Delta:"
+                      - strong [ref=f14e347]: 0 units
+                    - generic [ref=f14e348]:
+                      - text: "Economics:"
+                      - strong [ref=f14e349]: Baseline unit economics
+      - region "EKARVO Drive" [ref=f14e350]:
+        - generic [ref=f14e351]:
+          - generic [ref=f14e352]:
+            - generic [ref=f14e353]:
+              - generic [ref=f14e354]: CONNECTED PULSE WORKFLOW
+              - generic [aria-hidden] [ref=f14e355]: ·
+              - generic [ref=f14e356]: Delegate repeatable cross-system verification and status updates to Drive
+            - generic [ref=f14e357]: "Authority Scope: Read External Portals & Update Queue · High-Value Adjustments Gated"
+          - generic [ref=f14e358]:
+            - paragraph [ref=f14e359]: Autonomous Execution · EKARVO Drive
+            - heading "WORK DOESN'T STOP AT A RECOMMENDATION." [level=2] [ref=f14e360]: WORK DOESN'T STOPAT A RECOMMENDATION.
+            - paragraph [ref=f14e361]: Design and operate digital workers that navigate applications, communicate, process documents, coordinate actions across systems, and verify results.
+          - generic [ref=f14e362]:
+            - generic [ref=f14e363]:
+              - paragraph [ref=f14e364]: Six Connected Execution Channels
+              - generic [ref=f14e365]: "Active Channel: NAVIGATE (Browser automation)"
+            - generic [ref=f14e366]:
+              - button "SPEAK Voice AI" [ref=f14e367] [cursor=pointer]:
+                - generic [ref=f14e368]: SPEAK
+                - generic [ref=f14e369]: Voice AI
+              - button "NAVIGATE Browser automation" [ref=f14e370] [cursor=pointer]:
+                - generic [ref=f14e371]: NAVIGATE
+                - generic [ref=f14e372]: Browser automation
+              - button "CONNECT Enterprise connectivity" [ref=f14e373] [cursor=pointer]:
+                - generic [ref=f14e374]: CONNECT
+                - generic [ref=f14e375]: Enterprise connectivity
+              - button "UNDERSTAND Document intelligence" [ref=f14e376] [cursor=pointer]:
+                - generic [ref=f14e377]: UNDERSTAND
+                - generic [ref=f14e378]: Document intelligence
+              - button "COMMUNICATE Communications" [ref=f14e379] [cursor=pointer]:
+                - generic [ref=f14e380]: COMMUNICATE
+                - generic [ref=f14e381]: Communications
+              - button "INTERACT Desktop automation" [ref=f14e382] [cursor=pointer]:
+                - generic [ref=f14e383]: INTERACT
+                - generic [ref=f14e384]: Desktop automation
+            - generic [ref=f14e385]:
+              - generic [ref=f14e386]:
+                - generic [ref=f14e387]:
+                  - generic [ref=f14e388]:
+                    - generic [ref=f14e389]: CHANNEL EXECUTION · NAVIGATE
+                    - generic [ref=f14e390]: "ENVIRONMENT: External Partner, Supplier & Customer Web Portals"
+                  - paragraph [ref=f14e391]: Navigates external web portals and partner applications resiliently across layout changes
+                - generic [ref=f14e392]:
+                  - generic [ref=f14e393]:
+                    - generic [ref=f14e394]:
+                      - generic [ref=f14e395]: "01"
+                      - generic [ref=f14e396]: Verify target domain against enterprise allowlist and inject managed credentials
+                    - generic [ref=f14e397]: VERIFIED
+                  - generic [ref=f14e398]:
+                    - generic [ref=f14e399]:
+                      - generic [ref=f14e400]: "02"
+                      - generic [ref=f14e401]: Navigate multi-step web workflows using semantic and visual anchors
+                    - generic [ref=f14e402]: VERIFIED
+                  - generic [ref=f14e403]:
+                    - generic [ref=f14e404]:
+                      - generic [ref=f14e405]: "03"
+                      - generic [ref=f14e406]: Extract required status records, schedules, or supporting files
+                    - generic [ref=f14e407]: VERIFIED
+                  - generic [ref=f14e408]:
+                    - generic [ref=f14e409]:
+                      - generic [ref=f14e410]: "04"
+                      - generic [ref=f14e411]: Confirm post-submission page state before closing session
+                    - generic [ref=f14e412]: VERIFIED
+                - generic [ref=f14e413]:
+                  - generic [ref=f14e414]: "Assurance State:"
+                  - generic [ref=f14e415]: Portal session state verified
+              - generic [ref=f14e416]:
+                - generic [ref=f14e417]:
+                  - generic [ref=f14e418]: BROWSER CHANNEL CAPABILITIES
+                  - generic [ref=f14e419]:
+                    - generic [ref=f14e420]:
+                      - generic [ref=f14e421]:
+                        - generic [ref=f14e422]: Navigation Mode
+                        - generic [ref=f14e423]: GOVERNED
+                      - generic [ref=f14e424]: Semantic DOM understanding combined with visual layout resilience
+                    - generic [ref=f14e425]:
+                      - generic [ref=f14e426]:
+                        - generic [ref=f14e427]: Access Control
+                        - generic [ref=f14e428]: GOVERNED
+                      - generic [ref=f14e429]: Zero-trust vault credential injection without exposing secrets
+                    - generic [ref=f14e430]:
+                      - generic [ref=f14e431]:
+                        - generic [ref=f14e432]: Verification
+                        - generic [ref=f14e433]: GOVERNED
+                      - generic [ref=f14e434]: Captures confirmation states before marking step complete
+                - generic [ref=f14e435]: All six execution channels share one unified operational context, preserving state across voice, browser portals, documents, enterprise APIs, communications, and desktop applications.
+          - generic [ref=f14e436]:
+            - generic [ref=f14e437]:
+              - paragraph [ref=f14e438]: Orchestration & Governance
+              - heading "ONE WORKFLOW. MULTIPLE SYSTEMS. VERIFIED EXECUTION." [level=3] [ref=f14e439]: ONE WORKFLOW.MULTIPLE SYSTEMS.VERIFIED EXECUTION.
+              - paragraph [ref=f14e440]: Drive maintains context across systems, applies enterprise business rules, pauses at policy boundaries when human judgment is needed, and confirms every completed outcome.
+            - generic [ref=f14e441]:
+              - generic [ref=f14e442]:
+                - generic [ref=f14e443]: POLICY BOUNDARY · HUMAN APPROVAL GATE
+                - generic [ref=f14e448]: Threshold Guardrail
+              - paragraph [ref=f14e449]: When a workflow encounters an exception that exceeds autonomous policy thresholds, Drive automatically pauses execution and routes the complete context package to an authorized human specialist for review.
+              - generic [ref=f14e450]:
+                - button "Authorize Exception & Complete Workflow" [ref=f14e451] [cursor=pointer]
+                - button "Explore End-to-End Workflows" [ref=f14e455] [cursor=pointer]
+      - region "Closed-Loop Workflows" [ref=f14e456]:
+        - generic [ref=f14e457]:
+          - generic [ref=f14e458]:
+            - generic [ref=f14e459]:
+              - paragraph [ref=f14e460]: Closed-Loop Workflows · Pulse + Drive
+              - heading "FROM SIGNAL TO OUTCOME." [level=2] [ref=f14e461]: FROM SIGNALTO OUTCOME.
+              - paragraph [ref=f14e462]: Explore how EKARVO connects operational intelligence, decision simulation, governed execution, and outcome verification across any enterprise function.
+            - generic [ref=f14e463]:
+              - generic [ref=f14e464]: Select an Operational Function
+              - tablist "Select an operational function" [ref=f14e465]:
+                - tab "Service & Case Operations" [selected] [ref=f14e466] [cursor=pointer]
+                - tab "Supply & Order Coordination" [ref=f14e467] [cursor=pointer]
+                - tab "Financial & Shared Services" [ref=f14e468] [cursor=pointer]
+          - generic [ref=f14e469]:
+            - generic [ref=f14e470]:
+              - generic [ref=f14e471]:
+                - generic [ref=f14e472]: SERVICE & CASE OPERATIONS
+                - generic [aria-hidden] [ref=f14e473]: ·
+                - generic [ref=f14e474]: Multi-System Case Resolution & SLA Management
+              - generic [ref=f14e475]:
+                - generic [ref=f14e476]:
+                  - button "Pulse + Drive" [ref=f14e477] [cursor=pointer]
+                  - button "pulse" [ref=f14e478] [cursor=pointer]
+                  - button "drive" [ref=f14e479] [cursor=pointer]
+                - button "Next Stage (VERIFY)" [ref=f14e480] [cursor=pointer]
+                - button "Restart" [ref=f14e484] [cursor=pointer]
+            - generic [ref=f14e489]:
+              - button "DETECT Signal Isolated Pulse" [ref=f14e490] [cursor=pointer]:
+                - generic [ref=f14e491]: DETECT
+                - generic [ref=f14e492]: Signal Isolated
+                - generic [ref=f14e493]: Pulse
+              - button "UNDERSTAND Workload Segmented Pulse" [ref=f14e494] [cursor=pointer]:
+                - generic [ref=f14e495]: UNDERSTAND
+                - generic [ref=f14e496]: Workload Segmented
+                - generic [ref=f14e497]: Pulse
+              - button "SIMULATE Options Modeled Pulse" [ref=f14e498] [cursor=pointer]:
+                - generic [ref=f14e499]: SIMULATE
+                - generic [ref=f14e500]: Options Modeled
+                - generic [ref=f14e501]: Pulse
+              - button "AUTHORIZE Policy Authorized Human + Authority" [ref=f14e502] [cursor=pointer]:
+                - generic [ref=f14e503]: AUTHORIZE
+                - generic [ref=f14e504]: Policy Authorized
+                - generic [ref=f14e505]: Human + Authority
+              - button "EXECUTE Action Executed Drive" [ref=f14e506] [cursor=pointer]:
+                - generic [ref=f14e507]: EXECUTE
+                - generic [ref=f14e508]: Action Executed
+                - generic [ref=f14e509]: Drive
+              - button "VERIFY Outcome Verified Drive" [ref=f14e510] [cursor=pointer]:
+                - generic [ref=f14e511]: VERIFY
+                - generic [ref=f14e512]: Outcome Verified
+                - generic [ref=f14e513]: Drive
+              - button "LEARN Loop Closed Pulse + Drive" [ref=f14e514] [cursor=pointer]:
+                - generic [ref=f14e515]: LEARN
+                - generic [ref=f14e516]: Loop Closed
+                - generic [ref=f14e517]: Pulse + Drive
+          - generic [ref=f14e518]:
+            - generic [ref=f14e519]:
+              - generic [ref=f14e520]:
+                - generic [ref=f14e521]:
+                  - generic [ref=f14e522]: OPERATIONAL CONTEXT (PULSE)
+                  - generic [ref=f14e523]: Detect & Simulate
+                - generic [ref=f14e524]:
+                  - generic [ref=f14e525]: Multi-System Case Resolution Queue
+                  - generic [ref=f14e526]: Intraday volume trending +34% above 14-day baseline
+                  - generic [ref=f14e527]: Service level commitment window at risk within 48 hours
+                  - generic [ref=f14e528]:
+                    - generic [ref=f14e529]: "Queue Volume: 1240"
+                    - generic [ref=f14e530]: "Drive Eligible: 780"
+                - generic [ref=f14e531]:
+                  - generic [ref=f14e532]: Pulse Recommendation
+                  - heading "Delegate repeatable status and verification cases to Drive." [level=3] [ref=f14e533]
+                  - paragraph [ref=f14e534]: 63% of queued cases require standard cross-system status retrieval and record validation without specialist judgment. Delegating eligible cases preserves human specialists for complex escalations.
+                - generic [ref=f14e535]:
+                  - generic [ref=f14e536]: Simulated Interventions
+                  - generic [ref=f14e537]:
+                    - generic [ref=f14e538]:
+                      - generic [ref=f14e539]: Rebalance work across cross-trained specialist teams
+                      - generic [ref=f14e541]:
+                        - generic [ref=f14e542]: Standard unit cost
+                        - generic [ref=f14e543]: +15% throughput
+                        - generic [ref=f14e544]: 14.2% SLA exposure remains
+                    - generic [ref=f14e545]:
+                      - generic [ref=f14e546]: Add temporary overtime capacity
+                      - generic [ref=f14e548]:
+                        - generic [ref=f14e549]: +45% unit cost
+                        - generic [ref=f14e550]: +25% throughput
+                        - generic [ref=f14e551]: 8.5% SLA exposure remains
+                    - generic [ref=f14e552]:
+                      - generic [ref=f14e553]:
+                        - generic [ref=f14e554]: Combine team rebalancing with Drive autonomous execution
+                        - generic [ref=f14e555]: RECOMMENDED
+                      - generic [ref=f14e556]:
+                        - generic [ref=f14e557]: "-68% unit cost"
+                        - generic [ref=f14e558]: +3.2x throughput
+                        - generic [ref=f14e559]: 1.2% SLA exposure (Verified)
+              - generic [ref=f14e560]: "Closed-Loop Feedback: Verified Drive completions automatically update this Pulse model."
+            - generic [ref=f14e562]:
+              - generic [ref=f14e563]:
+                - generic [ref=f14e564]: EXECUTION JOURNEY
+                - generic [ref=f14e565]: Stage 6 of 7
+              - generic [ref=f14e566]:
+                - generic [ref=f14e567]:
+                  - generic [ref=f14e568]: VERIFY
+                  - generic [ref=f14e569]: Drive
+                - heading "Confirm target system state and record audit evidence" [level=4] [ref=f14e570]
+                - paragraph [ref=f14e571]: Verifies that all system updates persisted accurately and routes any policy exceptions to human specialists.
+              - generic [ref=f14e572]:
+                - generic [ref=f14e573]:
+                  - generic [ref=f14e574]: POLICY & AUTHORITY BOUNDARIES
+                  - button "Authorized" [ref=f14e575] [cursor=pointer]
+                - generic [ref=f14e576]:
+                  - generic [ref=f14e577]:
+                    - generic [ref=f14e578]: Retrieve status and supporting documents across approved portals
+                    - generic [ref=f14e579]: PERMITTED
+                  - generic [ref=f14e580]:
+                    - generic [ref=f14e581]: Update case disposition fields in the core system of record
+                    - generic [ref=f14e582]: PERMITTED
+                  - generic [ref=f14e583]:
+                    - generic [ref=f14e584]: High-value financial adjustments above policy threshold
+                    - generic [ref=f14e585]: RESTRICTED
+              - generic [ref=f14e586]:
+                - generic [ref=f14e587]: Execution & Verification Stages
+                - generic [ref=f14e588]:
+                  - button "Stage 1 of 4 External Portal Verification Confirmed" [ref=f14e589] [cursor=pointer]:
+                    - generic [ref=f14e590]:
+                      - generic [ref=f14e591]: Stage 1 of 4
+                      - generic [ref=f14e592]: External Portal Verification
+                    - generic [ref=f14e593]: Confirmed
+                  - button "Stage 2 of 4 Document & Policy Reconciliation Confirmed" [ref=f14e594] [cursor=pointer]:
+                    - generic [ref=f14e595]:
+                      - generic [ref=f14e596]: Stage 2 of 4
+                      - generic [ref=f14e597]: Document & Policy Reconciliation
+                    - generic [ref=f14e598]: Confirmed
+                  - button "Stage 3 of 4 System of Record Update Confirmed" [ref=f14e599] [cursor=pointer]:
+                    - generic [ref=f14e600]:
+                      - generic [ref=f14e601]: Stage 3 of 4
+                      - generic [ref=f14e602]: System of Record Update
+                    - generic [ref=f14e603]: Confirmed
+                  - button "Stage 4 of 4 Threshold Exception Escalation Review Required" [ref=f14e604] [cursor=pointer]:
+                    - generic [ref=f14e605]:
+                      - generic [ref=f14e606]: Stage 4 of 4
+                      - generic [ref=f14e607]: Threshold Exception Escalation
+                    - generic [ref=f14e608]: Review Required
+            - generic [ref=f14e609]:
+              - generic [ref=f14e610]:
+                - generic [ref=f14e611]: OUTCOME VERIFICATION
+                - generic [ref=f14e617]:
+                  - generic [ref=f14e618]:
+                    - generic [ref=f14e619]: ELIGIBLE WORKLOAD
+                    - generic [ref=f14e620]: 780 Items
+                  - generic [ref=f14e621]:
+                    - generic [ref=f14e622]: OUTCOME CONFIRMED
+                    - generic [ref=f14e623]: 768 Verified
+                - generic [ref=f14e624]:
+                  - generic [ref=f14e625]:
+                    - generic [ref=f14e626]: External Portal Verification
+                    - generic [ref=f14e627]: Confirmed
+                  - generic [ref=f14e628]:
+                    - generic [ref=f14e629]:
+                      - generic [ref=f14e630]: Objective
+                      - generic [ref=f14e631]: Retrieve current status and supporting records from external partner portal.
+                    - generic [ref=f14e632]:
+                      - generic [ref=f14e633]: Authorized Action
+                      - generic [ref=f14e634]: Authenticated read session via managed enterprise credential vault.
+                    - generic [ref=f14e635]:
+                      - generic [ref=f14e636]: Observed Result
+                      - generic [ref=f14e637]: Current transaction status and reference documents retrieved.
+                    - generic [ref=f14e638]:
+                      - generic [ref=f14e639]: Verification Assurance
+                      - generic [ref=f14e640]: Portal session state verified and supporting artifact attached.
+              - generic [ref=f14e641]:
+                - generic [ref=f14e642]: OUTCOME VERIFIED
+                - generic [ref=f14e647]: 12 Exceptions Routed to Specialists
+      - region "Operating Model Evolution" [ref=f14e648]:
+        - generic [ref=f14e649]:
+          - generic [ref=f14e650]:
+            - paragraph [ref=f14e651]: Operating Model Evolution
+            - heading "NOT JUST AUTOMATED TASKS. A BETTER WAY TO OPERATE." [level=2] [ref=f14e652]: NOT JUST AUTOMATED TASKS.A BETTER WAY TO OPERATE.
+            - paragraph [ref=f14e653]: Connect people, digital workers, business knowledge, decisions, and execution through one coordinated operating model.
+          - generic [ref=f14e654]:
+            - generic [ref=f14e655]:
+              - generic [ref=f14e656]:
+                - generic [ref=f14e657]: Operating Model Architecture
+                - heading "Compare how teams, systems, and verification evolve across operating states" [level=3] [ref=f14e658]
+              - tablist "Operating Model State" [ref=f14e659]:
+                - tab "Fragmented" [ref=f14e660] [cursor=pointer]
+                - tab "Connected" [ref=f14e661] [cursor=pointer]
+                - tab "Governed Autonomous" [selected] [ref=f14e662] [cursor=pointer]
+            - generic [ref=f14e663]:
+              - generic [ref=f14e664]:
+                - text: Closed-Loop State
+                - heading "Governed autonomous operations" [level=4] [ref=f14e665]
+                - paragraph [ref=f14e666]: Eligible workflows move through governed digital execution pathways while human specialists focus on judgment, policy authority, and exceptions.
+              - generic [ref=f14e667]:
+                - generic [ref=f14e668]:
+                  - generic [ref=f14e669]: Human Teams
+                  - paragraph [ref=f14e670]: High-judgment decisions, policy authority, and team development.
+                - generic [ref=f14e671]:
+                  - generic [ref=f14e672]: Digital Execution
+                  - paragraph [ref=f14e673]: Multi-channel execution across voice, browser, documents, APIs, and desktop.
+                - generic [ref=f14e674]:
+                  - generic [ref=f14e675]: Verification
+                  - paragraph [ref=f14e676]: Every completed action verified against target system state.
+          - heading "HUMAN JUDGMENT. DIGITAL EXECUTION. ONE COORDINATED OPERATION." [level=3] [ref=f14e678]: HUMAN JUDGMENT. DIGITAL EXECUTION.ONE COORDINATED OPERATION.
+      - region "Capability Architecture" [ref=f14e679]:
+        - generic [ref=f14e680]:
+          - generic [ref=f14e681]:
+            - generic [ref=f14e682]:
+              - paragraph [ref=f14e683]: Capability Architecture · 27 Modules
+              - heading "ONE PLATFORM VISION. PURPOSE-BUILT CAPABILITIES." [level=2] [ref=f14e684]: ONE PLATFORM VISION.PURPOSE-BUILT CAPABILITIES.
+              - paragraph [ref=f14e685]: Start with the capabilities your operation needs today. Expand across teams, workflows, and enterprise systems at your own pace.
+            - generic [ref=f14e686]:
+              - generic [ref=f14e687]:
+                - button "Pulse (12 Modules)" [ref=f14e688] [cursor=pointer]
+                - button "Drive (15 Modules)" [ref=f14e689] [cursor=pointer]
+              - button "Full 27-Module Index" [ref=f14e690] [cursor=pointer]
+          - generic [ref=f14e691]:
+            - generic [ref=f14e692]:
+              - generic [ref=f14e693]:
+                - generic [ref=f14e694]:
+                  - generic [ref=f14e695]: PULSE · PLAN
+                  - generic [ref=f14e696]: 4 MODULES
+                - generic [ref=f14e697]:
+                  - button "Forecast Inspect" [ref=f14e698] [cursor=pointer]:
+                    - generic [ref=f14e699]: Forecast
+                    - generic [ref=f14e700]: Inspect
+                  - button "Capacity Inspect" [ref=f14e701] [cursor=pointer]:
+                    - generic [ref=f14e702]: Capacity
+                    - generic [ref=f14e703]: Inspect
+                  - button "Allocate Inspect" [ref=f14e704] [cursor=pointer]:
+                    - generic [ref=f14e705]: Allocate
+                    - generic [ref=f14e706]: Inspect
+                  - button "Simulate Inspect" [ref=f14e707] [cursor=pointer]:
+                    - generic [ref=f14e708]: Simulate
+                    - generic [ref=f14e709]: Inspect
+              - generic [ref=f14e710]:
+                - generic [ref=f14e711]:
+                  - generic [ref=f14e712]: PULSE · OPERATE
+                  - generic [ref=f14e713]: 4 MODULES
+                - generic [ref=f14e714]:
+                  - button "Command Inspect" [ref=f14e715] [cursor=pointer]:
+                    - generic [ref=f14e716]: Command
+                    - generic [ref=f14e717]: Inspect
+                  - button "Perform Inspect" [ref=f14e718] [cursor=pointer]:
+                    - generic [ref=f14e719]: Perform
+                    - generic [ref=f14e720]: Inspect
+                  - button "Quality Inspect" [ref=f14e721] [cursor=pointer]:
+                    - generic [ref=f14e722]: Quality
+                    - generic [ref=f14e723]: Inspect
+                  - button "Economics Inspect" [ref=f14e724] [cursor=pointer]:
+                    - generic [ref=f14e725]: Economics
+                    - generic [ref=f14e726]: Inspect
+              - generic [ref=f14e727]:
+                - generic [ref=f14e728]:
+                  - generic [ref=f14e729]: PULSE · DEVELOP
+                  - generic [ref=f14e730]: 2 MODULES
+                - generic [ref=f14e731]:
+                  - button "Academy Inspect" [ref=f14e732] [cursor=pointer]:
+                    - generic [ref=f14e733]: Academy
+                    - generic [ref=f14e734]: Inspect
+                  - button "Coach Inspect" [ref=f14e735] [cursor=pointer]:
+                    - generic [ref=f14e736]: Coach
+                    - generic [ref=f14e737]: Inspect
+              - generic [ref=f14e738]:
+                - generic [ref=f14e739]:
+                  - generic [ref=f14e740]: PULSE · OPTIMIZE
+                  - generic [ref=f14e741]: 2 MODULES
+                - generic [ref=f14e742]:
+                  - button "Discover Inspect" [ref=f14e743] [cursor=pointer]:
+                    - generic [ref=f14e744]: Discover
+                    - generic [ref=f14e745]: Inspect
+                  - button "Optimize Inspect" [ref=f14e746] [cursor=pointer]:
+                    - generic [ref=f14e747]: Optimize
+                    - generic [ref=f14e748]: Inspect
+            - generic [ref=f14e749]:
+              - generic [ref=f14e750]:
+                - generic [ref=f14e751]: PULSE · PLAN · SIMULATE
+                - heading "Simulate" [level=3] [ref=f14e752]
+                - paragraph [ref=f14e753]: Tests operational decisions before implementing them in live production.
+              - generic [ref=f14e754]:
+                - generic [ref=f14e755]: Key Capabilities
+                - list [ref=f14e756]:
+                  - listitem [ref=f14e757]:
+                    - generic [ref=f14e761]: Demand scenario modeling
+                  - listitem [ref=f14e762]:
+                    - generic [ref=f14e766]: Staffing alternatives
+                  - listitem [ref=f14e767]:
+                    - generic [ref=f14e771]: Skill-based capacity constraints
+                  - listitem [ref=f14e772]:
+                    - generic [ref=f14e776]: SLA sensitivity analysis
+                  - listitem [ref=f14e777]:
+                    - generic [ref=f14e781]: Automation adoption scenarios
+                  - listitem [ref=f14e782]:
+                    - generic [ref=f14e786]: Cost and throughput comparisons
+              - generic [ref=f14e787]:
+                - generic [ref=f14e788]: Operational Applications
+                - generic [ref=f14e789]:
+                  - generic [ref=f14e790]: Evaluating Drive automation ROI before deployment
+                  - generic [ref=f14e791]: Stress-testing SLA resilience under volume spikes
+              - generic [ref=f14e792]: "Connected Modules: Forecast · Capacity · Allocate · Drive Flow"
+      - region "Enterprise Governance" [ref=f14e794]:
+        - generic [ref=f14e795]:
+          - generic [ref=f14e796]:
+            - paragraph [ref=f14e797]: Enterprise Governance & Control
+            - heading "AUTONOMY WITHOUT LOSING CONTROL." [level=2] [ref=f14e798]: AUTONOMYWITHOUT LOSING CONTROL.
+            - paragraph [ref=f14e799]: Define what software is permitted to do. Require human approvals where judgment is needed. Preserve complete execution evidence and verify every result.
+          - generic [ref=f14e800]:
+            - generic [ref=f14e801]:
+              - button "Context Layer What does the system know? Captures the operational signal, business objective, source data lineage, and active policy version before any action begins." [ref=f14e802] [cursor=pointer]:
+                - generic [ref=f14e803]:
+                  - generic [ref=f14e804]: Context Layer
+                  - generic [ref=f14e805]: What does the system know?
+                  - generic [ref=f14e806]: Captures the operational signal, business objective, source data lineage, and active policy version before any action begins.
+              - button "Authority Layer What is the system permitted to do? Defines approved tools, system permissions, financial thresholds, and mandatory human approval gates." [ref=f14e811] [cursor=pointer]:
+                - generic [ref=f14e812]:
+                  - generic [ref=f14e813]: Authority Layer
+                  - generic [ref=f14e814]: What is the system permitted to do?
+                  - generic [ref=f14e815]: Defines approved tools, system permissions, financial thresholds, and mandatory human approval gates.
+              - button "Execution Layer What did the system actually do? Records deterministic execution traces, channel transitions, and handled exceptions across every system touched." [ref=f14e820] [cursor=pointer]:
+                - generic [ref=f14e821]:
+                  - generic [ref=f14e822]: Execution Layer
+                  - generic [ref=f14e823]: What did the system actually do?
+                  - generic [ref=f14e824]: Records deterministic execution traces, channel transitions, and handled exceptions across every system touched.
+              - button "Verification Layer How do we know the work was completed correctly? Compares the expected business outcome against the observed target system state and preserves verifiable audit evidence." [ref=f14e829] [cursor=pointer]:
+                - generic [ref=f14e830]:
+                  - generic [ref=f14e831]: Verification Layer
+                  - generic [ref=f14e832]: How do we know the work was completed correctly?
+                  - generic [ref=f14e833]: Compares the expected business outcome against the observed target system state and preserves verifiable audit evidence.
+            - generic [ref=f14e838]:
+              - generic [ref=f14e839]:
+                - generic [ref=f14e840]:
+                  - generic [ref=f14e841]: AUTHORITY LAYER
+                  - generic [ref=f14e842]: Connected to Policy Boundary & Human Approval Gate
+                - heading "What is the system permitted to do?" [level=3] [ref=f14e843]
+                - paragraph [ref=f14e844]: Defines approved tools, system permissions, financial thresholds, and mandatory human approval gates.
+                - generic [ref=f14e845]:
+                  - generic [ref=f14e846]:
+                    - generic [ref=f14e847]: Permitted Actions
+                    - generic [ref=f14e848]: Query external portal status, validate documents, and update queue disposition
+                  - generic [ref=f14e849]:
+                    - generic [ref=f14e850]: Restricted Actions
+                    - generic [ref=f14e851]: Financial adjustments or policy exceptions above threshold require human sign-off
+                  - generic [ref=f14e852]:
+                    - generic [ref=f14e853]: Identity Principal
+                    - generic [ref=f14e854]: Scoped service identity with short-lived, auditable authorization tokens
+              - generic [ref=f14e855]:
+                - generic [ref=f14e856]:
+                  - generic [ref=f14e857]: Bounded autonomy
+                  - generic [ref=f14e858]: Defined policy limits
+                - generic [ref=f14e859]:
+                  - generic [ref=f14e860]: Human oversight
+                  - generic [ref=f14e861]: Explicit authorization
+                - generic [ref=f14e862]:
+                  - generic [ref=f14e863]: Execution evidence
+                  - generic [ref=f14e864]: Full trace recording
+                - generic [ref=f14e865]:
+                  - generic [ref=f14e866]: Outcome verification
+                  - generic [ref=f14e867]: Confirmed state
+          - generic [ref=f14e868]:
+            - generic [ref=f14e869]: ENTERPRISE READINESS & ARCHITECTURAL SAFEGUARDS
+            - generic [ref=f14e873]:
+              - generic [ref=f14e874]:
+                - heading "Access control and identity integration" [level=4] [ref=f14e875]
+                - paragraph [ref=f14e876]: Scoped role-based authority, short-lived service identities, and enterprise SSO/IAM federation.
+              - generic [ref=f14e877]:
+                - heading "Data isolation and security architecture" [level=4] [ref=f14e878]
+                - paragraph [ref=f14e879]: Tenant-isolated data planes, field-level data masking, and encrypted transit and storage.
+              - generic [ref=f14e880]:
+                - heading "Auditability and evidence" [level=4] [ref=f14e881]
+                - paragraph [ref=f14e882]: Every attempted and completed action generates a replayable trace and verification record.
+              - generic [ref=f14e883]:
+                - heading "Human approvals and exception management" [level=4] [ref=f14e884]
+                - paragraph [ref=f14e885]: Configurable monetary and policy guardrails pause execution until authorized by designated staff.
+              - generic [ref=f14e886]:
+                - heading "Deployment and integration options" [level=4] [ref=f14e887]
+                - paragraph [ref=f14e888]: Cloud-managed or VPC-isolated runtime environments connecting via APIs, browsers, and virtual desktops.
+              - generic [ref=f14e889]:
+                - heading "Operational monitoring and reliability" [level=4] [ref=f14e890]
+                - paragraph [ref=f14e891]: Continuous fleet observability, automated retry policies, and graceful fallback routing.
+      - region "Get Started with EKARVO" [ref=f14e892]:
+        - generic [ref=f14e893]:
+          - generic [ref=f14e894]:
+            - paragraph [ref=f14e895]: Autonomous Enterprise Operations
+            - paragraph [ref=f14e896]: The next operating model is ready to be built.
+            - heading "WORK. DONE. VERIFIED." [level=2] [ref=f14e897]: WORK.DONE.VERIFIED.
+            - paragraph [ref=f14e898]: Bring operating intelligence and autonomous execution together with EKARVO.
+          - generic [ref=f14e899]:
+            - button "Talk to EKARVO" [ref=f14e900] [cursor=pointer]
+            - button "Explore Closed-Loop Workflows" [ref=f14e904] [cursor=pointer]
+        - generic [ref=f14e908]:
+          - generic [ref=f14e909]:
+            - generic [ref=f14e910]: EKARVO
+            - generic [ref=f14e911]: Intelligence. Execution. Verified Outcomes.
+          - generic [ref=f14e912]:
+            - generic [ref=f14e913]:
+              - generic [ref=f14e914]: "Platform:"
+              - link "Pulse" [ref=f14e915] [cursor=pointer]:
+                - /url: "#scene-06"
+              - link "Drive" [ref=f14e916] [cursor=pointer]:
+                - /url: "#scene-07"
+              - button "Architecture" [ref=f14e917] [cursor=pointer]
+              - button "Use Cases" [ref=f14e918] [cursor=pointer]
+            - generic [ref=f14e919]:
+              - generic [ref=f14e920]: "Company:"
+              - button "About" [ref=f14e921] [cursor=pointer]
+              - button "Contact" [ref=f14e922] [cursor=pointer]
+          - navigation "Documentation and legal" [ref=f14e923]:
+            - link "Documentation" [ref=f14e924] [cursor=pointer]:
+              - /url: /landing/doc
+            - link "Privacy" [ref=f14e925] [cursor=pointer]:
+              - /url: /landing/legal/privacy-policy
+            - link "Terms" [ref=f14e926] [cursor=pointer]:
+              - /url: /landing/legal/terms-of-service
+            - link "Refunds" [ref=f14e927] [cursor=pointer]:
+              - /url: /landing/legal/cancellation-refund-policies
+  - region "Notifications alt+T"

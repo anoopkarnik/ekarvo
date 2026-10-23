@@ -1,0 +1,102 @@
+import { z } from 'zod';
+import {
+  validatePlatform, validateAuth,
+  validateSupport, validateStorage, validateObservability, validatePayment,
+  validateAI
+} from './validators';
+
+export const formSchema = z.object({
+  // Project name (folder name)
+  name: z
+    .string()
+    .min(1, "Project name is required")
+    .max(80, "Keep it under 80 characters")
+    .regex(/^[a-zA-Z0-9][a-zA-Z0-9._-]*$/, "Use letters, numbers, dot, underscore, or hyphen"),
+
+  // Project Settings Variables
+  NEXT_PUBLIC_THEME: z.enum(["blue", "green", "neutral", "orange", "red", "rose", "violet", "yellow"]),
+  NEXT_PUBLIC_THEME_TYPE: z.enum(["light", "dark", "system"]),
+  SELECTED_MODULES: z.array(z.enum(["billing", "multi_tenancy", "ai", "ai_agents", "api_keys", "jobs", "notifications", "audit_log", "webhooks", "feature_flags", "onboarding", "analytics", "mcp"])).optional(),
+  // "true" ships every payment gateway, image storage (runtime switching);
+  // by default the download keeps only the ones chosen.
+  KEEP_ALL_PROVIDERS: z.enum(["true", "false"]).optional(),
+  NEXT_PUBLIC_SAAS_NAME: z.string(),
+  NEXT_PUBLIC_COMPANY_NAME: z.string(),
+  NEXT_PUBLIC_URL: z.string(),
+  NEXT_PUBLIC_PLATFORM: z.array(z.enum(["web", "mobile", "desktop"])).min(1, "Select at least one platform"),
+
+  // Landing Module Variables
+  UPSTASH_REDIS_REST_URL: z.string().optional(),
+  UPSTASH_REDIS_REST_TOKEN: z.string().optional(),
+
+  // Authentication Module Variables
+  NEXT_PUBLIC_AUTH_FRAMEWORK: z.enum(['better-auth']),
+  BETTER_AUTH_SECRET: z.string().optional(),
+  NEXT_PUBLIC_AUTH_PROVIDERS: z.array(z.enum(["email_verification", "linkedin", "google", "github"])).min(1, "Select at least one auth provider"),
+  AUTH_LINKEDIN_CLIENT_ID: z.string().optional(),
+  AUTH_LINKEDIN_CLIENT_SECRET: z.string().optional(),
+  AUTH_GITHUB_CLIENT_ID: z.string().optional(),
+  AUTH_GITHUB_CLIENT_SECRET: z.string().optional(),
+  AUTH_GOOGLE_CLIENT_ID: z.string().optional(),
+  AUTH_GOOGLE_CLIENT_SECRET: z.string().optional(),
+  NEXT_PUBLIC_EMAIL_CLIENT: z.enum(["none", "resend", "gmail_smtp"]),
+  RESEND_API_KEY: z.string().optional(),
+
+  // Support Module Variables
+  NEXT_PUBLIC_SUPPORT_FEATURES: z.array(z.enum(["support_mail", "calendly"])).optional(),
+  NEXT_PUBLIC_SUPPORT_MAIL: z.string().optional(),
+  NEXT_PUBLIC_CALENDLY_BOOKING_URL: z.string().optional(),
+
+  // Storage Module Variables
+  NEXT_PUBLIC_IMAGE_STORAGE: z.enum(["vercel_blob", "cloudflare_r2"]),
+  BLOB_READ_WRITE_TOKEN: z.string().optional(),
+  R2_ACCOUNT_ID: z.string().optional(),
+  R2_ACCESS_KEY_ID: z.string().optional(),
+  R2_SECRET_ACCESS_KEY: z.string().optional(),
+  R2_BUCKET_NAME: z.string().optional(),
+  NEXT_PUBLIC_R2_PUBLIC_URL: z.string().optional(),
+  DATABASE_URL: z.string(),
+
+  // Observability Module Variables
+  NEXT_PUBLIC_OBSERVABILITY_FEATURES: z.array(z.enum(["logging", "google_analytics", "ga4_reports", "pagespeed_insights", "rate_limiting"])).optional(),
+  BETTERSTACK_TELEMETRY_SOURCE_TOKEN: z.string().optional(),
+  BETTERSTACK_TELEMETRY_INGESTING_HOST: z.string().optional(),
+  NEXT_PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID: z.string().optional(),
+  GA4_PROPERTY_ID: z.string().optional(),
+  GA4_CREDENTIALS_JSON: z.string().optional(),
+  GOOGLE_PAGESPEED_API_KEY: z.string().optional(),
+  NEXT_PUBLIC_ALLOW_RATE_LIMIT: z.enum(["upstash"]).optional(),
+
+  // AI Module Variables
+  NEXT_PUBLIC_AI_ENABLED: z.enum(["true", "false"]).optional(),
+  AI_GATEWAY_API_KEY: z.string().optional(),
+  OPENAI_API_KEY: z.string().optional(),
+  ANTHROPIC_API_KEY: z.string().optional(),
+  GOOGLE_GENERATIVE_AI_API_KEY: z.string().optional(),
+  OPENROUTER_API_KEY: z.string().optional(),
+  OLLAMA_BASE_URL: z.string().optional(),
+  OPENAI_COMPATIBLE_BASE_URL: z.string().optional(),
+  N8N_WEBHOOK_URL: z.string().optional(),
+  N8N_WEBHOOK_JWT_KEY: z.string().optional(),
+
+  // Payment Module Variables
+  NEXT_PUBLIC_PAYMENT_GATEWAY: z.enum(['none', 'dodo', 'stripe']),
+  DODO_PAYMENTS_API_KEY: z.string().optional(),
+  DODO_PAYMENTS_WEBHOOK_KEY: z.string().optional(),
+  DODO_PAYMENTS_RETURN_URL: z.string().optional(),
+  DODO_PAYMENTS_ENVIRONMENT: z.string().optional(),
+  DODO_CREDITS_PRODUCT_ID: z.string().optional(),
+  NEXT_PUBLIC_DODO_PAYMENTS_URL: z.string().optional(),
+  STRIPE_SECRET_KEY: z.string().optional(),
+  STRIPE_WEBHOOK_SECRET: z.string().optional(),
+}).superRefine((data, ctx) => {
+  validatePlatform(data, ctx);
+  validateAuth(data, ctx);
+  validateSupport(data, ctx);
+  validateStorage(data, ctx);
+  validateObservability(data, ctx);
+  validatePayment(data, ctx);
+  validateAI(data, ctx);
+});
+
+export type FormValues = z.infer<typeof formSchema>;

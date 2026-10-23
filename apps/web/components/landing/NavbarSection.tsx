@@ -1,0 +1,203 @@
+"use client"
+import { useEffect, useState } from "react";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuList,
+} from "@workspace/ui/components/shadcn/navigation-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@workspace/ui/components/shadcn/sheet";
+
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import { Button, buttonVariants } from "@workspace/ui/components/shadcn/button";
+import { MenuIcon, Coffee, ArrowRight } from "lucide-react";
+import { useTheme } from 'next-themes';
+import Image from 'next/image';
+import { NavbarSectionProps } from "@/lib/ts-types/landing";
+import { useRouter } from "next/navigation";
+import { ReactElement } from "react";
+import { useLocale, useTranslations } from "next-intl";
+import type { Locale } from "@workspace/i18n/config";
+import { LocaleSwitcher } from "@workspace/ui/components/misc/LocaleSwitcher";
+import { useChangeLocale } from "@/hooks/useChangeLocale";
+
+const NavbarSection = ({ navbarSection }: { navbarSection: NavbarSectionProps }): ReactElement => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const [starCount, setStarCount] = useState<number>(0);
+  const router = useRouter()
+  const t = useTranslations("landing.nav");
+  const locale = useLocale() as Locale;
+  const changeLocale = useChangeLocale();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const fetchStarCount = async () => {
+      try {
+        const response = await fetch("https://api.github.com/repos/" + navbarSection.githubUsername + "/" + navbarSection.githubRepositoryName);
+        if (response.ok) {
+          const data = await response.json();
+          setStarCount(data.stargazers_count);
+        } else {
+          console.error("Failed to fetch star count");
+        }
+      } catch (error) {
+        console.log("Error fetching star count:", error);
+      }
+    };
+    if (navbarSection.githubLink) {
+      fetchStarCount();
+    }
+
+  }, [resolvedTheme, navbarSection.githubLink]);
+  return (
+    <header className="sticky border-b-[1px] top-0 z-40 w-full bg-background">
+      <NavigationMenu className="mx-auto">
+        <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
+          <NavigationMenuItem className="font-bold flex">
+            <a
+              rel="noreferrer noopener"
+              href="/"
+              className="ml-2 font-bold text-xl flex items-center gap-2"
+            >
+              {mounted ? (
+                resolvedTheme === "dark" ? (
+                  navbarSection.darkLogo ? (
+                    <Image src={navbarSection.darkLogo} alt={navbarSection.title} width={30} height={30} />
+                  ) : <span className="text-xl">🚀</span>
+                ) : (
+                  navbarSection.logo ? (
+                    <Image src={navbarSection.logo} alt={navbarSection.title} width={30} height={30} />
+                  ) : <span className="text-xl">🚀</span>
+                )
+              ) : (
+                <div className="w-[30px] h-[30px]" />
+              )}
+              <div className="hidden lg:flex">{navbarSection.title}</div>
+            </a>
+          </NavigationMenuItem>
+
+
+          <span className="flex md:hidden">
+
+            <Sheet
+              open={isOpen}
+              onOpenChange={setIsOpen}
+            >
+              <SheetTrigger aria-label={t("openMenu")} className="flex size-11 items-center justify-center rounded-md">
+                <MenuIcon aria-hidden="true" className="flex md:hidden h-5 w-5" />
+              </SheetTrigger>
+
+              <SheetContent side={"left"}>
+                <SheetHeader>
+                  <SheetTitle className="font-bold text-xl">
+                    {navbarSection.title}
+                  </SheetTitle>
+                </SheetHeader>
+                <nav className="flex flex-col justify-center items-center gap-2 mt-4">
+
+                  <a
+                    rel="noreferrer noopener" href={"/landing#features"} onClick={() => setIsOpen(false)}
+                    className={buttonVariants({ variant: "ghost" })}
+                  >
+                    {t("features")}
+                  </a>
+                  <a
+                    rel="noreferrer noopener" href={"/landing#testimonials"} onClick={() => setIsOpen(false)}
+                    className={buttonVariants({ variant: "ghost" })}
+                  >
+                    {t("testimonials")}
+                  </a>
+                  <a
+                    rel="noreferrer noopener" href={"/landing#faq"} onClick={() => setIsOpen(false)}
+                    className={buttonVariants({ variant: "ghost" })}
+                  >
+                    {t("faq")}
+                  </a>
+
+                  <a
+                    rel="noreferrer noopener"
+                    href={navbarSection.githubLink}
+                    target="_blank"
+                    aria-label={t("github")}
+                    className={`w-[110px] border ${buttonVariants({
+                      variant: "secondary",
+                    })}`}
+                  >
+                    <GitHubLogoIcon className="mr-2 w-5 h-5" />
+
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="yellow"
+                      className="w-4 h-4 mx-1 "
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 .587l3.668 7.429 8.332 1.151-6.064 5.868 1.516 8.252-7.452-3.915-7.452 3.915 1.516-8.252-6.064-5.868 8.332-1.151z" />
+                    </svg>
+                    {starCount}
+                  </a>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </span>
+
+          {/* desktop */}
+          <nav className="hidden md:flex gap-2">
+            <a
+              rel="noreferrer noopener" href={"/landing#features"} onClick={() => setIsOpen(false)}
+              className={buttonVariants({ variant: "ghost" })}
+            >
+              {t("features")}
+            </a>
+            <a
+              rel="noreferrer noopener" href={"/landing#testimonials"} onClick={() => setIsOpen(false)}
+              className={buttonVariants({ variant: "ghost" })}
+            >
+              {t("testimonials")}
+            </a>
+            <a
+              rel="noreferrer noopener" href={"/landing#faq"} onClick={() => setIsOpen(false)}
+              className={buttonVariants({ variant: "ghost" })}
+            >
+              {t("faq")}
+            </a>
+          </nav>
+          <div className="flex items-center gap-2">
+            <LocaleSwitcher value={locale} onChange={changeLocale} id="landing-locale" className="h-9" />
+            <div className="hidden md:flex gap-2">
+              <a
+                rel="noreferrer noopener"
+                href={navbarSection.githubLink}
+                target="_blank"
+                    aria-label={t("github")}
+                className={`border flex items-center ${buttonVariants({ variant: "secondary" })}`}
+              >
+                <GitHubLogoIcon className=" w-5 h-5" />
+                {starCount}
+              </a>
+            </div>
+            <Button
+              className="flex items-center gap-1"
+              variant="default"
+              size="sm"
+              onClick={() => router.push("/sign-in")}
+            >
+              <p className="text-sm">{t("login")}</p>
+            </Button>
+          </div>
+        </NavigationMenuList>
+      </NavigationMenu>
+    </header>
+  );
+};
+
+export default NavbarSection;

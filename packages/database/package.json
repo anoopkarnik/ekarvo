@@ -1,0 +1,40 @@
+{
+  "name": "@workspace/database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run --passWithNoTests",
+    "generate": "npx prisma generate --schema prisma",
+    "migrate": "npx prisma migrate dev --schema prisma && npx prisma generate --schema prisma",
+    "migrate:deploy": "npx prisma migrate deploy --schema prisma",
+    "migrate:deploy:prod": "DOTENV_CONFIG_PATH=.env.production npx prisma migrate deploy --schema prisma",
+    "reset": "npx prisma migrate reset --force --schema prisma && npx prisma db seed",
+    "seed": "npx prisma db seed",
+    "backfill:orgs": "tsx scripts/backfill-organizations.ts",
+    "backfill:onboarding": "tsx scripts/backfill-onboarding.ts",
+    "typecheck": "tsc --noEmit",
+    "test:coverage": "vitest run --coverage --passWithNoTests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.4.1",
+  "devDependencies": {
+    "@types/node": "^24.19.1",
+    "prisma": "^7.10.0",
+    "tsx": "^4.21.0"
+  },
+  "exports": {
+    "./client": "./src/client.ts",
+    "./prisma": "./src/generated/prisma/client.ts",
+    "./constants": "./src/constants/index.ts"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.10.0",
+    "@prisma/client": "^7.10.0",
+    "dotenv": "^17.2.3",
+    "vitest": "^4.0.18"
+  }
+}

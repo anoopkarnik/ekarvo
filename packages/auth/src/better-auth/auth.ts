@@ -1,0 +1,249 @@
+import { betterAuth, BetterAuthOptions } from "better-auth";
+import { prismaAdapter } from "better-auth/adapters/prisma";
+import db from '@workspace/database/client';
+import { admin,  openAPI, jwt } from "better-auth/plugins";
+import { expo } from "@better-auth/expo";
+import { sendEmail } from "@workspace/email/jobs"
+import { authCookiePrefix } from "./cookies";
+import { DESKTOP_APP_ORIGIN } from "./desktop-origin";
+import { isEmailAllowedToRegister, type RegistrationMode } from "./registration";
+import { createAuthMiddleware, APIError, getSessionFromCtx } from "better-auth/api";
+import { isGuestAccountMutation } from "./guestGuard";
+import { userAdditionalFields } from "./user-fields";
+import { emailLocale } from "./email-locale";
+import {
+    createPersonalOrganization,
+    getInitialActiveOrganizationId,
+    hasPendingOrganizationInvite,
+    organizationPlugins,
+} from "./organization";
+
+type DeleteQueryCallbackArgs = {
+    args: any;
+    query: (args: any) => Promise<any>;
+};
+
+// Better Auth's account linking flow calls db.delete() on records that may not
+// exist (e.g. removing an old provider account before re-linking). Prisma throws
+// P2025 on delete-of-nonexistent. We extend the client passed to the adapter so
+// that P2025 on delete is silently ignored — only affects Better Auth, not the
+// rest of the app.
+const authDb = db.$extends({
+    query: {
+        $allModels: {
+            async delete({ args, query }: DeleteQueryCallbackArgs) {
+                try {
+                    return await query(args);
+                } catch (error: any) {
+                    if (error?.code === "P2025") return null as any;
+                    throw error;
+                }
+            },
+        },
+    },
+});
+
+const appUrl = process.env.NEXT_PUBLIC_URL || "http://localhost:3000";
+
+const getRegistrationMode = async (): Promise<RegistrationMode> => {
+    const setting = await db.appSetting.findUnique({
+        where: { key: "registration_mode" },
+    });
+    return setting?.value === "INVITE_ONLY" ? "INVITE_ONLY" : "OPEN";
+};
+
+const options = {
+    basePath: "/api/auth",
+    baseURL: appUrl,
+    // `expo()` is cast because the installed @better-auth/expo types are skewed
+    // from better-auth core (missing `hasPlugin` on AuthContext) — type-only, no
+    // runtime change. Remove once the better-auth package versions are aligned.
+    plugins: [openAPI(), admin({
+        impersonationSessionDuration: 3600
+    }), expo() as any, ...organizationPlugins],
+    trustedOrigins: [
+        "saas-forge://",
+        "saas-forge://*",
+        "exp://",
+        "exp://*",
+        DESKTOP_APP_ORIGIN,
+        "http://localhost:5173",
+        "http://localhost:8081",
+        appUrl
+    ].filter(Boolean),
+    database: prismaAdapter(authDb, {
+        provider: "postgresql",
+    }),
+    rateLimit:{
+        window: 60,
+        max: 100,
+        customRules: {
+            '/sign-in/email':{
+                window: 60,
+                max:3
+            }
+        }
+    },
+    session: {
+        expiresIn: 60 * 60 * 24 * 7, // 7 day
+        updateAge: 60 * 60 * 24, // 1 day 
+        cookieCache: {
+            enabled: true,
+            maxAge: 5 * 60,
+        }
+    },
+    user: {
+        additionalFields: userAdditionalFields,
+        changeEmail: {
+            enabled: true,
+            sendChangeEmailConfirmation: async ({user, newEmail, url, token}, request) => {
+                await sendEmail({ template: "verification", email: newEmail, url, locale: emailLocale(user, request) })
+            }
+        },
+        deleteUser: {
+            enabled: true,
+            
+        }
+    },
+    account:{
+        accountLinking: {
+            enabled: true,
+            trustedProviders: ['google','github','linkedin']
+        }
+    },
+    socialProviders: {
+        github: {
+            clientId: process.env.AUTH_GITHUB_CLIENT_ID ?? "",
+            clientSecret: process.env.AUTH_GITHUB_CLIENT_SECRET ?? "",
+        },
+        google: {
+            clientId: process.env.AUTH_GOOGLE_CLIENT_ID ?? "",
+            clientSecret: process.env.AUTH_GOOGLE_CLIENT_SECRET ?? "",
+        },
+        linkedin: {
+            clientId: process.env.AUTH_LINKEDIN_CLIENT_ID ?? "",
+            clientSecret: process.env.AUTH_LINKEDIN_CLIENT_SECRET ?? "",
+        }
+    },
+    emailAndPassword: {
+        enabled: true,
+        autoSignIn: false,
+        requireEmailVerification: true,
+        sendResetPassword : async ({user, url}, request) =>{
+            await sendEmail({ template: "reset", email: user.email, url, locale: emailLocale(user, request) })
+        }
+    },
+    emailVerification: {
+        sendOnSignUp: true,
+        autoSignInAfterVerification: true,
+        sendVerificationEmail: async({user,token}, request)=>{
+            console.log("Sending verification email to:", user.email);
+            const fullUser = await db.user.findUnique({
+                where: { id: user.id },
+                include: {
+                  accounts: true,
+                },
+              });
+            
+              const isSocial =
+                fullUser?.accounts?.some((account:any) =>
+                  ["google", "github", "linkedin"].includes(account.providerId)
+                ) ?? false;
+             console.log("isSocial:", isSocial);
+              if (isSocial) {
+                console.log("Skipping email verification for social login user");
+                return;
+              }
+            
+            const verificationUrl = `${appUrl}/api/auth/verify-email?token=${token}
+            &callbackURL=${appUrl}/email-verified`;
+            await sendEmail({ template: "verification", email: user.email, url: verificationUrl, locale: emailLocale(user, request) })
+        },
+    },
+    databaseHooks: {
+        user: {
+            create: {
+                before: async (user: { email: string }) => {
+                    const mode = await getRegistrationMode();
+                    if (mode === "OPEN") return;
+                    const email = user.email.toLowerCase();
+                    const invite = await db.invitation.findFirst({
+                        where: { email, status: "PENDING" },
+                        orderBy: { createdAt: "desc" },
+                    });
+                    const allowed =
+                        isEmailAllowedToRegister(
+                            mode,
+                            invite ? { status: invite.status, expiresAt: invite.expiresAt } : null,
+                            new Date(),
+                        ) || (await hasPendingOrganizationInvite(email));
+                    if (!allowed) {
+                        throw new APIError("FORBIDDEN", {
+                            message: "Sign-ups are invite-only. Please use your invitation link.",
+                        });
+                    }
+                },
+                after: async (user) => {
+                    const userCount = await db.user.count();
+                    if (userCount === 1) {
+                        await db.user.update({
+                            where: { id: user.id },
+                            data: { role: "admin" },
+                        });
+                    }
+                    const email = user.email.toLowerCase();
+                    await db.invitation.updateMany({
+                        where: { email, status: "PENDING" },
+                        data: { status: "ACCEPTED", acceptedAt: new Date() },
+                    });
+                    await createPersonalOrganization(user);
+                },
+            },
+        },
+        session: {
+            create: {
+                before: async (session: { userId: string }) => {
+                    const activeOrganizationId = await getInitialActiveOrganizationId(session.userId);
+                    if (!activeOrganizationId) return;
+                    return { data: { ...session, activeOrganizationId } };
+                },
+            },
+        },
+    },
+    advanced: {
+        cookiePrefix: authCookiePrefix,
+        // crossSubDomainCookies fails on localhost (no valid TLD for domain extraction)
+        // Only enable in production where the real domain is used
+        crossSubDomainCookies: {
+            enabled: process.env.NODE_ENV === "production"
+        },
+        defaultCookieAttributes: {
+            sameSite: "none",
+            secure: true,
+        }
+    },
+    hooks: {
+        before: createAuthMiddleware(async (ctx) => {
+            if (!isGuestAccountMutation(ctx.path)) return;
+            const session = await getSessionFromCtx(ctx);
+            if (session?.user?.role === "guest") {
+                throw new APIError("FORBIDDEN", {
+                    message: "This is a read-only demo account.",
+                });
+            }
+        }),
+    },
+} satisfies BetterAuthOptions;
+
+import { toNextJsHandler } from "better-auth/next-js";
+
+// Use module-level variable for true singleton behavior
+// This ensures only one instance is created per Node.js process
+const createAuthInstance = () => {
+    return betterAuth(options);
+};
+
+export const auth: any = createAuthInstance();
+
+export type Session = typeof auth.$Infer.Session;
+export const handlers = toNextJsHandler(auth);

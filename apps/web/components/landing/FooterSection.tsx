@@ -1,0 +1,96 @@
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useTheme } from "next-themes";
+import { FooterSectionProps } from "@/lib/ts-types/landing";
+import { FooterLinkProps } from "@/lib/ts-types/landing";
+import { motion, useReducedMotion } from "framer-motion";
+import { ReactElement } from "react";
+
+const FooterSection = ({ footerSection }: { footerSection: FooterSectionProps }): ReactElement => {
+    const t = useTranslations("landing");
+  const reducedMotion = useReducedMotion();
+    const [footerTypes, setFooterTypes] = useState<any>([]);
+    const { theme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    useEffect(() => {
+        const types = footerSection.links?.map((footer: FooterLinkProps) => footer.type);
+        setFooterTypes(new Set(types));
+    }, [theme, footerSection.links])
+
+
+    return (
+        <footer id="footer" className="w-full container mx-auto px-4 sm:px-6 lg:px-8">
+            <hr className="w-full mx-auto border-border" />
+            <motion.div
+                initial={reducedMotion ? false : { opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="w-full flex flex-wrap items-start justify-around gap-4 my-10 "
+            >
+                <section className="hidden lg:flex w-1/2 font-cyberdyne">
+                    <a
+                        rel="noreferrer noopener"
+                        href="/"
+                        className="ml-2 font-bold text-xl flex items-center gap-2"
+                    >
+                        {mounted ? (
+                            theme === "dark" ? (
+                                footerSection.darkLogo ? (
+                                    <Image src={footerSection.darkLogo} alt={footerSection.title} width={30} height={30} />
+                                ) : <span className="text-xl">🚀</span>
+                            ) : (
+                                footerSection.logo ? (
+                                    <Image src={footerSection.logo} alt={footerSection.title} width={30} height={30} />
+                                ) : <span className="text-xl">🚀</span>
+                            )
+                        ) : (
+                            <div className="w-[30px] h-[30px]" />
+                        )}
+                        <div className="hidden lg:flex">{footerSection.title}</div>
+                    </a>
+
+                </section>
+                {[...footerTypes]?.map((type: string) => (
+                    <div key={type} className="flex flex-col gap-2">
+                        <h3 className="text-paragraph font-semibold tracking-wide text-foreground">{type}</h3>
+                        {footerSection.links?.filter(footer => footer.type === type)?.map((item) => (
+                            <div key={item.label}>
+                                <a
+                                    rel="noreferrer noopener"
+                                    href={item.href}
+                                    className="text-muted-foreground hover:text-primary transition-colors inline-flex min-h-11 items-center text-sm"
+                                >
+                                    {item.label}
+                                </a>
+                            </div>
+                        ))}
+                    </div>
+                ))}
+            </motion.div>
+
+
+            <section className="container pb-14 text-center text-sm opacity-80">
+                <h3>
+                    {t("footer.madeBy")}{" "}
+                    <a
+                        rel="noreferrer noopener"
+                        target="_blank"
+                        href={footerSection.creatorLink}
+                        className="text-primary transition-all border-primary hover:border-b-2"
+                    >
+                        {footerSection.creator}
+                    </a>
+                </h3>
+            </section>
+        </footer>
+    );
+};
+
+export default FooterSection;

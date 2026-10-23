@@ -1,0 +1,80 @@
+import json
+
+import pytest
+from fastapi.testclient import TestClient
+
+from saas_forge_backend.config import get_settings
+from saas_forge_backend.main import create_app
+from saas_forge_backend.security.hmac import sign_payload
+
+
+@pytest.fixture(autouse=True)
+def _secret(monkeypatch):
+    monkeypatch.setenv("BACKEND_HMAC_SECRET", "x" * 32)
+    get_settings.cache_clear()
+    yield
+    get_settings.cache_clear()
+
+
+def _parse_sse(body: str) -> list[tuple[str, dict]]:
+    events = []
+    for chunk in body.split("\n\n"):
+        if not chunk.strip():
+            continue
+        lines = chunk.splitlines()
+        event_type = next(ln.removeprefix("event: ") for ln in lines if ln.startswith("event: "))
+        data = next(ln.removeprefix("data: ") for ln in lines if ln.startswith("data: "))
+        events.append((event_type, json.loads(data)))
+    return events
+
+
+def test_agents_stream_noop_emits_step_step_final_end():
+    client = TestClient(create_app())
+    payload = {"user_id": "u1", "org_id": None, "agent_id": "noop", "input": {"hello": "world"}}
+    ts, sig = sign_payload("x" * 32, payload)
+    resp = client.post(
+        "/agents/stream",
+        json=payload,
+        headers={"X-Saas-Forge-Ts": ts, "X-Saas-Forge-Sig": sig, "X-Saas-Forge-Req-Id": "r1"},
+    )
+    assert resp.status_code == 200
+    assert resp.headers["content-type"].startswith("text/event-stream")
+    events = _parse_sse(resp.text)
+    types = [t for t, _ in events]
+    assert types == ["step", "step", "final", "end"]
+
+
+def test_agents_stream_unknown_agent_returns_404():
+    client = TestClient(create_app())
+    payload = {"user_id": "u1", "org_id": None, "agent_id": "doesnotexist", "input": {}}
+    ts, sig = sign_payload("x" * 32, payload)
+    resp = client.post(
+        "/agents/stream",
+        json=payload,
+        headers={"X-Saas-Forge-Ts": ts, "X-Saas-Forge-Sig": sig, "X-Saas-Forge-Req-Id": "r2"},
+    )
+    assert resp.status_code == 404
+
+
+def test_agents_stream_stops_after_cancellation(monkeypatch):
+    from saas_forge_backend.api.routes import agents
+
+    checks = 0
+
+    async def cancelled(_job_id):
+        nonlocal checks
+        checks += 1
+        return checks >= 2
+
+    monkeypatch.setattr(agents, "is_job_cancelled", cancelled)
+    client = TestClient(create_app())
+    payload = {
+        "user_id": "u1", "org_id": None, "agent_id": "noop",
+        "job_id": "j1", "input": {"hello": "world"},
+    }
+    ts, sig = sign_payload("x" * 32, payload)
+    resp = client.post(
+        "/agents/stream", json=payload,
+        headers={"X-Saas-Forge-Ts": ts, "X-Saas-Forge-Sig": sig},
+    )
+    assert [kind for kind, _ in _parse_sse(resp.text)] == ["step", "end"]

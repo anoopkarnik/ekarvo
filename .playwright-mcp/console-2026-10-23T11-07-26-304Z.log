@@ -1,0 +1,13 @@
+[      82ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/41cf9_next_dist_client_10d3af25._.js:5949
+[     292ms] [LOG] [Fast Refresh] done in 296ms @ http://localhost:3010/_next/static/chunks/41cf9_next_dist_client_10d3af25._.js:5809
+[     486ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/41cf9_next_dist_client_10d3af25._.js:5949
+[    1713ms] [LOG] [Fast Refresh] done in 1327ms @ http://localhost:3010/_next/static/chunks/41cf9_next_dist_client_10d3af25._.js:5809
+[    1814ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/41cf9_next_dist_client_10d3af25._.js:5949
+[    1844ms] [LOG] [Fast Refresh] done in 130ms @ http://localhost:3010/_next/static/chunks/41cf9_next_dist_client_10d3af25._.js:5809
+[    1946ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/41cf9_next_dist_client_10d3af25._.js:5949
+[    2067ms] [LOG] [Fast Refresh] done in 222ms @ http://localhost:3010/_next/static/chunks/41cf9_next_dist_client_10d3af25._.js:5809
+[    2182ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/41cf9_next_dist_client_10d3af25._.js:5949
+[    2313ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3010/landing?_rsc=q1cb7:0
+[    2346ms] [LOG] [Fast Refresh] done in 277ms @ http://localhost:3010/_next/static/chunks/41cf9_next_dist_client_10d3af25._.js:5809
+[    2388ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3010/landing:0
+[    2438ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3010/favicon.ico:0

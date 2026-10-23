@@ -1,0 +1,93 @@
+"use client"
+import { FormResult } from './FormResult';
+import { Card, CardContent, CardFooter, CardHeader } from '@workspace/ui/components/shadcn/card';
+
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@workspace/ui/components/shadcn/form';
+import { useForm } from 'react-hook-form';
+import { z } from "zod"
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Input } from '@workspace/ui/components/shadcn/input';
+import { useState } from 'react';
+import LoadingButton from '@workspace/ui/components/misc/LoadingButton';
+import { useTranslations } from 'use-intl';
+import { useAuthSchemas } from '@workspace/ui/hooks/useAuthSchemas';
+import { ResetPasswordCardProps } from '@workspace/auth/utils/typescript';
+import { toast } from 'sonner'
+
+const ResetPasswordCard = ({ errorMessage, successMessage, token, resetFunction, onBackToLoginClick }: ResetPasswordCardProps) => {
+  const t = useTranslations('auth')
+  const { ResetPasswordSchema } = useAuthSchemas()
+  const [pending, setPending] = useState(false)
+  const form = useForm<z.infer<typeof ResetPasswordSchema>>({
+    resolver: zodResolver(ResetPasswordSchema),
+    defaultValues: {
+      password: '',
+      confirmPassword: '',
+    },
+  })
+
+
+  async function handleSubmit(data: z.infer<typeof ResetPasswordSchema>) {
+    setPending(true)
+    await resetFunction(token, data.password)
+    toast.success(t('reset.success'))
+    if (onBackToLoginClick) {
+      onBackToLoginClick();
+    }
+    setPending(false)
+  }
+
+  return (
+    <Card className='w-full max-w-md border-border/50 shadow-xl bg-card/50 backdrop-blur-sm'>
+      <CardHeader className="space-y-1 pb-6">
+        <h2 className='text-3xl font-bold tracking-tight text-center'>{t('reset.title')}</h2>
+        <p className='text-sm text-muted-foreground text-center'>{t('reset.subtitle')}</p>
+      </CardHeader>
+      <CardContent>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(handleSubmit)} className='space-y-6'>
+            <div className='space-y-4 mb-4'>
+              <FormField control={form.control} name="password" render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t('reset.newPassword')}</FormLabel>
+                  <FormControl>
+                    <Input type="password" placeholder='******' className="h-10" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )} />
+              <FormField control={form.control} name="confirmPassword" render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t('confirmPassword')}</FormLabel>
+                  <FormControl>
+                    <Input type="password" placeholder='******' className="h-10" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )} />
+            </div>
+            <FormResult type="error" message={errorMessage} />
+            <FormResult type="success" message={successMessage} />
+            <LoadingButton variant="default" className="w-full h-10 font-medium" pending={pending}>
+              {t('reset.submit')}
+            </LoadingButton>
+          </form>
+        </Form>
+      </CardContent>
+      <CardFooter className='flex justify-center pt-2'>
+        <button onClick={onBackToLoginClick} className='text-sm text-center font-medium text-primary hover:underline'>
+          {t('backToLogin')}
+        </button>
+      </CardFooter>
+    </Card>
+  )
+}
+
+export default ResetPasswordCard;

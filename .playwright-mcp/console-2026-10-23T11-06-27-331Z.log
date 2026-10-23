@@ -1,0 +1,63 @@
+[    7096ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3010/_next/static/chunks/41cf9_next_dist_compiled_react-dom_307990d4._.js:14537
+[    9913ms] [WARNING] [.WebGL-0x36fc00a2d800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels @ http://localhost:3010/landing:0
+[   10126ms] [LOG] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit @ https://va.vercel-scripts.com/v1/script.debug.js:0
+[   10126ms] [LOG] %c[Vercel Web Analytics]%c [view] http://localhost:3010/landing color: rgb(120, 120, 120) color: inherit {o: http://localhost:3010/landing, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 1.6.1, r: } /_vercel/insights/view @ https://va.vercel-scripts.com/v1/script.debug.js:0
+[   10127ms] [WARNING] [.WebGL-0x36fc00a2d800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels @ http://localhost:3010/landing:0
+[   10271ms] [WARNING] [.WebGL-0x36fc00a2d800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels @ http://localhost:3010/landing:0
+[   10351ms] [LOG] %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit @ https://va.vercel-scripts.com/v1/speed-insights/script.debug.js:0
+[   10352ms] [WARNING] [.WebGL-0x36fc00a2d800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat) @ http://localhost:3010/landing:0
+[   40558ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/41cf9_next_dist_client_10d3af25._.js:5949
+[   40748ms] [ERROR] ./apps/web/components/landing/ekarvo/components/EkarvoSignalCanvas.tsx:423:13
+Ecmascript file had an error
+  421 |       const elapsed = isReduced ? 0 : Math.max(0, nowSec - startTimeSec);
+  422 |       const st = stateRef.current;
+> 423 |       const isReduced = reducedMotionRef.current;
+      |             ^^^^^^^^^
+  424 |       const isNarrowViewport = camera.aspect < 0.85;
+  425 |
+  426 |       // Smooth pointer damping
+
+the name `isReduced` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/landing/ekarvo/components/EkarvoSignalCanvas.tsx [Client Component Browser]
+    ./apps/web/components/landing/ekarvo/EkarvoLanding.tsx [Client Component Browser]
+    ./apps/web/blocks/landing/LandingPage.tsx [Client Component Browser]
+    ./apps/web/blocks/landing/LandingPage.tsx [Server Component]
+    ./apps/web/app/landing/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/landing/ekarvo/components/EkarvoSignalCanvas.tsx [Client Component SSR]
+    ./apps/web/components/landing/ekarvo/EkarvoLanding.tsx [Client Component SSR]
+    ./apps/web/blocks/landing/LandingPage.tsx [Client Component SSR]
+    ./apps/web/blocks/landing/LandingPage.tsx [Server Component]
+    ./apps/web/app/landing/page.tsx [Server Component] @ http://localhost:3010/_next/static/chunks/41cf9_next_dist_762c8d3c._.js:2359
+[   40765ms] [LOG] {file: Object} @ http://localhost:3010/_next/static/chunks/41cf9_next_dist_compiled_next-devtools_index_ba3df47b.js:16058
+[   43314ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3010/_next/static/chunks/41cf9_next_dist_client_10d3af25._.js:5949
+[   43667ms] [ERROR] ./apps/web/components/landing/ekarvo/components/EkarvoSignalCanvas.tsx:423:13
+Ecmascript file had an error
+  421 |       const elapsed = isReduced ? 0 : Math.max(0, nowSec - startTimeSec);
+  422 |       const st = stateRef.current;
+> 423 |       const isReduced = reducedMotionRef.current;
+      |             ^^^^^^^^^
+  424 |       const isNarrowViewport = camera.aspect < 0.85;
+  425 |
+  426 |       // Smooth pointer damping
+
+the name `isReduced` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/components/landing/ekarvo/components/EkarvoSignalCanvas.tsx [Client Component Browser]
+    ./apps/web/components/landing/ekarvo/EkarvoLanding.tsx [Client Component Browser]
+    ./apps/web/blocks/landing/LandingPage.tsx [Client Component Browser]
+    ./apps/web/blocks/landing/LandingPage.tsx [Server Component]
+    ./apps/web/app/landing/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/components/landing/ekarvo/components/EkarvoSignalCanvas.tsx [Client Component SSR]
+    ./apps/web/components/landing/ekarvo/EkarvoLanding.tsx [Client Component SSR]
+    ./apps/web/blocks/landing/LandingPage.tsx [Client Component SSR]
+    ./apps/web/blocks/landing/LandingPage.tsx [Server Component]
+    ./apps/web/app/landing/page.tsx [Server Component] @ http://localhost:3010/_next/static/chunks/41cf9_next_dist_762c8d3c._.js:2359
