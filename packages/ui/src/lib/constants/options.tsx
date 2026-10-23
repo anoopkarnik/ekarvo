@@ -18,6 +18,7 @@ export const themeColors: Record<string, string> = {
   rose: "#f43f5e",
   violet: "#8b5cf6",
   yellow: "#eab308",
+  ekarvo: "#5ddec4",
 };
 
 // ─── Select options ────────────────────────────────────────────────────
@@ -37,6 +38,7 @@ export const selectOptions: Record<string, SelectOption[]> = {
     { value: "rose", label: "Rose" },
     { value: "violet", label: "Violet" },
     { value: "yellow", label: "Yellow" },
+    { value: "ekarvo", label: "EKARVO" },
   ],
   NEXT_PUBLIC_THEME_TYPE: [
     { value: "light", label: "Light", icon: <Sun className="h-4 w-4" /> },

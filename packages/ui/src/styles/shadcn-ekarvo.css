@@ -1,0 +1,98 @@
+/* EKARVO theme — mirrors the /landing page. See docs/design-system.md. */
+.theme-ekarvo {
+  --radius: 0.5rem;
+  --background: oklch(0.975 0.003 128.49); /* #F6F7F5 mineral white */
+  --foreground: oklch(0.221 0.017 240.9); /* #141C22 graphite ink */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.221 0.017 240.9);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.221 0.017 240.9);
+  --primary: oklch(0.476 0.079 179.72); /* #176B5E deep teal */
+  --primary-foreground: oklch(0.975 0.003 128.49);
+  --secondary: oklch(0.96 0.007 160.07); /* #EEF3F0 */
+  --secondary-foreground: oklch(0.221 0.017 240.9);
+  --muted: oklch(0.96 0.007 160.07);
+  --muted-foreground: oklch(0.522 0.019 225.47); /* #5E6C72 steel, darkened for AA */
+  --accent: oklch(0.946 0.016 172.64); /* #E3F1EC teal tint */
+  --accent-foreground: oklch(0.221 0.017 240.9);
+  --destructive: oklch(0.534 0.122 23.33); /* #A84C4A coral, darkened for AA */
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.909 0.009 161.33); /* #DCE3DF silver border */
+  --input: oklch(0.909 0.009 161.33);
+  --ring: oklch(0.476 0.079 179.72);
+  --chart-1: oklch(0.476 0.079 179.72); /* deep teal */
+  --chart-2: oklch(0.621 0.113 71.83); /* amber, darkened */
+  --chart-3: oklch(0.534 0.122 23.33); /* coral */
+  --chart-4: oklch(0.522 0.019 225.47); /* steel */
+  --chart-5: oklch(0.821 0.12 177.65); /* mineral teal */
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.221 0.017 240.9);
+  --sidebar-primary: oklch(0.476 0.079 179.72);
+  --sidebar-primary-foreground: oklch(0.975 0.003 128.49);
+  --sidebar-accent: oklch(0.96 0.007 160.07);
+  --sidebar-accent-foreground: oklch(0.221 0.017 240.9);
+  --sidebar-border: oklch(0.909 0.009 161.33);
+  --sidebar-ring: oklch(0.476 0.079 179.72);
+}
+
+.theme-ekarvo.dark {
+  --background: oklch(0.157 0.011 248.32); /* #090D11 obsidian */
+  --foreground: oklch(0.96 0.007 160.07); /* #EEF3F0 mineral white */
+  --card: oklch(0.213 0.017 240.96); /* #121A20 graphite */
+  --card-foreground: oklch(0.96 0.007 160.07);
+  --popover: oklch(0.213 0.017 240.96);
+  --popover-foreground: oklch(0.96 0.007 160.07);
+  --primary: oklch(0.821 0.12 177.65); /* #5DDEC4 mineral teal */
+  --primary-foreground: oklch(0.157 0.011 248.32);
+  --secondary: oklch(0.241 0.018 234.87); /* #172127 slate */
+  --secondary-foreground: oklch(0.96 0.007 160.07);
+  --muted: oklch(0.241 0.018 234.87);
+  --muted-foreground: oklch(0.677 0.018 221.18); /* #8C9A9F steel */
+  --accent: oklch(0.253 0.028 211.26); /* #11262A teal-tinted graphite */
+  --accent-foreground: oklch(0.96 0.007 160.07);
+  --destructive: oklch(0.625 0.125 22.52); /* #C86664 coral */
+  --destructive-foreground: oklch(0.157 0.011 248.32);
+  --border: oklch(0.313 0.024 238.74); /* #26333C hairline */
+  --input: oklch(0.313 0.024 238.74);
+  --ring: oklch(0.821 0.12 177.65);
+  --chart-1: oklch(0.821 0.12 177.65); /* mineral teal */
+  --chart-2: oklch(0.806 0.107 75.35); /* #E8B66E amber */
+  --chart-3: oklch(0.625 0.125 22.52); /* coral */
+  --chart-4: oklch(0.677 0.018 221.18); /* steel */
+  --chart-5: oklch(0.542 0.095 171.18); /* #218168 emerald */
+  --sidebar: oklch(0.213 0.017 240.96);
+  --sidebar-foreground: oklch(0.96 0.007 160.07);
+  --sidebar-primary: oklch(0.821 0.12 177.65);
+  --sidebar-primary-foreground: oklch(0.157 0.011 248.32);
+  --sidebar-accent: oklch(0.241 0.018 234.87);
+  --sidebar-accent-foreground: oklch(0.96 0.007 160.07);
+  --sidebar-border: oklch(0.313 0.024 238.74);
+  --sidebar-ring: oklch(0.821 0.12 177.65);
+}
+
+/* Typography. Font variables come from @workspace/ui/typography/font and are
+   declared on <body>, so the aliases must be declared there too. Unlayered so
+   it beats the next/font body className. */
+.theme-ekarvo body {
+  --font-sans: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-archivo), var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
+  font-family: var(--font-sans);
+}
+
+@layer base {
+  .theme-ekarvo :is(h1, h2, h3, .font-display) {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+  }
+
+  .theme-ekarvo :is(code, kbd, pre, samp, .font-mono) {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.theme-ekarvo :where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline-color: var(--ring);
+  outline-offset: 4px;
+}

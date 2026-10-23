@@ -14,7 +14,7 @@ export const formSchema = z.object({
     .regex(/^[a-zA-Z0-9][a-zA-Z0-9._-]*$/, "Use letters, numbers, dot, underscore, or hyphen"),
 
   // Project Settings Variables
-  NEXT_PUBLIC_THEME: z.enum(["blue", "green", "neutral", "orange", "red", "rose", "violet", "yellow"]),
+  NEXT_PUBLIC_THEME: z.enum(["blue", "green", "neutral", "orange", "red", "rose", "violet", "yellow", "ekarvo"]),
   NEXT_PUBLIC_THEME_TYPE: z.enum(["light", "dark", "system"]),
   SELECTED_MODULES: z.array(z.enum(["billing", "multi_tenancy", "ai", "ai_agents", "api_keys", "jobs", "notifications", "audit_log", "webhooks", "feature_flags", "onboarding", "analytics", "mcp"])).optional(),
   // "true" ships every payment gateway, image storage (runtime switching);

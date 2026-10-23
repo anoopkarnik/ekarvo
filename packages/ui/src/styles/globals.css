@@ -17,6 +17,7 @@
 @import "./shadcn-green.css";
 @import "./shadcn-orange.css";
 @import "./shadcn-rose.css";
+@import "./shadcn-ekarvo.css";
 
 @theme inline {
   --color-background: var(--background);

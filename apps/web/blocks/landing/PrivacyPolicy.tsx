@@ -26,7 +26,6 @@ const PrivacyPolicy = () => {
         <LegalPageLayout
             title="Privacy Policy"
             lastUpdated={data.privacyPolicy.lastUpdated}
-            navbarSection={data.navbarSection}
             footerSection={data.footerSection}
             tableOfContents={tableOfContents}
         >

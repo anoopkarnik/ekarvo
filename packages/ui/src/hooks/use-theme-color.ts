@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 
-export type ThemeColor = "blue" | "violet" | "neutral" | "red" | "yellow" | "green" | "orange" | "rose"
+export type ThemeColor = "blue" | "violet" | "neutral" | "red" | "yellow" | "green" | "orange" | "rose" | "ekarvo"
 
 const THEME_COLOR_KEY = "theme-color"
 const DEFAULT_THEME_COLOR: ThemeColor = (process.env.NEXT_PUBLIC_THEME as ThemeColor) || "green"
@@ -33,7 +33,7 @@ export function useThemeColor() {
 }
 
 function isValidThemeColor(color: string): color is ThemeColor {
-  return ["blue", "violet", "neutral", "red", "yellow", "green", "orange", "rose"].includes(color)
+  return ["blue", "violet", "neutral", "red", "yellow", "green", "orange", "rose", "ekarvo"].includes(color)
 }
 
 function applyThemeColor(color: ThemeColor) {
@@ -48,7 +48,8 @@ function applyThemeColor(color: ThemeColor) {
     "theme-yellow",
     "theme-green",
     "theme-orange",
-    "theme-rose"
+    "theme-rose",
+    "theme-ekarvo"
   )
 
   // Add the new theme color class

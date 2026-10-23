@@ -8,7 +8,7 @@ import { DEFAULT_LOCALE, LOCALES } from "@workspace/i18n/config";
  * exactly as its env says. Client-safe: no database access here.
  */
 
-export const THEME_COLORS = ["blue", "violet", "neutral", "red", "yellow", "green", "orange", "rose"] as const;
+export const THEME_COLORS = ["blue", "violet", "neutral", "red", "yellow", "green", "orange", "rose", "ekarvo"] as const;
 
 export type SettingDefinition<S extends z.ZodType = z.ZodType> = {
   schema: S;

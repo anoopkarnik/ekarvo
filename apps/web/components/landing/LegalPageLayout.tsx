@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import NavbarSection from "./NavbarSection";
+import { TopNav } from "./ekarvo/components/TopNav";
 import FooterSection from "./FooterSection";
-import { FooterSectionProps, NavbarSectionProps } from "@/lib/ts-types/landing";
+import { FooterSectionProps } from "@/lib/ts-types/landing";
 import { motion, useScroll, useSpring, useReducedMotion } from "framer-motion";
 import { cn } from "@workspace/ui/lib/utils";
 
@@ -16,7 +16,6 @@ interface LegalPageLayoutProps {
     children: React.ReactNode;
     title: string;
     lastUpdated?: string;
-    navbarSection: NavbarSectionProps;
     footerSection: FooterSectionProps;
     tableOfContents?: TableOfContentsItem[];
 }
@@ -25,7 +24,6 @@ const LegalPageLayout = ({
     children,
     title,
     lastUpdated,
-    navbarSection,
     footerSection,
     tableOfContents,
 }: LegalPageLayoutProps) => {
@@ -64,7 +62,7 @@ const LegalPageLayout = ({
 
     return (
         <div className="min-h-screen bg-background text-foreground selection:bg-primary/20">
-            <NavbarSection navbarSection={navbarSection} />
+            <TopNav />
 
             {/* Scroll Progress Bar */}
             <motion.div

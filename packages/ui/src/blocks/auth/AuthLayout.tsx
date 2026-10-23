@@ -9,8 +9,9 @@ interface AuthLayoutProps {
 
 const AuthLayout = ({ children, quote }: AuthLayoutProps) => {
     return (
-        <main id="main-content" tabIndex={-1} className={`min-h-screen bg-background grid grid-cols-1 lg:grid-cols-2 w-full`}>
-            <div className="flex items-center justify-center bg-gradient-to-br from-primary to-sidebar dark:bg-gradient-to-br p-4 sm:p-8 overflow-y-auto flex-1">
+        // --auth-top-offset lets an app reserve room for a fixed header above the layout.
+        <main id="main-content" tabIndex={-1} className={`min-h-[calc(100dvh-var(--auth-top-offset,0px))] bg-background grid grid-cols-1 lg:grid-cols-2 w-full`}>
+            <div className="flex items-center justify-center bg-background p-4 sm:p-8 overflow-y-auto flex-1">
                 <div className="w-full max-w-md">
                     {children}
                 </div>

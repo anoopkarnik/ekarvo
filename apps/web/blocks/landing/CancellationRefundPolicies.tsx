@@ -23,7 +23,6 @@ const CancellationRefundPolicies = () => {
         <LegalPageLayout
             title="Cancellation and Refund Policy"
             lastUpdated={data.cancellationRefundPolicies.lastUpdated}
-            navbarSection={data.navbarSection}
             footerSection={data.footerSection}
             tableOfContents={tableOfContents}
         >

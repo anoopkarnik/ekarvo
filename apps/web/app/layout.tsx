@@ -1,6 +1,6 @@
 import "@workspace/ui/globals.css"
 import { ThemeProvider } from "@workspace/ui/providers/theme-provider"
-import { geistSans, geistMono, cyberdyne } from "@workspace/ui/typography/font"
+import { geistSans, geistMono, cyberdyne, archivo, plusJakartaSans, ibmPlexMono } from "@workspace/ui/typography/font"
 import type { Metadata } from "next";
 import { Toaster } from "@workspace/ui/components/shadcn/sonner";
 import { Analytics } from "@vercel/analytics/react"
@@ -38,7 +38,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning className={`theme-${config["branding.theme"]}`}>
-      <body className={`${geistSans.className} ${geistMono.variable} ${cyberdyne.variable} `}>
+      <body className={`${geistSans.className} ${geistMono.variable} ${cyberdyne.variable} ${archivo.variable} ${plusJakartaSans.variable} ${ibmPlexMono.variable}`}>
         <IntlClientProvider locale={locale} messages={getMessages(locale)}>
         <TRPCReactProvider>
           <SiteConfigProvider config={config}>
