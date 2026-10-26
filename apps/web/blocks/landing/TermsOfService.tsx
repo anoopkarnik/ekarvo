@@ -24,7 +24,6 @@ const TermsOfService = () => {
         <LegalPageLayout
             title="Terms of Service"
             lastUpdated={data.termsOfService.lastUpdated}
-            footerSection={data.footerSection}
             tableOfContents={tableOfContents}
         >
             <p className="mb-4 text-xs opacity-50">Version {data.termsOfService.version}</p>

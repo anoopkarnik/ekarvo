@@ -31,6 +31,13 @@ export const plusJakartaSans = localFont({
     weight: "200 800",
   });
 
+// Cinematic /landing typeface (apps/web/app/landing/cinematic.css)
+export const inter = localFont({
+    src: "./fontFiles/Inter-latin-wght.woff2",
+    variable: "--font-inter",
+    weight: "100 900",
+  });
+
 export const ibmPlexMono = localFont({
     src: [
       { path: "./fontFiles/IBMPlexMono-latin-400.woff2", weight: "400" },

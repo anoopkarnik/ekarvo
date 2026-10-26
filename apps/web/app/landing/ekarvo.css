@@ -1,104 +1,128 @@
-@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+/* EKARVO site frame, ported from the Astro marketing site (Website/src/styles: global, editorial, system).
+   Shared by /landing, the legal and contact pages, and the auth group. Colors come from the theme
+   tokens (--background, --foreground, --border…), so a page picks paper or film by setting
+   `theme-ekarvo` (paper) or `theme-ekarvo dark` (film) on its wrapper; the landing film maps
+   the tokens onto its own scroll-driven colors in cinematic.css. */
 
-@layer base {
-  .ekarvo-site {
-    --ek-obsidian: #0b0f13;
-    --ek-graphite: #12181f;
-    --ek-mineral-white: #f6f7f5;
-    --ek-pure-white: #ffffff;
-    --ek-graphite-ink: #141c22;
-    --ek-mineral-teal: #5ddec4;
-    --ek-deep-teal: #176b5e;
-    --ek-steel: #8c9a9f;
-    --ek-silver-border: #dce3df;
-    --ek-amber: #e8b66e;
-    --ek-coral: #c86664;
-    --ek-emerald: #218168;
+.ek-site{--header-height:5rem;--page-gutter:2rem;--section-space:6rem;--hero-space:5rem;--ek-rule:#bdc2c7;--ek-blue:#315cf5;--ek-blue-700:#2448cc;--ek-blue-800:#1c369e;min-height:100svh;background:var(--background);color:var(--foreground);font-family:var(--font-inter),Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+.ek-site.theme-ekarvo:not(.dark){color-scheme:light}
+.ek-site.theme-ekarvo.dark{color-scheme:dark;--ek-rule:#293342}
+/* The app theme can set a display face on headings; the site keeps Inter throughout. */
+.ek-site :where(h1,h2,h3,h4){font-family:inherit;font-weight:500;letter-spacing:-.035em}
+.ek-site :is(a,button){transition:background-color .16s,color .16s,border-color .16s,transform .16s}
+.ek-site :focus-visible{outline:2px solid var(--ring);outline-offset:4px}
+.ek-site .site-icon{display:block;flex:none;width:1.25rem;height:1.25rem;max-width:none}
+.ek-site .site-icon--16{width:1rem;height:1rem}
+.ek-site .container{width:min(calc(100% - 2 * var(--page-gutter)),75rem);max-width:none;margin-inline:auto;padding-inline:0}
 
-    --ek-theme-progress: 0;
-    --ek-bg-current: #0b0f13;
-    --ek-surface-current: #12181f;
-    --ek-text-primary: #f2f5f3;
-    --ek-text-secondary: #94a2a8;
-    --ek-border-current: #222d35;
-    --ek-accent-current: #5ddec4;
-  }
+/* Header */
+.ek-site .site-header{position:sticky;top:0;z-index:100;background:var(--background);color:var(--foreground);border-bottom:1px solid var(--border)}
+.ek-site .header-inner{height:var(--header-height);display:grid;grid-template-columns:1fr auto 1fr;gap:2rem;align-items:center}
+.ek-site :is(.site-header,.site-footer) a{display:inline-flex;align-items:center;gap:.5rem;min-height:2.75rem;color:inherit;text-decoration:none}
+.ek-site .wordmark{min-height:48px;font-size:20px;font-weight:600;letter-spacing:.18em;line-height:1;white-space:nowrap;justify-self:start}
+.ek-site .desktop-nav{display:flex;align-items:center;gap:1.5rem}
+.ek-site .desktop-nav a{min-height:48px;padding:0 .5rem;font-size:14px;font-weight:500}
+.ek-site .desktop-nav a:hover,.ek-site .header-login:hover{color:var(--ek-blue)}
+.ek-site .header-actions{display:flex;align-items:center;justify-self:end;gap:1rem}
+.ek-site .header-login{font-size:14px;font-weight:500}
+.ek-site .mobile-menu{display:none}
+.ek-site .mobile-menu summary{display:flex;align-items:center;gap:.5rem;min-height:48px;padding:12px;list-style:none;cursor:pointer}
+.ek-site .mobile-menu summary::marker{content:''}
+.ek-site .mobile-menu summary::-webkit-details-marker{display:none}
 
-  .ekarvo-site {
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+/* Pill button (the site's primary action) */
+.ek-site .button,.ek-site .site-header a.button{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:12px 24px;border:1px solid var(--ek-blue);border-radius:999px;background:var(--ek-blue);color:#fff;font-size:14px;font-weight:500;line-height:1.35;white-space:nowrap;text-decoration:none;cursor:pointer}
+.ek-site .button:hover{background:var(--ek-blue-700);border-color:var(--ek-blue-700);color:#fff}
+.ek-site .button:active{background:var(--ek-blue-800);border-color:var(--ek-blue-800)}
+.ek-site .button.secondary{background:transparent;color:var(--foreground);border-color:var(--input)}
+.ek-site .button.secondary:hover{background:var(--accent);color:var(--ek-blue)}
+@media(hover:hover){.ek-site .button:hover{transform:translateY(-2px)}}
 
-  }
+/* Footer */
+.ek-site .site-footer{padding:var(--section-space) 0 2rem;background:var(--background);color:var(--foreground);border-top:1px solid var(--border)}
+.ek-site .footer-top{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.2fr;gap:3rem}
+.ek-site .footer-top>div{display:flex;flex-direction:column;align-items:flex-start;gap:.5rem;min-width:0}
+.ek-site .footer-top .wordmark{margin-bottom:1.5rem;font-size:28px}
+.ek-site .footer-top p{margin:0 0 1rem;font-size:1rem;color:var(--muted-foreground)}
+.ek-site .footer-top .footer-signature{margin-bottom:24px;color:var(--foreground);font-size:clamp(2rem,3vw,3rem);font-weight:500;line-height:1.1;letter-spacing:-.035em}
+.ek-site .footer-top .footer-label{margin-bottom:1.5rem;color:var(--foreground);font-size:.75rem;font-weight:500;line-height:1.6;letter-spacing:.12em}
+.ek-site .footer-top>div>a:not(.wordmark){min-height:48px;margin:0;color:var(--muted-foreground);font-size:1rem}
+.ek-site .footer-top>div>a:not(.wordmark):hover{color:var(--ek-blue)}
+.ek-site .footer-bottom{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border)}
+.ek-site .footer-bottom p{margin:0;color:var(--muted-foreground);font-size:14px;line-height:1.6}
+.ek-site .footer-bottom>div{display:flex;gap:1.5rem}
+.ek-site .footer-bottom a{min-height:48px;padding-inline:.5rem;color:var(--muted-foreground);font-size:14px}
+.ek-site .footer-bottom a:hover{color:var(--ek-blue)}
 
-  .ekarvo-site :is(h1, h2, h3, .font-display) {
-    font-family: 'Archivo', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    letter-spacing: -0.03em;
-  }
+/* Editorial page hero and reading column (Website PageHero + .reading, e.g. /privacy) */
+.ek-site .page-hero{padding:var(--hero-space) 0}
+.ek-site .eyebrow{display:block;margin:0 0 1.5rem;color:var(--muted-foreground);font-size:.75rem;font-weight:600;line-height:1.6;letter-spacing:.12em;text-transform:uppercase}
+.ek-site .page-hero h1{max-width:20ch;margin:0 0 2rem;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:500;line-height:1.12;letter-spacing:-.06em;text-wrap:balance}
+.ek-site .lead{max-width:54ch;margin:0;color:var(--muted-foreground);font-size:1.125rem;line-height:1.6}
+.ek-site .meta{margin:0;color:var(--muted-foreground);font-size:.875rem}
+.ek-site .reading{max-width:42rem;min-width:0}
+.ek-site .reading :is(h2,h3,h4){color:var(--foreground);scroll-margin-top:calc(var(--header-height) + 1.5rem);text-wrap:balance}
+.ek-site .reading h2{margin:3rem 0 1.5rem;font-size:2rem;font-weight:500;line-height:1.2;letter-spacing:-.035em}
+.ek-site .reading h3{margin:2rem 0 1rem;font-size:1.25rem;font-weight:500;line-height:1.3;letter-spacing:-.02em}
+.ek-site .reading h4{margin:1.5rem 0 .75rem;font-size:1rem;font-weight:600}
+.ek-site .reading :is(p,li){color:var(--muted-foreground);font-size:1rem;line-height:1.7}
+.ek-site .reading p{margin:0 0 1.5rem}
+.ek-site .reading .lead{margin-bottom:1.5rem;color:var(--foreground);font-size:1.125rem}
+.ek-site .reading ul{margin:0 0 1.5rem;padding-left:1.25rem;list-style:disc}
+.ek-site .reading ol{margin:0 0 1.5rem;padding-left:1.25rem;list-style:decimal}
+.ek-site .reading li{margin:.5rem 0;padding-left:.25rem}
+.ek-site .reading li::marker{color:var(--ek-blue)}
+.ek-site .reading strong{color:var(--foreground);font-weight:600}
+.ek-site .reading a{color:var(--foreground);text-decoration:underline;text-decoration-color:var(--ek-blue);text-underline-offset:4px}
+.ek-site .reading a:hover{color:var(--ek-blue)}
+.ek-site .reading>:first-child{margin-top:0}
 
-  .ekarvo-site :is(code, pre, .font-mono) {
-    font-family: 'IBM Plex Mono', monospace;
-    font-variant-numeric: tabular-nums;
-  }
+/* "On this page" index beside the reading column */
+.ek-site .reading-layout{display:grid;grid-template-columns:15rem minmax(0,1fr);gap:4rem;align-items:start;padding-bottom:var(--section-space)}
+.ek-site .reading-layout:not(:has(.reading-index)){grid-template-columns:minmax(0,1fr)}
+.ek-site .reading-index{position:sticky;top:calc(var(--header-height) + 2rem)}
+.ek-site .reading-index nav{display:flex;flex-direction:column;border-left:1px solid var(--border)}
+.ek-site .reading-index a{display:flex;align-items:center;min-height:2.5rem;margin-left:-1px;padding:.25rem 0 .25rem 1rem;border-left:2px solid transparent;color:var(--muted-foreground);font-size:.875rem;line-height:1.4;text-decoration:none}
+.ek-site .reading-index a:hover{color:var(--foreground)}
+.ek-site .reading-index a[aria-current="true"]{border-color:var(--ek-blue);color:var(--ek-blue);font-weight:500}
+.ek-site .read-progress{position:fixed;top:0;left:0;right:0;z-index:101;height:2px;background:var(--ek-blue);transform-origin:left}
+
+@media(max-width:1100px){
+ .ek-site .header-inner{display:flex;justify-content:space-between}
+ .ek-site :is(.desktop-nav,.header-actions){display:none!important}
+ .ek-site .mobile-menu{display:block}
+ .ek-site .mobile-menu nav{position:absolute;left:0;right:0;top:var(--header-height);display:flex;flex-direction:column;gap:.5rem;padding:1.5rem var(--page-gutter);background:var(--background);color:var(--foreground);border-bottom:1px solid var(--border)}
+ .ek-site .mobile-menu:not([open]) nav{display:none}
+ .ek-site .mobile-menu nav a{min-height:48px;padding:12px 0;font-size:1rem}
+ .ek-site .footer-top{grid-template-columns:1.5fr 1fr;gap:3rem}
 }
+@media(max-width:1000px){.ek-site .reading-layout{grid-template-columns:minmax(0,1fr)}.ek-site .reading-index{display:none}}
+@media(max-width:850px){.ek-site{--section-space:5rem;--hero-space:4rem}}
+@media(max-width:650px){
+ .ek-site{--header-height:4.5rem;--page-gutter:1.5rem;--section-space:4rem;--hero-space:3rem}
+ .ek-site .wordmark{font-size:18px}
+ .ek-site .header-inner{gap:1rem}
+ .ek-site .page-hero h1{max-width:18ch;font-size:clamp(2.5rem,10.5vw,4rem)}
+ .ek-site .footer-top{grid-template-columns:1fr 1fr;gap:3rem 1.5rem}
+ .ek-site .footer-top>div:first-child{grid-column:1/-1}
+ .ek-site .footer-top .footer-signature{font-size:2.25rem}
+ .ek-site .footer-top>div>a:not(.wordmark){font-size:14px}
+ .ek-site .footer-bottom{display:block;margin-top:3rem;padding-top:1.5rem}
+ .ek-site .footer-bottom>div{margin-top:1.5rem}
+}
+@media(prefers-reduced-motion:reduce){.ek-site .button:hover{transform:none}.ek-site .read-progress{display:none}}
+.ek-site .reading :is(small,p.text-xs){font-size:.8125rem}
 
-.ekarvo-site .tabular-nums {
-  font-variant-numeric: tabular-nums;
-}
-
-.ekarvo-site .text-balance {
-  text-wrap: balance;
-}
-
-.ekarvo-site { color-scheme: dark; overflow-x: clip; }
-.ekarvo-site section { scroll-margin-top: 4rem; }
-.ekarvo-site :is(button, a, input, select, textarea):focus-visible { outline: 2px solid #5ddec4; outline-offset: 4px; }
-.ekarvo-site :is(button, a) { touch-action: manipulation; }
-@media (prefers-reduced-motion: reduce) {
-  .ekarvo-site *, .ekarvo-site *::before, .ekarvo-site *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-.ekarvo-workstream { opacity: 1; }
-.ekarvo-workstream-stage {
-  position: absolute;
-  width: min(48vw, 800px);
-  height: auto;
-  top: 50%;
-  right: 0;
-  transform: translateY(-49%);
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
-.ekarvo-workstream [data-active="true"] .workstream-plate { fill: url(#workstream-tile-active); stroke: #5ddec4; }
-.ekarvo-workstream [data-active="true"] .workstream-glyph { color: #a8f1d9; }
-.ekarvo-workstream [data-active="true"] .workstream-status { fill: #5ddec4; }
-.ekarvo-workstream [data-active="true"] .workstream-label { fill: #eefbf5; }
-.ekarvo-motion-control {
-  position: fixed;
-  z-index: 30;
-  right: max(1rem, env(safe-area-inset-right));
-  bottom: max(1rem, env(safe-area-inset-bottom));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 0.5rem 0.8rem;
-  border: 1px solid #39514b;
-  border-radius: 999px;
-  background: #101c1f;
-  color: #b7d5ca;
-  font-size: 11px;
-  cursor: pointer;
-}
-.ekarvo-motion-control:hover { border-color: #5ddec4; color: #eefbf5; }
-.ekarvo-motion-control:disabled { cursor: default; color: #8c9a9f; }
-.ekarvo-motion-control[hidden] { display: none; }
-@media (max-width: 767px) {
-  .ekarvo-workstream { opacity: 0.2; }
-  .ekarvo-workstream-stage { width: 115vw; right: -34vw; top: 58%; }
-  .ekarvo-motion-control { padding: 0.5rem; }
-  .ekarvo-motion-control span { display: none; }
-}
+/* Contact cards (Website .info-card / form panel treatment) */
+.ek-site .contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
+.ek-site .contact-card{display:flex;flex-direction:column;align-items:flex-start;gap:.75rem;min-width:0;padding:2rem;border:1px solid var(--ek-rule);border-radius:var(--radius);background:linear-gradient(130deg,var(--card),var(--secondary))}
+.ek-site .contact-card .site-icon{width:1.5rem;height:1.5rem;margin-bottom:1rem;color:var(--ek-blue)}
+.ek-site .contact-card h2{margin:0;font-size:1.25rem;font-weight:500;letter-spacing:-.02em}
+.ek-site .contact-card p{margin:0;color:var(--muted-foreground);font-size:.875rem}
+.ek-site .contact-card :is(a,span){margin-top:auto;padding-top:1rem;color:var(--foreground);font-weight:500;overflow-wrap:anywhere}
+.ek-site .contact-card a{text-decoration:underline;text-decoration-color:var(--ek-blue);text-underline-offset:4px}
+.ek-site .contact-card a:hover{color:var(--ek-blue)}
+.ek-site .contact-meta{padding:3rem 0 var(--section-space);color:var(--muted-foreground);font-size:.875rem}
+.ek-site .contact-meta p{margin:0 0 .5rem}
+.ek-site .contact-meta strong{color:var(--foreground);font-weight:500}
+@media(max-width:850px){.ek-site .contact-grid{grid-template-columns:1fr}}

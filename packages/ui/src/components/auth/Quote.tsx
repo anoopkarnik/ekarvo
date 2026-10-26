@@ -17,15 +17,15 @@ const Quote = ({ quote }: { quote?: QuoteProps }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <blockquote className='font-display text-4xl md:text-5xl font-extrabold leading-[0.95] text-foreground mb-10 tracking-[-0.035em]'>
+          <blockquote className='font-display text-5xl md:text-6xl font-medium leading-[1.04] text-foreground mb-10 tracking-[-0.06em] text-balance'>
             {quote?.quote || t("text")}
           </blockquote>
 
           <div className="flex flex-col gap-1 border-t border-border pt-6">
-            <cite className='not-italic text-lg font-semibold text-foreground'>
+            <cite className='not-italic text-lg font-semibold tracking-[0.18em] text-foreground'>
               {quote?.author || t("author")}
             </cite>
-            <span className='font-mono text-xs text-primary font-medium uppercase tracking-[0.18em]'>
+            <span className='text-xs text-muted-foreground font-semibold uppercase tracking-[0.14em]'>
               {quote?.credential || t("credential")}
             </span>
           </div>

@@ -1,2 +1,2 @@
 "use client";
-export { default } from "@/components/landing/ekarvo/EkarvoLanding";
+export { default } from "@/components/landing/ekarvo/CinematicLanding";

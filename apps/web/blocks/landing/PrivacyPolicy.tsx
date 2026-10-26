@@ -26,7 +26,6 @@ const PrivacyPolicy = () => {
         <LegalPageLayout
             title="Privacy Policy"
             lastUpdated={data.privacyPolicy.lastUpdated}
-            footerSection={data.footerSection}
             tableOfContents={tableOfContents}
         >
             <p className="mb-4 lead">

@@ -1,89 +1,93 @@
-/* EKARVO theme — mirrors the /landing page. See docs/design-system.md. */
+/* EKARVO theme — mirrors the /landing page (the Website marketing site's tokens). See docs/design-system.md.
+   Light is the site's paper surface; dark is the cinematic film surface. */
 .theme-ekarvo {
-  --radius: 0.5rem;
-  --background: oklch(0.975 0.003 128.49); /* #F6F7F5 mineral white */
-  --foreground: oklch(0.221 0.017 240.9); /* #141C22 graphite ink */
+  --radius: 0.75rem;
+  --background: oklch(0.959 0.007 247.9); /* #EEF2F6 paper */
+  --foreground: oklch(0.187 0.011 268.11); /* #111318 ink */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.221 0.017 240.9);
+  --card-foreground: oklch(0.187 0.011 268.11);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.221 0.017 240.9);
-  --primary: oklch(0.476 0.079 179.72); /* #176B5E deep teal */
-  --primary-foreground: oklch(0.975 0.003 128.49);
-  --secondary: oklch(0.96 0.007 160.07); /* #EEF3F0 */
-  --secondary-foreground: oklch(0.221 0.017 240.9);
-  --muted: oklch(0.96 0.007 160.07);
-  --muted-foreground: oklch(0.522 0.019 225.47); /* #5E6C72 steel, darkened for AA */
-  --accent: oklch(0.946 0.016 172.64); /* #E3F1EC teal tint */
-  --accent-foreground: oklch(0.221 0.017 240.9);
-  --destructive: oklch(0.534 0.122 23.33); /* #A84C4A coral, darkened for AA */
+  --popover-foreground: oklch(0.187 0.011 268.11);
+  --primary: oklch(0.545 0.233 266.22); /* #315CF5 action blue */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.975 0.005 258.32); /* #F5F7FA gray 50 */
+  --secondary-foreground: oklch(0.187 0.011 268.11);
+  --muted: oklch(0.975 0.005 258.32);
+  --muted-foreground: oklch(0.49 0.022 258.37); /* #59616D slate */
+  --accent: oklch(0.962 0.018 272.31); /* #EEF2FF blue 50 */
+  --accent-foreground: oklch(0.187 0.011 268.11);
+  --destructive: oklch(0.559 0.171 18.85); /* #C43D4B red */
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.909 0.009 161.33); /* #DCE3DF silver border */
-  --input: oklch(0.909 0.009 161.33);
-  --ring: oklch(0.476 0.079 179.72);
-  --chart-1: oklch(0.476 0.079 179.72); /* deep teal */
-  --chart-2: oklch(0.621 0.113 71.83); /* amber, darkened */
-  --chart-3: oklch(0.534 0.122 23.33); /* coral */
-  --chart-4: oklch(0.522 0.019 225.47); /* steel */
-  --chart-5: oklch(0.821 0.12 177.65); /* mineral teal */
+  --border: oklch(0.899 0.015 260.73); /* #D8DEE8 light border */
+  --input: oklch(0.611 0.025 260.7); /* #7B8493 control border, 3:1 on paper */
+  --ring: oklch(0.545 0.233 266.22);
+  --chart-1: oklch(0.545 0.233 266.22); /* blue */
+  --chart-2: oklch(0.552 0.103 171.07); /* #16856A green */
+  --chart-3: oklch(0.626 0.125 70.45); /* #B7791F amber */
+  --chart-4: oklch(0.559 0.171 18.85); /* red */
+  --chart-5: oklch(0.61 0.048 254.85); /* #7085A0 mineral */
   --sidebar: oklch(1 0 0);
-  --sidebar-foreground: oklch(0.221 0.017 240.9);
-  --sidebar-primary: oklch(0.476 0.079 179.72);
-  --sidebar-primary-foreground: oklch(0.975 0.003 128.49);
-  --sidebar-accent: oklch(0.96 0.007 160.07);
-  --sidebar-accent-foreground: oklch(0.221 0.017 240.9);
-  --sidebar-border: oklch(0.909 0.009 161.33);
-  --sidebar-ring: oklch(0.476 0.079 179.72);
+  --sidebar-foreground: oklch(0.187 0.011 268.11);
+  --sidebar-primary: oklch(0.545 0.233 266.22);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.962 0.018 272.31);
+  --sidebar-accent-foreground: oklch(0.187 0.011 268.11);
+  --sidebar-border: oklch(0.899 0.015 260.73);
+  --sidebar-ring: oklch(0.545 0.233 266.22);
 }
 
 .theme-ekarvo.dark {
-  --background: oklch(0.157 0.011 248.32); /* #090D11 obsidian */
-  --foreground: oklch(0.96 0.007 160.07); /* #EEF3F0 mineral white */
-  --card: oklch(0.213 0.017 240.96); /* #121A20 graphite */
-  --card-foreground: oklch(0.96 0.007 160.07);
-  --popover: oklch(0.213 0.017 240.96);
-  --popover-foreground: oklch(0.96 0.007 160.07);
-  --primary: oklch(0.821 0.12 177.65); /* #5DDEC4 mineral teal */
-  --primary-foreground: oklch(0.157 0.011 248.32);
-  --secondary: oklch(0.241 0.018 234.87); /* #172127 slate */
-  --secondary-foreground: oklch(0.96 0.007 160.07);
-  --muted: oklch(0.241 0.018 234.87);
-  --muted-foreground: oklch(0.677 0.018 221.18); /* #8C9A9F steel */
-  --accent: oklch(0.253 0.028 211.26); /* #11262A teal-tinted graphite */
-  --accent-foreground: oklch(0.96 0.007 160.07);
-  --destructive: oklch(0.625 0.125 22.52); /* #C86664 coral */
-  --destructive-foreground: oklch(0.157 0.011 248.32);
-  --border: oklch(0.313 0.024 238.74); /* #26333C hairline */
-  --input: oklch(0.313 0.024 238.74);
-  --ring: oklch(0.821 0.12 177.65);
-  --chart-1: oklch(0.821 0.12 177.65); /* mineral teal */
-  --chart-2: oklch(0.806 0.107 75.35); /* #E8B66E amber */
-  --chart-3: oklch(0.625 0.125 22.52); /* coral */
-  --chart-4: oklch(0.677 0.018 221.18); /* steel */
-  --chart-5: oklch(0.542 0.095 171.18); /* #218168 emerald */
-  --sidebar: oklch(0.213 0.017 240.96);
-  --sidebar-foreground: oklch(0.96 0.007 160.07);
-  --sidebar-primary: oklch(0.821 0.12 177.65);
-  --sidebar-primary-foreground: oklch(0.157 0.011 248.32);
-  --sidebar-accent: oklch(0.241 0.018 234.87);
-  --sidebar-accent-foreground: oklch(0.96 0.007 160.07);
-  --sidebar-border: oklch(0.313 0.024 238.74);
-  --sidebar-ring: oklch(0.821 0.12 177.65);
+  --background: oklch(0.167 0.012 254.17); /* #0B0F14 film */
+  --foreground: oklch(0.982 0.008 271.33); /* #F7F9FF film ink */
+  --card: oklch(0.211 0.023 254.32); /* #111923 graphite */
+  --card-foreground: oklch(0.982 0.008 271.33);
+  --popover: oklch(0.211 0.023 254.32);
+  --popover-foreground: oklch(0.982 0.008 271.33);
+  --primary: oklch(0.545 0.233 266.22); /* #315CF5 action blue, white text as on the film */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.258 0.03 256.86); /* #1A2432 */
+  --secondary-foreground: oklch(0.982 0.008 271.33);
+  --muted: oklch(0.258 0.03 256.86);
+  --muted-foreground: oklch(0.824 0.025 259.82); /* #BCC6D6 inverse muted */
+  --accent: oklch(0.251 0.05 265.03); /* #16213A blue-tinted graphite */
+  --accent-foreground: oklch(0.982 0.008 271.33);
+  --destructive: oklch(0.676 0.146 15.97); /* #E26D78 red, lifted for dark */
+  --destructive-foreground: oklch(0.167 0.012 254.17);
+  --border: oklch(0.318 0.03 258.34); /* #293342 film hairline */
+  --input: oklch(0.492 0.031 257.08); /* #566273 control border */
+  --ring: oklch(0.84 0.071 267.18); /* #B6CAFA ice */
+  --chart-1: oklch(0.62 0.204 268.54); /* #5478FF blue */
+  --chart-2: oklch(0.724 0.126 168.19); /* #3FBF97 green */
+  --chart-3: oklch(0.767 0.128 77.6); /* #E0A84A amber */
+  --chart-4: oklch(0.676 0.146 15.97); /* red */
+  --chart-5: oklch(0.703 0.036 255.26); /* #91A1B6 mineral */
+  --sidebar: oklch(0.211 0.023 254.32);
+  --sidebar-foreground: oklch(0.982 0.008 271.33);
+  --sidebar-primary: oklch(0.545 0.233 266.22);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.258 0.03 256.86);
+  --sidebar-accent-foreground: oklch(0.982 0.008 271.33);
+  --sidebar-border: oklch(0.318 0.03 258.34);
+  --sidebar-ring: oklch(0.84 0.071 267.18);
 }
 
 /* Typography. Font variables come from @workspace/ui/typography/font and are
    declared on <body>, so the aliases must be declared there too. Unlayered so
-   it beats the next/font body className. */
+   it beats the next/font body className. The site sets everything in Inter. */
 .theme-ekarvo body {
-  --font-sans: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-archivo), var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-sans);
   --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
 
 @layer base {
+  /* Editorial headings: medium weight, tight tracking (utilities such as font-bold still win). */
   .theme-ekarvo :is(h1, h2, h3, .font-display) {
     font-family: var(--font-display);
-    letter-spacing: -0.03em;
+    font-weight: 500;
+    letter-spacing: -0.035em;
   }
 
   .theme-ekarvo :is(code, kbd, pre, samp, .font-mono) {

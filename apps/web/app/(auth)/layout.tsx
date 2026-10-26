@@ -1,16 +1,17 @@
 import "@/app/landing/ekarvo.css";
 import type { ReactElement, ReactNode } from "react";
-import { TopNav } from "@/components/landing/ekarvo/components/TopNav";
+import { SiteHeader } from "@/components/landing/ekarvo/SiteChrome";
 
-// Auth pages share the landing page's look: always-dark EKARVO tokens and the same top nav.
+// Auth pages share the landing film's look: always-dark EKARVO tokens and the site header.
+// The header is sticky (in flow), so AuthLayout subtracts its height to stay one screen tall.
 export default function AuthGroupLayout({
   children,
 }: Readonly<{
   children: ReactNode;
 }>): ReactElement {
   return (
-    <div className="ekarvo-site theme-ekarvo dark relative isolate min-h-dvh bg-background text-foreground pt-16 [--auth-top-offset:4rem]">
-      <TopNav />
+    <div className="ek-site theme-ekarvo dark relative isolate [--auth-top-offset:var(--header-height)]">
+      <SiteHeader />
       {children}
     </div>
   );
