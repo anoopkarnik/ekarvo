@@ -1,4 +1,6 @@
 import React from "react";
+import { readFileSync } from "node:fs";
+import { URL as NodeURL } from "node:url";
 import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { SiteFooter, SiteHeader } from "./SiteChrome";
@@ -38,6 +40,19 @@ describe("marketing navigation", () => {
       expect(link).toHaveAttribute("href", "/sign-in");
     }
     expect(screen.getByRole("link", { name: "Ekarvo home" })).toHaveAttribute("href", "/landing");
+  });
+
+  it("gives the desktop Login action at least a 44px inline target", () => {
+    const style = document.createElement("style");
+    style.textContent = readFileSync(new NodeURL("../../../app/landing/marketing.css", import.meta.url), "utf8");
+    document.head.appendChild(style);
+    try {
+      const { container } = render(<div className="ek-site theme-ekarvo marketing-site"><SiteHeader /></div>);
+      const login = container.querySelector<HTMLAnchorElement>(".header-login")!;
+      expect(Number.parseFloat(getComputedStyle(login).minInlineSize)).toBeGreaterThanOrEqual(44);
+    } finally {
+      style.remove();
+    }
   });
 
   it("marks the current product section in both menus on product detail routes", () => {

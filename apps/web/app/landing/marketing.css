@@ -44,6 +44,7 @@
 .ek-site.marketing-site { font-size: var(--text-base); }
 .ek-site .container .container { width: 100%; }
 .ek-site :is(a, button, input, summary) { touch-action: manipulation; }
+.ek-site .header-login { min-inline-size: 44px; }
 .ek-site :is(a, button) { overflow-wrap: anywhere; }
 .ek-site :is(.desktop-nav a, .mobile-menu a)[aria-current="page"] { color: var(--ek-blue); }
 .ek-site .mobile-menu nav { max-height: calc(100svh - var(--header-height)); overflow-y: auto; }
