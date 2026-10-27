@@ -13,6 +13,7 @@
 ## Global Constraints
 
 - Never modify `/Users/arahaelion/EKARVO/Website`; record and recheck a complete SHA-256 tree manifest.
+- The untouched baseline has one unrelated failing suite, `apps/web/tests/doctor.test.ts`, because its imported `scripts/doctor.mjs` is absent from Git; feature verification must run the complete web suite excluding only that named file and report the baseline defect separately.
 - Keep every new page under the existing public `/landing` route prefix; do not expose parallel root-level marketing routes.
 - Preserve `/sign-in`, current SaaS legal content, and the existing `/landing/legal/contact-us` informational page.
 - Add the reference workflow form as `/landing/contact`; keep its persistence local and do not add CRM, email, calendar, or external data integrations.
@@ -282,7 +283,7 @@ git commit -m "feat: add EKARVO editorial marketing routes"
 - Create: `apps/web/components/landing/ekarvo/marketing/ProductCarousel.test.tsx`
 - Modify: `apps/web/components/landing/ekarvo/marketing/data.ts`
 - Modify: `apps/web/app/landing/marketing.css`
-- Modify: `apps/web/app/landing/marketing-interactions.css`
+- Create: `apps/web/app/landing/marketing-interactions.css`
 
 **Interfaces:**
 - Produces: `ProductCarousel({ products })`, where each product contains `name`, `role`, `mode`, `title`, `body`, `href`, `action`, and `label`.
@@ -572,8 +573,8 @@ Assert repeated next/previous/rail commands end on the last requested chapter, k
 
 - [ ] **Step 5: Run the full unit/integration suite and commit**
 
-Run: `pnpm --dir apps/web test && pnpm --dir apps/web typecheck`
-Expected: PASS.
+Run: `pnpm --dir apps/web exec vitest run --passWithNoTests --exclude tests/doctor.test.ts && pnpm --dir apps/web typecheck`
+Expected: PASS, with the pre-existing missing-doctor-script suite excluded explicitly.
 
 ```bash
 git add apps/web/components/landing apps/web/blocks/landing apps/web/app/'(auth)'/layout.tsx
@@ -621,7 +622,7 @@ After each fix, rerun the affected unit test, recapture the same state, and reco
 
 - [ ] **Step 7: Run final repository verification**
 
-Run: `pnpm --dir apps/web test && pnpm --dir apps/web typecheck && pnpm --dir apps/web lint && pnpm --dir apps/web build && pnpm --dir apps/web test:e2e`
+Run: `pnpm --dir apps/web exec vitest run --passWithNoTests --exclude tests/doctor.test.ts && pnpm --dir apps/web typecheck && pnpm --dir apps/web lint && pnpm --dir apps/web build && pnpm --dir apps/web test:e2e`
 Expected: all commands exit 0.
 
 - [ ] **Step 8: Prove the source tree is unchanged**
