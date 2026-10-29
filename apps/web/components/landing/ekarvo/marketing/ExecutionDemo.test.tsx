@@ -115,6 +115,26 @@ describe("Drive execution island", () => {
     );
     expect(revoke).toHaveBeenCalledWith("blob:evidence");
   });
+  it("keeps the same live status node mounted across state and reset updates", () => {
+    render(<ExecutionDemo compact />);
+    const status = screen.getByRole("status");
+    const unchanged = (text: string) => {
+      expect(screen.getByRole("status")).toBe(status);
+      expect(status).toHaveTextContent(text);
+    };
+    click("Confirm example contract");
+    unchanged("contract is complete");
+    click("Run simulation");
+    unchanged("Classifying 20 records");
+    tick();
+    unchanged("needs your approval");
+    click("Approve report creation");
+    unchanged("Checking classification");
+    tick();
+    unchanged("20 records classified");
+    click("Reset simulation");
+    unchanged("Define a reconciled");
+  });
   it("cancels all pending timers when unmounted", () => {
     const { unmount } = render(<ExecutionDemo compact />);
     run();

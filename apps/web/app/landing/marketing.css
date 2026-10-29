@@ -447,3 +447,19 @@
   .ek-site .execution-title > .actions { margin-top: 2rem; }
 }
 @media (max-width: 650px) { .ek-site .execution-landing > .film-study { height: 440px; } }
+
+/* Combined demo route: the source's original section-header hierarchy. */
+.ek-site .demo-section-header { display: flex; justify-content: space-between; align-items: end; gap: 4rem; margin-bottom: 3rem; }
+.ek-site.marketing-site .demo-section-header h2 { max-width: 35rem; margin-bottom: 0; }
+.ek-site.marketing-site .demo-section-header > p { max-width: 26rem; color: var(--muted-foreground); margin: 0; }
+.ek-site .demo-subtle { background: #eae9e5; border-block: 1px solid var(--border); }
+@media (max-width: 850px) {
+  .ek-site .demo-section-header { display: block; }
+  .ek-site.marketing-site .demo-section-header > p { margin-top: 1.5rem; }
+}
+@media (max-width: 600px) {
+  .ek-site .demo-section-header { margin-bottom: 2rem; }
+}
+
+.ek-site.marketing-site:has(.demo-section-header) :is(h1, h2) { font-weight: 500; }
+.ek-site.marketing-site:has(.demo-section-header) .page-hero .actions { margin-bottom: 1rem; }

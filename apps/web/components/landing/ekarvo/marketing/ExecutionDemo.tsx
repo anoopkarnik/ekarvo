@@ -180,7 +180,6 @@ export function ExecutionDemo({ compact = false }: { compact?: boolean }) {
           ))}
         </ol>
         <div
-          key={state}
           className={
             "status-box " +
             (state === "Verified"
