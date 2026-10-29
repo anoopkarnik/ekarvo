@@ -1,3 +1,4 @@
+import { isSameLocalOrigin } from "@/lib/marketing/local-origin";
 import { deleteRequestSchema } from "@/lib/marketing/request-schema";
 import { deleteRequest } from "@/lib/marketing/request-store";
 import { checkLocalFormRateLimit } from "@/lib/marketing/local-rate-limit";
@@ -14,11 +15,7 @@ const json = (message: string, status = 200) =>
   );
 
 export async function POST(request: Request) {
-  const url = new URL(request.url);
-  if (
-    !["localhost", "127.0.0.1", "[::1]"].includes(url.hostname) ||
-    request.headers.get("origin") !== url.origin
-  ) {
+  if (!isSameLocalOrigin(request)) {
     return json("Request not permitted.", 403);
   }
   if (

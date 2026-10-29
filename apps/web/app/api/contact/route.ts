@@ -1,3 +1,4 @@
+import { isSameLocalOrigin } from "@/lib/marketing/local-origin";
 import { contactRequestSchema } from "@/lib/marketing/request-schema";
 import { saveRequest } from "@/lib/marketing/request-store";
 import { checkLocalFormRateLimit } from "@/lib/marketing/local-rate-limit";
@@ -18,7 +19,7 @@ export async function POST(request: Request) {
       403,
     );
   }
-  if (request.headers.get("origin") !== url.origin) {
+  if (!isSameLocalOrigin(request)) {
     return json({ message: "Reload this page and try again." }, 403);
   }
   if (

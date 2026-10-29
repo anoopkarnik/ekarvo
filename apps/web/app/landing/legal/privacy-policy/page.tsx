@@ -1,9 +1,5 @@
-import ErrorState from "@workspace/ui/components/misc/ErrorState";
-import LoadingState from "@workspace/ui/components/misc/LoadingState";
-import { getQueryClient, trpc } from "@/trpc/server"
-import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { ReactElement, Suspense } from "react";
-import { ErrorBoundary } from "react-error-boundary";
+import { getQueryClient, trpc } from "@/trpc/server";
+import type { ReactElement } from "react";
 import PrivacyPolicy from "@/blocks/landing/PrivacyPolicy";
 import type { Metadata } from "next";
 import { siteMetadata } from "@/lib/site-config/metadata";
@@ -20,19 +16,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const Page = async (): Promise<ReactElement> => {
   const queryClient = getQueryClient();
-  await Promise.all([
-    // queryClient.ensureQueryData(trpc.portfolio.getPortfolioDataFromStrapi.queryOptions()),
-    queryClient.ensureQueryData(trpc.landing.getLandingInfo.queryOptions()),
-  ]);
-  return (
-    <HydrationBoundary state={dehydrate(queryClient)}>
-      <Suspense fallback={<LoadingState title='Retrieving' description='Please wait while we retrieve the page data' />}>
-        <ErrorBoundary fallback={<ErrorState title='Error Retrieving Data' description='There was an error while retrieving the data.' />}>
-          <PrivacyPolicy />
-        </ErrorBoundary>
-      </Suspense>
-    </HydrationBoundary>
-  )
-}
+  const data = await queryClient.ensureQueryData(
+    trpc.landing.getLandingInfo.queryOptions(),
+  );
+  return <PrivacyPolicy privacyPolicy={data.privacyPolicy} />;
+};
 
-export default Page
+export default Page;

@@ -145,3 +145,40 @@ describe("POST /api/delete-request", () => {
     await status(request(), 503);
   });
 });
+
+describe("Next normalized loopback request origins", () => {
+  it("deletes on the exact Host authority after Next normalizes the URL", async () => {
+    const receipt = await saveRequest(randomUUID(), values);
+    await status(
+      request(
+        { id: receipt.id, token: receipt.deleteToken },
+        {
+          headers: { host: "127.0.0.1:3011", origin: "http://127.0.0.1:3011" },
+        },
+      ),
+      200,
+    );
+  });
+  it.each<Record<string, string>>([
+    { host: "127.0.0.1:9999", origin: "http://127.0.0.1:9999" },
+    { host: "127.0.0.1:3011", origin: "http://localhost:3011" },
+    { host: "127.0.0.1:3011", origin: "http://127.0.0.1:9999" },
+    { host: "127.0.0.1:3011", origin: "https://127.0.0.1:3011" },
+    { host: "evil.example:3011", origin: "http://evil.example:3011" },
+    { host: "localhost:3011@evil.example", origin: "http://localhost:3011" },
+    { host: "localhost:3011/path", origin: "http://localhost:3011" },
+    { host: "localhost:99999", origin: "http://localhost:3011" },
+    { host: "", origin: "http://localhost:3011" },
+    {
+      host: "127.0.0.1:3011",
+      origin: "http://localhost:3011",
+      "x-forwarded-host": "localhost:3011",
+      "x-forwarded-proto": "http",
+    },
+  ])(
+    "rejects cross-origin, invalid or forwarded authority %j",
+    async (headers) => {
+      await status(request(undefined, { headers }), 403);
+    },
+  );
+});

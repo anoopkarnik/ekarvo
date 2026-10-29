@@ -202,3 +202,36 @@ describe("POST /api/contact", () => {
     });
   });
 });
+
+describe("Next normalized loopback request origins", () => {
+  it("accepts the actual Host authority when Next normalizes URL 127.0.0.1 to localhost", async () => {
+    await status(
+      request(undefined, {
+        headers: { host: "127.0.0.1:3011", origin: "http://127.0.0.1:3011" },
+      }),
+      201,
+    );
+  });
+  it.each<Record<string, string>>([
+    { host: "127.0.0.1:9999", origin: "http://127.0.0.1:9999" },
+    { host: "127.0.0.1:3011", origin: "http://localhost:3011" },
+    { host: "127.0.0.1:3011", origin: "http://127.0.0.1:9999" },
+    { host: "127.0.0.1:3011", origin: "https://127.0.0.1:3011" },
+    { host: "evil.example:3011", origin: "http://evil.example:3011" },
+    { host: "localhost:3011@evil.example", origin: "http://localhost:3011" },
+    { host: "localhost:3011/path", origin: "http://localhost:3011" },
+    { host: "localhost:99999", origin: "http://localhost:3011" },
+    { host: "", origin: "http://localhost:3011" },
+    {
+      host: "127.0.0.1:3011",
+      origin: "http://localhost:3011",
+      "x-forwarded-host": "localhost:3011",
+      "x-forwarded-proto": "http",
+    },
+  ])(
+    "rejects cross-origin, invalid or forwarded authority %j",
+    async (headers) => {
+      await status(request(undefined, { headers }), 403);
+    },
+  );
+});
