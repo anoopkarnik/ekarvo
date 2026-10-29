@@ -423,3 +423,27 @@
   .ek-site.marketing-site .company-statement { font-size: 2.5rem; max-width: 24ch; }
   .ek-site .editorial-image-window { height: 360px; }
 }
+
+/* Drive detail: source editorial.css and final site-continuity.css. */
+.ek-site.marketing-site:has(.execution-landing) main :is(h1, h2) { font-weight: 500; }
+.ek-site .execution-landing { padding-top: var(--hero-space); background: var(--ek-film); color: var(--ek-film-text); }
+.ek-site .execution-title { display: grid; grid-template-columns: 1fr 1fr; gap: 0 4rem; }
+.ek-site .execution-title > * { min-width: 0; }
+.ek-site.marketing-site .execution-title .product-category { grid-column: 1 / -1; color: var(--ek-film-muted); }
+.ek-site.marketing-site .execution-title h1 { font-size: var(--title-section); margin: 0; grid-row: 2 / 4; color: var(--ek-film-text); }
+.ek-site.marketing-site .execution-title > p:not(.product-category) { color: var(--ek-film-muted); align-self: end; max-width: 44ch; }
+.ek-site .execution-title .actions { margin-top: 1.5rem; align-self: start; }
+.ek-site .execution-title .product-link { color: var(--ek-film-text); }
+.ek-site .execution-landing > .film-study { height: clamp(400px, 52vw, 720px); margin-top: 2rem; }
+.ek-site .execution-landing > .film-study .film-study-picture { aspect-ratio: auto; }
+.ek-site .example-panel-dark { background: var(--ek-film); color: var(--ek-film-text); border-color: #394353; }
+.ek-site.marketing-site .example-panel-dark :is(p, .example-kicker) { color: var(--ek-film-muted); }
+.ek-site .example-panel-dark li { border-color: #394353; }
+.ek-site .example-panel-dark .example-flow span { color: #9eb6ff; }
+@media (max-width: 1100px) { .ek-site .execution-title { gap: 2rem; } }
+@media (max-width: 800px) {
+  .ek-site .execution-title { display: block; }
+  .ek-site.marketing-site .execution-title h1 { margin-bottom: 2rem; }
+  .ek-site .execution-title > .actions { margin-top: 2rem; }
+}
+@media (max-width: 650px) { .ek-site .execution-landing > .film-study { height: 440px; } }
