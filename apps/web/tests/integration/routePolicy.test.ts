@@ -1,3 +1,4 @@
+// @vitest-environment node
 import fs from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
@@ -71,4 +72,67 @@ describe("route trust contract", () => {
     expect(resolveRoutePolicy("/api/v1/projects/abc")?.auth).toBe("api-key");
     expect(resolveRoutePolicy("/api/v1/projects/abc/nope")).toBeUndefined();
   });
+});
+
+describe("local marketing form route policy", () => {
+  it.each([
+    ["/api/contact", 16384],
+    ["/api/delete-request", 1024],
+  ] as const)(
+    "publishes %s only at its exact path with handler-owned origin/rate checks",
+    (path, bytes) => {
+      expect(resolveRoutePolicy(path)).toEqual({
+        path,
+        match: "exact",
+        auth: "public",
+        rateLimit: "none",
+        maxBodyBytes: bytes,
+        input: "zod",
+        cors: "self-managed",
+      });
+      expect(resolveRoutePolicy(`${path}/nested`)).toBeUndefined();
+      expect(resolveRoutePolicy(`${path}-other`)).toBeUndefined();
+    },
+  );
+});
+
+// Exercise the middleware boundary as well: declared-size rejection happens before handlers.
+describe("local form middleware ceilings", () => {
+  it.each([
+    ["/api/contact", 16384],
+    ["/api/delete-request", 1024],
+  ] as const)(
+    "keeps %s public and its oversized response private without adding CORS",
+    async (path, bytes) => {
+      const { default: middleware } = await import("@/middleware");
+      const { NextRequest } = await import("next/server");
+      const accepted = await middleware(
+        new NextRequest(`http://localhost:3011${path}`, {
+          method: "POST",
+          headers: {
+            origin: "http://localhost:3011",
+            "content-length": String(bytes),
+          },
+        }),
+      );
+      expect(accepted.status).toBe(200);
+      expect(accepted.headers.get("location")).toBeNull();
+      expect(accepted.headers.get("access-control-allow-origin")).toBeNull();
+      const rejected = await middleware(
+        new NextRequest(`http://localhost:3011${path}`, {
+          method: "POST",
+          headers: {
+            origin: "http://localhost:3011",
+            "content-length": String(bytes + 1),
+          },
+        }),
+      );
+      expect(rejected.status).toBe(413);
+      expect(await rejected.json()).toEqual({
+        message: "The request is too large.",
+      });
+      expect(rejected.headers.get("cache-control")).toBe("no-store");
+      expect(rejected.headers.get("access-control-allow-origin")).toBeNull();
+    },
+  );
 });

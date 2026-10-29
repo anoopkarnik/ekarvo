@@ -58,11 +58,14 @@ export default async function middleware(req: NextRequest) {
 
   const contentLength = Number(req.headers.get("content-length") ?? 0);
   if (policy?.maxBodyBytes && contentLength > policy.maxBodyBytes) {
+    const localForm = policy.path === "/api/contact" || policy.path === "/api/delete-request";
     return NextResponse.json(
-      { error: "Payload too large" },
+      localForm ? { message: "The request is too large." } : { error: "Payload too large" },
       {
         status: 413,
-        headers: isAllowedOrigin
+        headers: localForm
+          ? { "Cache-Control": "no-store" }
+          : isAllowedOrigin
           ? {
               "Access-Control-Allow-Origin": origin,
               "Access-Control-Allow-Credentials": "true",

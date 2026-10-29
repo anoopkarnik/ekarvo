@@ -91,6 +91,10 @@ export const routePolicies = [
   { path: "/api/demo-login", match: "exact", auth: "public", rateLimit: "none", maxBodyBytes: 16 * KB, input: "none" },
   { path: "/api/trpc", match: "prefix", auth: "procedure", rateLimit: "none", input: "trpc" },
 
+  // Local marketing forms own same-origin checks and a bounded in-process limiter.
+  { path: "/api/contact", match: "exact", auth: "public", rateLimit: "none", maxBodyBytes: 16 * KB, input: "zod", cors: "self-managed" },
+  { path: "/api/delete-request", match: "exact", auth: "public", rateLimit: "none", maxBodyBytes: 1 * KB, input: "zod", cors: "self-managed" },
+
   // Payment webhooks
   { path: "/api/payments/dodo/webhook", match: "exact", auth: "webhook", rateLimit: "none", maxBodyBytes: 1 * MB, input: "provider" },
 
