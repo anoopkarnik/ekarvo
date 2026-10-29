@@ -251,3 +251,254 @@ export const PRODUCTS = [
     label: "A blue decision thread moves through explicit approval boundaries on the same connected signal.",
   },
 ] as const satisfies readonly MarketingProduct[];
+
+/** Source capability atlas content. */
+type Module = {
+  name: string;
+  problem: string;
+  example: string;
+  connection: string;
+};
+type Group = { name: string; summary: string; modules: [Module, ...Module[]] };
+const entry = (
+  name: string,
+  problem: string,
+  example: string,
+  connection: string,
+): Module => ({ name, problem, example, connection });
+const pulse: [Group, ...Group[]] = [
+  {
+    name: "PLAN",
+    summary:
+      "Understand demand and test the options before committing resources.",
+    modules: [
+      entry(
+        "Forecast",
+        "Demand can change before plans do.",
+        "Compare likely work volume with available capacity.",
+        "Capacity and Simulate",
+      ),
+      entry(
+        "Capacity",
+        "Availability and skill fit can be hidden across teams.",
+        "See which commitments an assignment would affect.",
+        "Forecast and Allocate",
+      ),
+      entry(
+        "Allocate",
+        "A local assignment can move risk elsewhere.",
+        "Match eligible capacity to the work that needs it.",
+        "Capacity and Command",
+      ),
+      entry(
+        "Simulate",
+        "A decision can look sound until its side effects appear.",
+        "Compare timing, cost and capacity consequences before a change.",
+        "Forecast, Capacity and Drive Flow",
+      ),
+    ],
+  },
+  {
+    name: "OPERATE",
+    summary: "Keep live work, performance, quality and economics in one view.",
+    modules: [
+      entry(
+        "Command",
+        "Leaders need a current view of the work.",
+        "See exceptions and commitments in context.",
+        "Perform and Quality",
+      ),
+      entry(
+        "Perform",
+        "Activity alone does not show delivery health.",
+        "Follow throughput, waiting work and progress.",
+        "Command and Economics",
+      ),
+      entry(
+        "Quality",
+        "An output can be complete but still fall short.",
+        "Connect quality signals to the work and its owner.",
+        "Perform and Drive Verify",
+      ),
+      entry(
+        "Economics",
+        "Operational choices have financial effects.",
+        "Compare cost and throughput while considering a response.",
+        "Simulate and Perform",
+      ),
+    ],
+  },
+  {
+    name: "DEVELOP",
+    summary: "Support people as roles, skills and ways of working change.",
+    modules: [
+      entry(
+        "Academy",
+        "New work needs a clear path to readiness.",
+        "Connect development to required capabilities.",
+        "Coach and Capacity",
+      ),
+      entry(
+        "Coach",
+        "Performance improvement needs useful context.",
+        "Make targeted support visible to team leads.",
+        "Academy and Perform",
+      ),
+    ],
+  },
+  {
+    name: "OPTIMIZE",
+    summary: "Find where the operating model can improve.",
+    modules: [
+      entry(
+        "Discover",
+        "Repeated friction can hide across handoffs.",
+        "Identify recurring constraints in the work.",
+        "Command and Optimize",
+      ),
+      entry(
+        "Optimize",
+        "Changes should be tested against their consequences.",
+        "Prioritize improvements by expected operational effect.",
+        "Discover and Simulate",
+      ),
+    ],
+  },
+];
+const drive: [Group, ...Group[]] = [
+  {
+    name: "DESIGN",
+    summary:
+      "Define the work, its knowledge and the digital workers that may help.",
+    modules: [
+      entry(
+        "Studio",
+        "A workflow needs an explicit design.",
+        "Define steps, decisions and acceptance conditions.",
+        "Agents and Flow",
+      ),
+      entry(
+        "Agents",
+        "Different work calls for different skills.",
+        "Configure a specialist role for a bounded task.",
+        "Studio and Knowledge",
+      ),
+      entry(
+        "Knowledge",
+        "Action needs the right business context.",
+        "Connect approved guidance to a workflow.",
+        "Agents and Context",
+      ),
+    ],
+  },
+  {
+    name: "EXECUTE",
+    summary: "Carry defined work through the channels and interfaces it needs.",
+    modules: [
+      entry(
+        "Voice",
+        "Some work begins in spoken interactions.",
+        "Route a permitted voice step into a governed flow.",
+        "Flow and Verify",
+      ),
+      entry(
+        "Browser",
+        "Some work must use a web interface.",
+        "Complete a bounded browser step with a record.",
+        "Control and Observe",
+      ),
+      entry(
+        "Connect",
+        "Systems need a managed handoff.",
+        "Pass approved data between connected services.",
+        "Context and Flow",
+      ),
+      entry(
+        "Document",
+        "Documents can be part of the work itself.",
+        "Read or prepare a document within a defined task.",
+        "Knowledge and Verify",
+      ),
+      entry(
+        "Interact",
+        "A workflow can require a human response.",
+        "Request clarification or approval at the right point.",
+        "Control and Context",
+      ),
+      entry(
+        "Desktop",
+        "Some work uses desktop applications.",
+        "Run a bounded desktop action in a controlled flow.",
+        "Runtime and Observe",
+      ),
+    ],
+  },
+  {
+    name: "ORCHESTRATE",
+    summary: "Keep steps, context and authority connected.",
+    modules: [
+      entry(
+        "Flow",
+        "A task often crosses several systems.",
+        "Coordinate a multi-step path to a defined result.",
+        "Context and Control",
+      ),
+      entry(
+        "Context",
+        "Handoffs can lose the reason behind the work.",
+        "Carry relevant state through each step.",
+        "Knowledge and Flow",
+      ),
+      entry(
+        "Control",
+        "Action needs clear limits and owners.",
+        "Set authorization and exception boundaries.",
+        "Flow and Verify",
+      ),
+    ],
+  },
+  {
+    name: "ASSURE",
+    summary: "Make execution observable and completion testable.",
+    modules: [
+      entry(
+        "Verify",
+        "An action is not proof of the outcome.",
+        "Check the result against acceptance criteria.",
+        "Control and Observe",
+      ),
+      entry(
+        "Observe",
+        "A path needs a trace that people can inspect.",
+        "Review events, exceptions and completion evidence.",
+        "Verify and Runtime",
+      ),
+    ],
+  },
+  {
+    name: "DEPLOY",
+    summary: "Provide the runtime foundation for governed execution.",
+    modules: [
+      entry(
+        "Runtime",
+        "A defined workflow needs a managed place to run.",
+        "Operate eligible flows with control and observability.",
+        "Flow and Observe",
+      ),
+    ],
+  },
+];
+export const CAPABILITY_PRODUCTS = [
+  {
+    name: "Ekarvo Pulse",
+    role: "Operating Intelligence",
+    href: "/landing/products/operations-os",
+    groups: pulse,
+  },
+  {
+    name: "Ekarvo Drive",
+    role: "Autonomous Execution",
+    href: "/landing/products/autonomous-execution",
+    groups: drive,
+  },
+] as const;
