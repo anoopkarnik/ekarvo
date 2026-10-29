@@ -6,6 +6,7 @@ import {
   open,
   readFile,
   readdir,
+  rmdir,
   stat,
   unlink,
 } from "node:fs/promises";
@@ -28,11 +29,43 @@ const missing = (error: unknown) =>
   (error as NodeJS.ErrnoException).code === "ENOENT";
 const lifetimeMs = 30 * 86400000;
 
+async function ensureDirectory(directory: string) {
+  await mkdir(directory, { recursive: true, mode: 0o700 });
+  await chmod(directory, 0o700);
+}
+
+/**
+ * Atomic mkdir coordinates every lifecycle mutation across processes sharing this directory.
+ * Never steal an old lock: its owner may still be running. A crashed owner's lock requires
+ * operator removal after stopping all writers; bounded waiting becomes a recoverable 503.
+ */
+async function withRequestLock<T>(
+  directory: string,
+  id: string,
+  work: () => Promise<T>,
+): Promise<T> {
+  const lock = join(directory, `.${id}.lock`);
+  for (let attempt = 0; ; attempt++) {
+    try {
+      await mkdir(lock, { mode: 0o700 });
+      break;
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "EEXIST") throw error;
+      if (attempt >= 200) throw new Error("REQUEST_LOCKED");
+      await new Promise<void>((done) => setTimeout(done, 10));
+    }
+  }
+  try {
+    return await work();
+  } finally {
+    await rmdir(lock);
+  }
+}
+
 /** Expiry follows the reference's file modification time, without extending it on retries. */
 export async function purgeExpired(now = Date.now()) {
   const directory = dataDirectory();
-  await mkdir(directory, { recursive: true, mode: 0o700 });
-  await chmod(directory, 0o700);
+  await ensureDirectory(directory);
   for (const name of await readdir(directory)) {
     if (
       !name.endsWith(".json") ||
@@ -41,7 +74,13 @@ export async function purgeExpired(now = Date.now()) {
       continue;
     const path = join(directory, name);
     try {
-      if (now - (await stat(path)).mtimeMs > lifetimeMs) await unlink(path);
+      // A cheap precheck avoids waiting for locks on live records unrelated to this save.
+      if (now - (await stat(path)).mtimeMs <= lifetimeMs) continue;
+      await withRequestLock(directory, name.slice(0, -5), async () => {
+        // The pathname may now refer to a newly published generation; inspect it again
+        // while holding the same lock that publication and token deletion require.
+        if (now - (await stat(path)).mtimeMs > lifetimeMs) await unlink(path);
+      });
     } catch (error) {
       if (!missing(error)) throw error;
     }
@@ -57,49 +96,51 @@ export async function saveRequest(
   const values = workflowValuesSchema.parse(input);
   const directory = dataDirectory();
   await purgeExpired();
-  const path = join(directory, `${id}.json`);
-  const hash = createHash("sha256")
-    .update(JSON.stringify(values))
-    .digest("hex");
-  const existing = async () => {
-    const record = JSON.parse(await readFile(path, "utf8")) as RequestRecord;
-    if (record.hash !== hash) throw new Error("CONFLICT");
-    return record;
-  };
-  try {
-    return await existing();
-  } catch (error) {
-    if (!missing(error)) throw error;
-  }
-
-  const record: RequestRecord = {
-    id,
-    createdAt: new Date().toISOString(),
-    deleteToken: randomUUID(),
-    hash,
-    ...values,
-  };
-  const temporary = join(directory, `.${randomUUID()}.tmp`);
-  try {
-    const file = await open(temporary, "wx", 0o600);
+  return withRequestLock(directory, id, async () => {
+    const path = join(directory, `${id}.json`);
+    const hash = createHash("sha256")
+      .update(JSON.stringify(values))
+      .digest("hex");
+    const existing = async () => {
+      const record = JSON.parse(await readFile(path, "utf8")) as RequestRecord;
+      if (record.hash !== hash) throw new Error("CONFLICT");
+      return record;
+    };
     try {
-      await file.writeFile(JSON.stringify(record, null, 2));
-      await file.sync();
-    } finally {
-      await file.close();
-    }
-    // A hard link publishes the complete file atomically and never overwrites a winner.
-    await link(temporary, path);
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code === "EEXIST")
       return await existing();
-    throw error;
-  } finally {
-    await unlink(temporary).catch((error: unknown) => {
+    } catch (error) {
       if (!missing(error)) throw error;
-    });
-  }
-  return record;
+    }
+
+    const record: RequestRecord = {
+      id,
+      createdAt: new Date().toISOString(),
+      deleteToken: randomUUID(),
+      hash,
+      ...values,
+    };
+    const temporary = join(directory, `.${randomUUID()}.tmp`);
+    try {
+      const file = await open(temporary, "wx", 0o600);
+      try {
+        await file.writeFile(JSON.stringify(record, null, 2));
+        await file.sync();
+      } finally {
+        await file.close();
+      }
+      // A hard link publishes the complete file atomically and never overwrites a winner.
+      await link(temporary, path);
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code === "EEXIST")
+        return await existing();
+      throw error;
+    } finally {
+      await unlink(temporary).catch((error: unknown) => {
+        if (!missing(error)) throw error;
+      });
+    }
+    return record;
+  });
 }
 
 export async function deleteRequest(
@@ -107,20 +148,24 @@ export async function deleteRequest(
   token: string,
 ): Promise<boolean> {
   if (!requestIdSchema.safeParse(id).success) return false;
-  const path = join(dataDirectory(), `${id}.json`);
-  try {
-    const record = JSON.parse(await readFile(path, "utf8")) as RequestRecord;
-    const expected = Buffer.from(record.deleteToken);
-    const received = Buffer.from(token);
-    if (
-      expected.length !== received.length ||
-      !timingSafeEqual(expected, received)
-    )
-      return false;
-    await unlink(path);
-    return true;
-  } catch (error) {
-    if (missing(error)) return false;
-    throw error;
-  }
+  const directory = dataDirectory();
+  await ensureDirectory(directory);
+  return withRequestLock(directory, id, async () => {
+    const path = join(directory, `${id}.json`);
+    try {
+      const record = JSON.parse(await readFile(path, "utf8")) as RequestRecord;
+      const expected = Buffer.from(record.deleteToken);
+      const received = Buffer.from(token);
+      if (
+        expected.length !== received.length ||
+        !timingSafeEqual(expected, received)
+      )
+        return false;
+      await unlink(path);
+      return true;
+    } catch (error) {
+      if (missing(error)) return false;
+      throw error;
+    }
+  });
 }
