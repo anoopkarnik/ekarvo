@@ -1,0 +1,18 @@
+EKARVO — Workflow discovery brief
+Local review. Do not include confidential records, sensitive personal data or credentials.
+
+Name:
+Work email:
+Organization:
+Role (optional):
+Product interest: Ekarvo Pulse (Operating Intelligence) / Ekarvo Drive (Autonomous Execution) / Not sure
+
+1. What work needs to be completed?
+2. Who owns the workflow?
+3. What is the current constraint?
+4. What would count as successful completion?
+5. Which approved data sources could establish a baseline?
+6. Which actions need human approval?
+7. Who should handle exceptions?
+
+Completing this brief does not submit a request or create a service agreement.

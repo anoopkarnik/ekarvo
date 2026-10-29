@@ -1,0 +1,30 @@
+EKARVO — OUTCOME CONTRACT EXAMPLE
+Define → Execute → Verify
+
+PURPOSE
+Move an approved service request to its agreed completed state.
+
+OWNER
+A named process owner is accountable for the request and its exceptions.
+
+SCOPE
+Inputs: approved request record, current status and required supporting records.
+Permitted actions: read the approved sources, route work within the agreed process, prepare a completion record.
+Outside scope: changes to unrelated records, external messages and actions beyond delegated authority.
+
+AUTHORITY
+Specify the systems, role permissions and limits before work starts. Require a person to approve any consequential action. A changed request or action needs a new decision.
+
+ACCEPTANCE
+1. The request meets its agreed completion criteria.
+2. The authoritative system confirms the final state.
+3. Required supporting records are present and linked to the request.
+4. The owner and time of completion are recorded.
+
+EXCEPTIONS
+Missing input, denied permission or uncertain action: stop the affected step, assign an owner and record the recovery path. Missing evidence keeps completion open.
+
+MEASUREMENT
+Record elapsed time, exceptions, human decisions and verified completion. An attempted action is not a completed outcome.
+
+This example defines a workflow for discussion. Actual scope, systems, permissions, data handling and acceptance criteria must be agreed for each operation.
