@@ -216,3 +216,38 @@ export const PRODUCT_MAP_GROUPS = [
 ] as const;
 
 export const WORK_LIFECYCLE = ["Detect", "Understand", "Simulate", "Authorize", "Execute", "Verify", "Learn"] as const;
+
+export interface MarketingProduct {
+  name: string;
+  role: string;
+  mode: SceneMode;
+  title: string;
+  body: string;
+  href: string;
+  action: string;
+  label: string;
+}
+
+/** Source product family; paths resolve through marketingHref at render time. */
+export const PRODUCTS = [
+  {
+    name: "Ekarvo Pulse",
+    role: "Operating Intelligence",
+    mode: "operations",
+    title: "Know the operation. Change the outcome.",
+    body: "Connect demand, capacity, quality and cost. Compare the consequences before choosing a response.",
+    href: "/products/operations-os",
+    action: "Explore Ekarvo Pulse",
+    label: "Connected operational layers expose the effects of a capacity decision.",
+  },
+  {
+    name: "Ekarvo Drive",
+    role: "Autonomous Execution",
+    mode: "execution",
+    title: "Move defined work to verified completion.",
+    body: "Define the result. Set the authority. Coordinate permitted action and keep the evidence connected.",
+    href: "/products/autonomous-execution",
+    action: "Explore Ekarvo Drive",
+    label: "A blue decision thread moves through explicit approval boundaries on the same connected signal.",
+  },
+] as const satisfies readonly MarketingProduct[];
