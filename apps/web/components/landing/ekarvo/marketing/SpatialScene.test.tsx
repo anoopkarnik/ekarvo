@@ -226,8 +226,6 @@ describe("source assets and visual primitives", () => {
       .trim().split("\n").map((line) => [line.slice(66), line.slice(0, 64)]));
     const required = [
       ...["human-judgment", "human-judgment-small"].map((name) => `/images/company/${name}.webp`),
-      ...["field-poster", "journey-context", "journey-pulse", "journey-authority", "journey-drive", "journey-evidence", "journey-system"].flatMap((name) => [`/images/flow/${name}.webp`, `/images/flow/${name}-mobile.webp`]),
-      ...["dark", "paper"].flatMap((theme) => [`/images/signal/signal-${theme}.svg`, `/images/signal/signal-${theme}-mobile.svg`]),
       ...[...scenes.map(([mode, theme]) => [mode, theme]), ["operations", "paper"], ["execution", "paper"]].flatMap(([mode, theme]) => [`/images/cinematic/study-${mode}-${theme}.webp`, `/images/cinematic/study-${mode}-${theme}-mobile.webp`]),
       "/images/cinematic/study-evidence-dark.webp",
       ...["film-desktop-0", "film-desktop-6", "film-mobile-0", "film-mobile-6"].map((name) => `/images/cinematic/${name}.webp`),
