@@ -139,6 +139,51 @@ describe("Products carousel", () => {
     selected("Ekarvo Drive", 1);
     expect(next).toBeDisabled();
   });
+  it.each([
+    "pointer press without dragging",
+    "vertical wheel without horizontal movement",
+  ])("finishes the requested slide after a mid-animation %s", (input) => {
+    const { track, next, back, container } = setup();
+    fireEvent.click(next);
+    act(() => vi.advanceTimersByTime(80));
+    expect(track.scrollLeft).toBeGreaterThan(0);
+    expect(track.scrollLeft).toBeLessThan(600);
+    // Flush the last animation scroll before interrupting. No horizontal
+    // movement/event follows the pointer press or vertical wheel.
+    fireEvent.scroll(track);
+    if (input === "pointer press without dragging")
+      fireEvent.pointerDown(track);
+    else fireEvent.wheel(track, { deltaX: 0, deltaY: 120 });
+    act(() => vi.advanceTimersByTime(1000));
+    expect(track.scrollLeft).toBe(600);
+    selected("Ekarvo Drive", 1);
+    expect(next).toBeDisabled();
+    expect(back).toBeEnabled();
+    expect(
+      container.querySelectorAll("[data-product-slide]")[0],
+    ).toHaveAttribute("inert");
+    expect(
+      container.querySelectorAll("[data-product-slide]")[1],
+    ).not.toHaveAttribute("inert");
+  });
+
+  it("allows successive horizontal wheel movement to select a different slide after interruption", () => {
+    const { track, next } = setup();
+    fireEvent.click(next);
+    act(() => vi.advanceTimersByTime(80));
+    fireEvent.wheel(track, { deltaX: -40 });
+    track.scrollLeft = 450;
+    fireEvent.scroll(track);
+    fireEvent.wheel(track, { deltaX: -40 });
+    expect(track.scrollLeft).toBe(450);
+    track.scrollLeft = 200;
+    fireEvent.scroll(track);
+    act(() => vi.advanceTimersByTime(1000));
+    expect(track.scrollLeft).toBe(0);
+    selected("Ekarvo Pulse", 0);
+    expect(next).toBeEnabled();
+  });
+
   it("uses immediate movement for reduced motion, including preference changes mid-animation", () => {
     reduced = true;
     const { track, next, back } = setup();

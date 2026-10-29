@@ -85,11 +85,19 @@ export function ProductCarousel({
         }
       }, 120);
     };
-    const interrupt = () => cancel();
+    const interrupt = () => {
+      // Complete pending programmatic movement before native manipulation
+      // starts; a press alone must not strand the selected slide halfway.
+      if (moving) align(false);
+    };
+    const onWheel = (event: WheelEvent) => {
+      if (event.deltaX !== 0 || (event.shiftKey && event.deltaY !== 0))
+        interrupt();
+    };
     const resize = () => align(false);
     node.addEventListener("scroll", onScroll, { passive: true });
     node.addEventListener("pointerdown", interrupt, { passive: true });
-    node.addEventListener("wheel", interrupt, { passive: true });
+    node.addEventListener("wheel", onWheel, { passive: true });
     motion.addEventListener("change", resize);
     const observer =
       typeof ResizeObserver === "undefined"
@@ -106,7 +114,7 @@ export function ProductCarousel({
       observer?.disconnect();
       node.removeEventListener("scroll", onScroll);
       node.removeEventListener("pointerdown", interrupt);
-      node.removeEventListener("wheel", interrupt);
+      node.removeEventListener("wheel", onWheel);
       window.removeEventListener("resize", resize);
       motion.removeEventListener("change", resize);
     };
