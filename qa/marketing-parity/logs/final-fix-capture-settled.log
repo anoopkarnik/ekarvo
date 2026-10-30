@@ -1,0 +1,244 @@
+
+> web@2.1.1 test:e2e /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web
+> playwright test --config final-fix-browser-config.ts final-fix-captures.spec.ts
+
+
+Running 1 test using 1 worker
+
+(node:77658) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:77658) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[
+  {
+    "site": "source",
+    "width": 1440,
+    "kind": "pulse",
+    "H3": {
+      "text": "Decision recorded. Evidence next.",
+      "flex": "0 1 auto",
+      "width": 297.109375,
+      "height": 24,
+      "lineHeight": "24px"
+    },
+    "SPAN": {
+      "text": "Awaiting measurement",
+      "flex": "0 1 auto",
+      "width": 149.203125,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "source",
+    "width": 1440,
+    "kind": "drive",
+    "H3": {
+      "text": "Reconciled exception report",
+      "flex": "0 1 auto",
+      "width": 244.21875,
+      "height": 24,
+      "lineHeight": "24px"
+    },
+    "SPAN": {
+      "text": "Verified",
+      "flex": "0 1 auto",
+      "width": 62.75,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "source",
+    "width": 768,
+    "kind": "pulse",
+    "H3": {
+      "text": "Decision recorded. Evidence next.",
+      "flex": "0 1 auto",
+      "width": 297.109375,
+      "height": 24,
+      "lineHeight": "24px"
+    },
+    "SPAN": {
+      "text": "Awaiting measurement",
+      "flex": "0 1 auto",
+      "width": 149.203125,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "source",
+    "width": 768,
+    "kind": "drive",
+    "H3": {
+      "text": "Reconciled exception report",
+      "flex": "0 1 auto",
+      "width": 244.21875,
+      "height": 24,
+      "lineHeight": "24px"
+    },
+    "SPAN": {
+      "text": "Verified",
+      "flex": "0 1 auto",
+      "width": 62.75,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "source",
+    "width": 375,
+    "kind": "pulse",
+    "H3": {
+      "text": "Decision recorded. Evidence next.",
+      "flex": "0 1 auto",
+      "width": 156.578125,
+      "height": 38.375,
+      "lineHeight": "19.2px"
+    },
+    "SPAN": {
+      "text": "Awaiting measurement",
+      "flex": "0 1 auto",
+      "width": 104.421875,
+      "height": 48.375,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "source",
+    "width": 375,
+    "kind": "drive",
+    "H3": {
+      "text": "Reconciled exception report",
+      "flex": "0 1 auto",
+      "width": 195.375,
+      "height": 19.1875,
+      "lineHeight": "19.2px"
+    },
+    "SPAN": {
+      "text": "Verified",
+      "flex": "0 1 auto",
+      "width": 62.75,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "implementation",
+    "width": 1440,
+    "kind": "pulse",
+    "H3": {
+      "text": "Decision recorded. Evidence next.",
+      "flex": "0 1 auto",
+      "width": 297.109375,
+      "height": 24,
+      "lineHeight": "24px"
+    },
+    "SPAN": {
+      "text": "Awaiting measurement",
+      "flex": "0 0 auto",
+      "width": 149.203125,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "implementation",
+    "width": 1440,
+    "kind": "drive",
+    "H3": {
+      "text": "Reconciled exception report",
+      "flex": "0 1 auto",
+      "width": 244.21875,
+      "height": 24,
+      "lineHeight": "24px"
+    },
+    "SPAN": {
+      "text": "Verified",
+      "flex": "0 0 auto",
+      "width": 62.75,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "implementation",
+    "width": 768,
+    "kind": "pulse",
+    "H3": {
+      "text": "Decision recorded. Evidence next.",
+      "flex": "0 1 auto",
+      "width": 297.109375,
+      "height": 24,
+      "lineHeight": "24px"
+    },
+    "SPAN": {
+      "text": "Awaiting measurement",
+      "flex": "0 0 auto",
+      "width": 149.203125,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "implementation",
+    "width": 768,
+    "kind": "drive",
+    "H3": {
+      "text": "Reconciled exception report",
+      "flex": "0 1 auto",
+      "width": 244.21875,
+      "height": 24,
+      "lineHeight": "24px"
+    },
+    "SPAN": {
+      "text": "Verified",
+      "flex": "0 0 auto",
+      "width": 62.75,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "implementation",
+    "width": 375,
+    "kind": "pulse",
+    "H3": {
+      "text": "Decision recorded. Evidence next.",
+      "flex": "0 1 auto",
+      "width": 156.578125,
+      "height": 38.375,
+      "lineHeight": "19.2px"
+    },
+    "SPAN": {
+      "text": "Awaiting measurement",
+      "flex": "0 1 auto",
+      "width": 104.421875,
+      "height": 48.375,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "implementation",
+    "width": 375,
+    "kind": "drive",
+    "H3": {
+      "text": "Reconciled exception report",
+      "flex": "0 1 auto",
+      "width": 195.375,
+      "height": 19.1875,
+      "lineHeight": "19.2px"
+    },
+    "SPAN": {
+      "text": "Verified",
+      "flex": "0 0 auto",
+      "width": 62.75,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  }
+]
+  ✓  1 [chromium] › e2e/final-fix-captures.spec.ts:5:1 › responsive Operations and Drive source pairs and accessibility (9.0s)
+
+  1 passed (10.2s)

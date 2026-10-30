@@ -1,0 +1,260 @@
+
+> web@2.1.1 test:e2e /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web
+> playwright test --config final-fix-browser-config.ts final-fix-captures.spec.ts marketing-interactions.spec.ts --grep 'responsive Operations|Required asset failures|Mobile Operations|Combined demo'
+
+
+Running 7 tests using 1 worker
+
+(node:77328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:77328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[
+  {
+    "site": "source",
+    "width": 1440,
+    "kind": "pulse",
+    "H3": {
+      "text": "Decision recorded. Evidence next.",
+      "flex": "0 1 auto",
+      "width": 297.109375,
+      "height": 24,
+      "lineHeight": "24px"
+    },
+    "SPAN": {
+      "text": "Awaiting measurement",
+      "flex": "0 1 auto",
+      "width": 149.203125,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "source",
+    "width": 1440,
+    "kind": "drive",
+    "H3": {
+      "text": "Reconciled exception report",
+      "flex": "0 1 auto",
+      "width": 244.21875,
+      "height": 24,
+      "lineHeight": "24px"
+    },
+    "SPAN": {
+      "text": "Verified",
+      "flex": "0 1 auto",
+      "width": 62.75,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "source",
+    "width": 768,
+    "kind": "pulse",
+    "H3": {
+      "text": "Decision recorded. Evidence next.",
+      "flex": "0 1 auto",
+      "width": 297.109375,
+      "height": 24,
+      "lineHeight": "24px"
+    },
+    "SPAN": {
+      "text": "Awaiting measurement",
+      "flex": "0 1 auto",
+      "width": 149.203125,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "source",
+    "width": 768,
+    "kind": "drive",
+    "H3": {
+      "text": "Reconciled exception report",
+      "flex": "0 1 auto",
+      "width": 244.21875,
+      "height": 24,
+      "lineHeight": "24px"
+    },
+    "SPAN": {
+      "text": "Verified",
+      "flex": "0 1 auto",
+      "width": 62.75,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "source",
+    "width": 375,
+    "kind": "pulse",
+    "H3": {
+      "text": "Decision recorded. Evidence next.",
+      "flex": "0 1 auto",
+      "width": 156.578125,
+      "height": 38.375,
+      "lineHeight": "19.2px"
+    },
+    "SPAN": {
+      "text": "Awaiting measurement",
+      "flex": "0 1 auto",
+      "width": 104.421875,
+      "height": 48.375,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "source",
+    "width": 375,
+    "kind": "drive",
+    "H3": {
+      "text": "Reconciled exception report",
+      "flex": "0 1 auto",
+      "width": 195.375,
+      "height": 19.1875,
+      "lineHeight": "19.2px"
+    },
+    "SPAN": {
+      "text": "Verified",
+      "flex": "0 1 auto",
+      "width": 62.75,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "implementation",
+    "width": 1440,
+    "kind": "pulse",
+    "H3": {
+      "text": "Decision recorded. Evidence next.",
+      "flex": "0 1 auto",
+      "width": 297.109375,
+      "height": 24,
+      "lineHeight": "24px"
+    },
+    "SPAN": {
+      "text": "Awaiting measurement",
+      "flex": "0 0 auto",
+      "width": 149.203125,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "implementation",
+    "width": 1440,
+    "kind": "drive",
+    "H3": {
+      "text": "Reconciled exception report",
+      "flex": "0 1 auto",
+      "width": 244.21875,
+      "height": 24,
+      "lineHeight": "24px"
+    },
+    "SPAN": {
+      "text": "Verified",
+      "flex": "0 0 auto",
+      "width": 62.75,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "implementation",
+    "width": 768,
+    "kind": "pulse",
+    "H3": {
+      "text": "Decision recorded. Evidence next.",
+      "flex": "0 1 auto",
+      "width": 297.109375,
+      "height": 24,
+      "lineHeight": "24px"
+    },
+    "SPAN": {
+      "text": "Awaiting measurement",
+      "flex": "0 0 auto",
+      "width": 149.203125,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "implementation",
+    "width": 768,
+    "kind": "drive",
+    "H3": {
+      "text": "Reconciled exception report",
+      "flex": "0 1 auto",
+      "width": 244.21875,
+      "height": 24,
+      "lineHeight": "24px"
+    },
+    "SPAN": {
+      "text": "Verified",
+      "flex": "0 0 auto",
+      "width": 62.75,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "implementation",
+    "width": 375,
+    "kind": "pulse",
+    "H3": {
+      "text": "Decision recorded. Evidence next.",
+      "flex": "0 1 auto",
+      "width": 156.578125,
+      "height": 38.375,
+      "lineHeight": "19.2px"
+    },
+    "SPAN": {
+      "text": "Awaiting measurement",
+      "flex": "0 1 auto",
+      "width": 104.421875,
+      "height": 48.375,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "implementation",
+    "width": 375,
+    "kind": "drive",
+    "H3": {
+      "text": "Reconciled exception report",
+      "flex": "0 1 auto",
+      "width": 195.375,
+      "height": 19.1875,
+      "lineHeight": "19.2px"
+    },
+    "SPAN": {
+      "text": "Verified",
+      "flex": "0 0 auto",
+      "width": 62.75,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  }
+]
+  ✓  1 [chromium] › e2e/final-fix-captures.spec.ts:5:1 › responsive Operations and Drive source pairs and accessibility (8.3s)
+  ✓  2 [chromium] › e2e/marketing-interactions.spec.ts:21:1 › Required asset failures follow the configured origin on another port (82ms)
+Direct hash heading ms [33m1440[39m operations [33m187[39m
+Direct hash heading ms [33m1440[39m execution [33m131[39m
+Direct hash heading ms [33m768[39m operations [33m110[39m
+Direct hash heading ms [33m768[39m execution [33m136[39m
+Direct hash heading ms [33m375[39m operations [33m123[39m
+Direct hash heading ms [33m375[39m execution [33m135[39m
+Navigation timings {
+  domContentLoadedMs: [33m86.09999999403954[39m,
+  responseMs: [33m73.90000000596046[39m
+}
+  ✓  3 [chromium] › e2e/marketing-interactions.spec.ts:339:1 › Combined demo direct hash entries and hero anchor navigation (1.7s)
+  ✓  4 [chromium] › e2e/marketing-interactions.spec.ts:402:1 › Mobile Operations terminal preserves the source heading and badge wrap (287ms)
+  ✓  5 [chromium] › e2e/marketing-interactions.spec.ts:425:1 › Combined demo Pulse keyboard scenarios, partial evidence and reset (610ms)
+  ✓  6 [chromium] › e2e/marketing-interactions.spec.ts:485:1 › Combined demo Drive preserves approval, blocked recovery, download and reset (2.1s)
+  ✓  7 [chromium] › e2e/marketing-interactions.spec.ts:523:1 › Combined demo normal motion rapid input and pending reset stay deterministic (2.1s)
+
+  7 passed (16.1s)

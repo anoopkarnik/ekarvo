@@ -1,0 +1,15 @@
+
+> web@2.1.1 test:e2e /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web
+> playwright test --config production-review.config.ts marketing-interactions.spec.ts --grep 'Required asset failures|Mobile Operations terminal'
+
+
+Running 2 tests using 1 worker
+
+(node:77923) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:77923) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › e2e/marketing-interactions.spec.ts:21:1 › Required asset failures follow the configured origin on another port (280ms)
+  ✓  2 [chromium] › e2e/marketing-interactions.spec.ts:402:1 › Mobile Operations terminal preserves the source heading and badge wrap (648ms)
+
+  2 passed (2.0s)

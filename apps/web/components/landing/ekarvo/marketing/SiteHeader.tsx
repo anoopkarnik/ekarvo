@@ -60,4 +60,3 @@ export function SiteHeader({ active, cinematic = false }: SiteHeaderProps) {
     </header>
   );
 }
-

@@ -1,0 +1,36 @@
+[
+  {
+    "site": "source",
+    "H3": {
+      "text": "Decision recorded. Evidence next.",
+      "flex": "0 1 auto",
+      "width": 156.578125,
+      "height": 38.375,
+      "lineHeight": "19.2px"
+    },
+    "SPAN": {
+      "text": "Awaiting measurement",
+      "flex": "0 1 auto",
+      "width": 104.421875,
+      "height": 48.375,
+      "lineHeight": "19.2px"
+    }
+  },
+  {
+    "site": "implementation",
+    "H3": {
+      "text": "Decision recorded. Evidence next.",
+      "flex": "0 1 auto",
+      "width": 111.796875,
+      "height": 57.5625,
+      "lineHeight": "19.2px"
+    },
+    "SPAN": {
+      "text": "Awaiting measurement",
+      "flex": "0 0 auto",
+      "width": 149.203125,
+      "height": 29.1875,
+      "lineHeight": "19.2px"
+    }
+  }
+]

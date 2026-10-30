@@ -1,0 +1,12 @@
+
+ RUN  v4.0.18 /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web
+
+ ✓ components/landing/ekarvo/marketing/ExecutionDemo.test.tsx (6 tests) 205ms
+ ✓ components/landing/ekarvo/marketing/OperationsDemo.test.tsx (5 tests) 176ms
+ ✓ components/landing/ekarvo/SiteChrome.test.tsx (17 tests) 260ms
+
+ Test Files  3 passed (3)
+      Tests  28 passed (28)
+   Start at  18:40:58
+   Duration  1.28s (transform 409ms, setup 226ms, import 1.80s, tests 641ms, environment 711ms)
+

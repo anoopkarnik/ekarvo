@@ -1,0 +1,160 @@
+
+> web@2.1.1 build /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web
+> pnpm --filter @workspace/database generate && next build
+
+../..                                    |  WARN  Unsupported engine: wanted: {"node":">=24"} (current: {"node":"v22.22.2","pnpm":"10.4.1"})
+
+> @workspace/database@1.0.0 generate /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/packages/database
+> npx prisma generate --schema prisma
+
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma.
+
+✔ Generated Prisma Client (7.10.0) to ./src/generated/prisma in 121ms
+
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/arahaelion/EKARVO/ekarvo/pnpm-lock.yaml as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/pnpm-lock.yaml
+
+   ▲ Next.js 15.5.9
+   - Environments: .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 11.4s
+   Linting and checking validity of types ...
+   Collecting page data ...
+2026-10-30T13:10:38.786Z WARN [Better Auth]: Social provider github is missing clientId or clientSecret
+2026-10-30T13:10:38.794Z WARN [Better Auth]: Social provider linkedin is missing clientId or clientSecret
+[backend/client] BACKEND_HMAC_SECRET is not set
+2026-10-30T13:10:38.810Z WARN [Better Auth]: Social provider github is missing clientId or clientSecret
+2026-10-30T13:10:38.811Z WARN [Better Auth]: Social provider linkedin is missing clientId or clientSecret
+2026-10-30T13:10:38.814Z WARN [Better Auth]: Social provider github is missing clientId or clientSecret
+2026-10-30T13:10:38.815Z WARN [Better Auth]: Social provider linkedin is missing clientId or clientSecret
+[backend/client] BACKEND_HMAC_SECRET is not set
+2026-10-30T13:10:38.864Z WARN [Better Auth]: Social provider github is missing clientId or clientSecret
+2026-10-30T13:10:38.868Z WARN [Better Auth]: Social provider linkedin is missing clientId or clientSecret
+2026-10-30T13:10:38.867Z WARN [Better Auth]: Social provider github is missing clientId or clientSecret
+2026-10-30T13:10:38.868Z WARN [Better Auth]: Social provider linkedin is missing clientId or clientSecret
+2026-10-30T13:10:38.896Z WARN [Better Auth]: Social provider github is missing clientId or clientSecret
+2026-10-30T13:10:38.900Z WARN [Better Auth]: Social provider linkedin is missing clientId or clientSecret
+[backend/client] BACKEND_HMAC_SECRET is not set
+[backend/client] BACKEND_HMAC_SECRET is not set
+2026-10-30T13:10:39.175Z WARN [Better Auth]: Social provider github is missing clientId or clientSecret
+2026-10-30T13:10:39.180Z WARN [Better Auth]: Social provider linkedin is missing clientId or clientSecret
+[backend/client] BACKEND_HMAC_SECRET is not set
+[backend/client] BACKEND_HMAC_SECRET is not set
+   Generating static pages (0/47) ...
+2026-10-30T13:10:42.248Z WARN [Better Auth]: Social provider github is missing clientId or clientSecret
+2026-10-30T13:10:42.250Z WARN [Better Auth]: Social provider linkedin is missing clientId or clientSecret
+[backend/client] BACKEND_HMAC_SECRET is not set
+   Generating static pages (11/47) 
+2026-10-30T13:10:42.276Z WARN [Better Auth]: Social provider github is missing clientId or clientSecret
+2026-10-30T13:10:42.278Z WARN [Better Auth]: Social provider linkedin is missing clientId or clientSecret
+[backend/client] BACKEND_HMAC_SECRET is not set
+[33mwarn[39m: [Oct-30-2026 18:40:46] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:46] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:46] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:46] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:46] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:46] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:46] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:46] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:46] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:46] 	Site config cache read failed
+   Generating static pages (23/47) 
+[33mwarn[39m: [Oct-30-2026 18:40:57] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:57] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:57] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:57] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:57] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:57] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:57] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:57] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:57] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:57] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:57] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:57] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:57] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:57] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:40:57] 	Site config cache read failed
+   Generating static pages (35/47) 
+[33mwarn[39m: [Oct-30-2026 18:41:05] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:41:05] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:41:05] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:41:05] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:41:05] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:41:05] 	Site config cache read failed
+[33mwarn[39m: [Oct-30-2026 18:41:05] 	Site config cache read failed
+ ✓ Generating static pages (47/47)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                         Size  First Load JS  Revalidate  Expire
+┌ ƒ /                                            9.71 kB         174 kB
+├ ƒ /_not-found                                    191 B         102 kB
+├ ƒ /accept-invitation/[id]                      3.44 kB         160 kB
+├ ƒ /admin/ai                                    17.4 kB         201 kB
+├ ƒ /admin/api                                   7.99 kB         138 kB
+├ ƒ /admin/jobs                                  4.11 kB         161 kB
+├ ƒ /admin/seo                                   17.9 kB         280 kB
+├ ƒ /admin/settings                                10 kB         227 kB
+├ ƒ /admin/users                                 6.33 kB         200 kB
+├ ƒ /ai                                          38.8 kB         241 kB
+├ ƒ /api/ai/agents/[agentId]/stream                191 B         102 kB
+├ ƒ /api/ai/chat                                   191 B         102 kB
+├ ƒ /api/ai/speech/stt                             191 B         102 kB
+├ ƒ /api/ai/speech/tts                             191 B         102 kB
+├ ƒ /api/auth/[...all]                             191 B         102 kB
+├ ƒ /api/auth/desktop-callback                     191 B         102 kB
+├ ƒ /api/contact                                   191 B         102 kB
+├ ƒ /api/delete-request                            191 B         102 kB
+├ ƒ /api/demo-login                                191 B         102 kB
+├ ƒ /api/healthcheck                               191 B         102 kB
+├ ƒ /api/inngest                                   191 B         102 kB
+├ ƒ /api/payments/dodo/webhook                     191 B         102 kB
+├ ƒ /api/settings/modifyAvatar                     191 B         102 kB
+├ ƒ /api/trpc/[trpc]                               191 B         102 kB
+├ ƒ /api/v1/me                                     191 B         102 kB
+├ ƒ /auth-callback                               2.45 kB         139 kB
+├ ƒ /email-verified                              4.01 kB         166 kB
+├ ƒ /error                                       4.51 kB         167 kB
+├ ƒ /forgot-password                              2.5 kB         256 kB
+├ ○ /icon.svg                                        0 B            0 B
+├ ƒ /landing                                     8.42 kB         114 kB
+├ ƒ /landing/approach                              191 B         111 kB
+├ ƒ /landing/company                             1.34 kB         107 kB
+├ ƒ /landing/contact                             5.01 kB         211 kB
+├ ƒ /landing/demo                                3.52 kB         113 kB
+├ ƒ /landing/doc                                   191 B         102 kB
+├ ƒ /landing/doc/[slug]                          46.3 kB         225 kB
+├ ƒ /landing/legal/cancellation-refund-policies  5.49 kB         180 kB
+├ ƒ /landing/legal/contact-us                    4.31 kB         175 kB
+├ ƒ /landing/legal/privacy-policy                4.22 kB         227 kB
+├ ƒ /landing/legal/terms-of-service              14.1 kB         188 kB
+├ ƒ /landing/platform                              191 B         111 kB
+├ ƒ /landing/products                             2.1 kB         113 kB
+├ ƒ /landing/products/autonomous-execution       1.52 kB         116 kB
+├ ƒ /landing/products/operations-os               5.1 kB         156 kB
+├ ƒ /landing/trust                                 870 B         112 kB
+├ ƒ /organization                                6.71 kB         164 kB
+├ ƒ /reset-password                              2.83 kB         266 kB
+├ ○ /robots.txt                                    191 B         102 kB
+├ ƒ /sign-in                                     4.26 kB         259 kB
+├ ƒ /sign-up                                     8.34 kB         281 kB
+├ ○ /sitemap.xml                                   191 B         102 kB         10m      1y
+└ ƒ /usage                                       13.5 kB         242 kB
++ First Load JS shared by all                     102 kB
+  ├ chunks/0b7379c5-7739587ee2f8e4d2.js          54.2 kB
+  ├ chunks/6382-c396e57b57d6e869.js              45.7 kB
+  └ other shared chunks (total)                  2.19 kB
+
+
+ƒ Middleware                                     35.9 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

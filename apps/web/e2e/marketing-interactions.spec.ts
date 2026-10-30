@@ -1,6 +1,44 @@
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 import { readFile } from "node:fs/promises";
 test.setTimeout(90000);
+
+function trackRequiredAssetFailures(page: Page, baseURL: string) {
+  const origin = new URL(baseURL).origin;
+  const failures: string[] = [];
+  page.on("response", (r) => {
+    if (
+      new URL(r.url()).origin === origin &&
+      r.status() >= 400 &&
+      ["stylesheet", "script", "image", "font"].includes(
+        r.request().resourceType(),
+      )
+    )
+      failures.push(r.url());
+  });
+  return failures;
+}
+
+test("Required asset failures follow the configured origin on another port", async ({
+  page,
+}) => {
+  const origin = "http://127.0.0.1:4187";
+  const failedAssets = trackRequiredAssetFailures(page, origin);
+  await page.route("**/*", (route) =>
+    route.fulfill({
+      status: route.request().resourceType() === "document" ? 200 : 503,
+      contentType:
+        route.request().resourceType() === "document"
+          ? "text/html"
+          : "image/png",
+      body:
+        route.request().resourceType() === "document"
+          ? `<img src="${origin}/required.png"><img src="http://127.0.0.1:4188/foreign.png?source=${origin}">`
+          : "Unavailable",
+    }),
+  );
+  await page.goto(origin);
+  expect(failedAssets).toEqual([`${origin}/required.png`]);
+});
 
 test("Products latest commands win, keyboard tab order and exact destinations", async ({
   page,
@@ -300,20 +338,12 @@ test("Drive without JavaScript retains narrative, download and disclosures", asy
 
 test("Combined demo direct hash entries and hero anchor navigation", async ({
   page,
+  baseURL,
 }) => {
   const route = "/landing/demo";
   const failures: string[] = [];
   page.on("pageerror", (e) => failures.push(e.message));
-  page.on("response", (r) => {
-    if (
-      r.url().includes("127.0.0.1:3011") &&
-      r.status() >= 400 &&
-      ["stylesheet", "script", "image", "font"].includes(
-        r.request().resourceType(),
-      )
-    )
-      failures.push(r.url());
-  });
+  const failedAssets = trackRequiredAssetFailures(page, baseURL!);
   for (const width of [1440, 768, 375]) {
     await page.setViewportSize({ width, height: 900 });
     for (const hash of ["operations", "execution"]) {
@@ -366,7 +396,30 @@ test("Combined demo direct hash entries and hero anchor navigation", async ({
       };
     }),
   );
-  expect(failures).toEqual([]);
+  expect([...failures, ...failedAssets]).toEqual([]);
+});
+
+test("Mobile Operations terminal preserves the source heading and badge wrap", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.goto("/landing/demo#operations");
+  const demo = page.locator("#operations .demo-shell");
+  await demo.getByRole("button", { name: "Compare scenarios" }).click();
+  await demo.getByRole("button", { name: "Approve simulated plan" }).click();
+  await expect(demo.getByText("Awaiting measurement")).toHaveCSS(
+    "flex",
+    "0 1 auto",
+  );
+  const heading = demo.getByRole("heading", {
+    name: "Decision recorded. Evidence next.",
+  });
+  const lines = await heading.evaluate(
+    (element) =>
+      element.getBoundingClientRect().height /
+      parseFloat(getComputedStyle(element).lineHeight),
+  );
+  expect(lines).toBeCloseTo(2, 1);
 });
 
 test("Combined demo Pulse keyboard scenarios, partial evidence and reset", async ({

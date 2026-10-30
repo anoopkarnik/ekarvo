@@ -147,19 +147,31 @@
     "state": "demo-1440",
     "source": "qa/marketing-parity/source/demo-1440.webp",
     "implementation": "qa/marketing-parity/implementation/demo-1440.webp",
-    "comparison": "qa/marketing-parity/comparisons/demo-1440.webp"
+    "comparison": "qa/marketing-parity/comparisons/demo-1440.webp",
+    "operationsFinalEvidence": {
+      "initial": "qa/marketing-parity/comparisons/demo-pulse-initial-1440.webp",
+      "terminal": "qa/marketing-parity/comparisons/demo-pulse-terminal-1440.webp"
+    }
   },
   {
     "state": "demo-375",
     "source": "qa/marketing-parity/source/demo-375.webp",
     "implementation": "qa/marketing-parity/implementation/demo-375.webp",
-    "comparison": "qa/marketing-parity/comparisons/demo-375.webp"
+    "comparison": "qa/marketing-parity/comparisons/demo-375.webp",
+    "operationsFinalEvidence": {
+      "initial": "qa/marketing-parity/comparisons/demo-pulse-initial-375.webp",
+      "terminal": "qa/marketing-parity/comparisons/demo-pulse-terminal-375.webp"
+    }
   },
   {
     "state": "demo-768",
     "source": "qa/marketing-parity/source/demo-768.webp",
     "implementation": "qa/marketing-parity/implementation/demo-768.webp",
-    "comparison": "qa/marketing-parity/comparisons/demo-768.webp"
+    "comparison": "qa/marketing-parity/comparisons/demo-768.webp",
+    "operationsFinalEvidence": {
+      "initial": "qa/marketing-parity/comparisons/demo-pulse-initial-768.webp",
+      "terminal": "qa/marketing-parity/comparisons/demo-pulse-terminal-768.webp"
+    }
   },
   {
     "state": "demo-drive-terminal-1440",
@@ -178,6 +190,24 @@
     "source": "qa/marketing-parity/source/demo-drive-terminal-768.webp",
     "implementation": "qa/marketing-parity/implementation/demo-drive-terminal-768.webp",
     "comparison": "qa/marketing-parity/comparisons/demo-drive-terminal-768.webp"
+  },
+  {
+    "state": "demo-pulse-initial-1440",
+    "source": "qa/marketing-parity/source/demo-pulse-initial-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/demo-pulse-initial-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/demo-pulse-initial-1440.webp"
+  },
+  {
+    "state": "demo-pulse-initial-375",
+    "source": "qa/marketing-parity/source/demo-pulse-initial-375.webp",
+    "implementation": "qa/marketing-parity/implementation/demo-pulse-initial-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/demo-pulse-initial-375.webp"
+  },
+  {
+    "state": "demo-pulse-initial-768",
+    "source": "qa/marketing-parity/source/demo-pulse-initial-768.webp",
+    "implementation": "qa/marketing-parity/implementation/demo-pulse-initial-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/demo-pulse-initial-768.webp"
   },
   {
     "state": "demo-pulse-terminal-1440",

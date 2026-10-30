@@ -1,0 +1,4 @@
+
+> web@2.1.1 lint /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web
+> eslint . --max-warnings 0
+

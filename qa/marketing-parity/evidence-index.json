@@ -166,6 +166,24 @@
       "sha256": "70442ac57f1946c009318da8d3a908c37cc0290c3ae6a4771c1a8a5eb341b871"
     },
     {
+      "path": "qa/marketing-parity/source/demo-pulse-initial-1440.webp",
+      "width": 1280,
+      "height": 801,
+      "sha256": "83d3d8767506d119a9d3fa776f4ec3e661d3dac68aef65c0f1060b13a5ebf464"
+    },
+    {
+      "path": "qa/marketing-parity/source/demo-pulse-initial-375.webp",
+      "width": 327,
+      "height": 948,
+      "sha256": "bfeae52ed295a5968f6369c0cccdee16cc6ada3b56104e282c1cf8cdf7f49831"
+    },
+    {
+      "path": "qa/marketing-parity/source/demo-pulse-initial-768.webp",
+      "width": 688,
+      "height": 785,
+      "sha256": "ff2e1dcdafd9366add53c55a318f889fa010cd552cb1908e1729b1ec4efa5336"
+    },
+    {
       "path": "qa/marketing-parity/source/demo-pulse-terminal-1440.webp",
       "width": 1280,
       "height": 616,
@@ -181,7 +199,7 @@
       "path": "qa/marketing-parity/source/demo-pulse-terminal-768.webp",
       "width": 688,
       "height": 622,
-      "sha256": "3e6aa72a9983728e9c6f356299f255354b6c45138d2663a83a723c0dcce0b4cd"
+      "sha256": "b2fbd891f6d9aa5f14b299fdc8dcdd3785b45f555a15a0f84887a659d587dc46"
     },
     {
       "path": "qa/marketing-parity/source/footer-1440.webp",
@@ -624,14 +642,32 @@
     {
       "path": "qa/marketing-parity/implementation/demo-drive-terminal-375.webp",
       "width": 327,
-      "height": 769,
-      "sha256": "a3246fb9befa4fc6bf26005d4af50e9e23f5fcef91916d113b9fb2abb109abf6"
+      "height": 768,
+      "sha256": "96c19da413b143d1cd4d5371c72bd4bbc021b63475050c6f6e5f8416a66daa86"
     },
     {
       "path": "qa/marketing-parity/implementation/demo-drive-terminal-768.webp",
       "width": 688,
       "height": 584,
       "sha256": "b11590525d8f896b6882b88f86ad4397d719e5b3def32f5e64e732179fc71c75"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/demo-pulse-initial-1440.webp",
+      "width": 1280,
+      "height": 801,
+      "sha256": "fb82bf60cb877f5873211fa7da98ceee8de482d8bd3fd4787c6fb8ec830bbc76"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/demo-pulse-initial-375.webp",
+      "width": 327,
+      "height": 948,
+      "sha256": "080fc2c35845a71fa39c6e3b3273d893ff9e40e15403d00580e89e0dd2923922"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/demo-pulse-initial-768.webp",
+      "width": 688,
+      "height": 785,
+      "sha256": "e7701f2868ee283309519263d476acc453f8103e1e82004962673c7623879778"
     },
     {
       "path": "qa/marketing-parity/implementation/demo-pulse-terminal-1440.webp",
@@ -642,8 +678,8 @@
     {
       "path": "qa/marketing-parity/implementation/demo-pulse-terminal-375.webp",
       "width": 327,
-      "height": 859,
-      "sha256": "11d228a7eef0a2d321a3b70e47c9a13a0c28a748516a661d241110236ae476f7"
+      "height": 850,
+      "sha256": "a0c33da2d4c57b55572e79866f30aa86b08d64a5c91355d35d6eaddca24ba9cf"
     },
     {
       "path": "qa/marketing-parity/implementation/demo-pulse-terminal-768.webp",
@@ -928,5 +964,20 @@
       "sha256": "4be96381d6be0d3b487fed771337ab4dafbbd8ddf2d36676ca3257568c4ad3b2"
     }
   ],
-  "finalFooterEvidence": "footer-{1440,768,375}; these supersede earlier full-page footer regions after the final footer-only CSS correction."
+  "finalFooterEvidence": "footer-{1440,768,375}; these supersede earlier full-page footer regions after the final footer-only CSS correction.",
+  "finalOperationsEvidence": "demo-pulse-initial-{1440,768,375} and refreshed demo-pulse-terminal-{1440,768,375}; supersede Operations demo regions in earlier demo full-page captures after the final mobile Operations-only badge CSS correction. Refreshed demo-drive-terminal pairs verify Drive unchanged.",
+  "finalReviewHistory": [
+    {
+      "path": "qa/marketing-parity/history/final-review-before-implementation-pulse-375.webp",
+      "width": 327,
+      "height": 859,
+      "sha256": "11d228a7eef0a2d321a3b70e47c9a13a0c28a748516a661d241110236ae476f7"
+    },
+    {
+      "path": "qa/marketing-parity/history/final-review-before-source-pulse-375.webp",
+      "width": 327,
+      "height": 850,
+      "sha256": "f677d5aea289cc53b570e0b2f635b1f99835fa5686a90040ed374d134d7e6779"
+    }
+  ]
 }

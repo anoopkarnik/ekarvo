@@ -214,6 +214,8 @@
 @media (max-width: 650px) {
   .ek-site .demo-topbar { padding: 1.5rem; flex-wrap: wrap; gap: .5rem; }
   .ek-site .demo-title { align-items: start; }
+  /* Match the source Operations badge shrink/wrap without changing Drive. */
+  .ek-site .operations-demo .demo-title .pill { flex: 0 1 auto; }
   .ek-site.marketing-site .demo-title h3 { font-size: var(--text-base); }
   .ek-site .demo-actions { align-items: stretch; }
 }
