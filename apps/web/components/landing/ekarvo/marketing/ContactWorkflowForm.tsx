@@ -244,7 +244,6 @@ export function ContactWorkflowForm({
               setErrors({});
               setStatus("");
               setConflict(false);
-              setConflict(false);
               setStatus(
                 "These entries are ready to save as a new request. The earlier request remains separate.",
               );

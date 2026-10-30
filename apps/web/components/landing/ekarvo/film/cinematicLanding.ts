@@ -23,6 +23,7 @@ export function initCinematicLanding(root:HTMLElement){
   const shortViewport=matchMedia('(max-height: 580px)');
   let world:ReturnType<typeof import('./kineticWorld')['createKineticWorld']>|undefined;
   let visible=true,frame=0,pointerX=0,pointerY=0,scrollSpan=1,rootTop=0,disposed=false,readingMode=false,lastChapter=-1;
+  let destination:number|undefined;
   const measure=()=>{
     const header=page.querySelector('.site-header')?.getBoundingClientRect().height||0;
     rootTop=root.getBoundingClientRect().top+scrollY-header;
@@ -39,6 +40,7 @@ export function initCinematicLanding(root:HTMLElement){
   function render(){
     frame=0;if(!visible||document.hidden||disposed)return;
     const phase=phaseAt();
+    if(destination!==undefined&&Math.abs(phase-destination)<.015)destination=undefined;
     root.classList.toggle('is-final',phase>5.82);
     root.dataset.phase=phase.toFixed(4);
     const daylight=root.classList.contains('is-film')?ease(phase,5.4,6):0;
@@ -53,7 +55,7 @@ export function initCinematicLanding(root:HTMLElement){
     rail.forEach((item,index)=>{if(index===Math.round(phase))item.setAttribute('aria-current','location');else item.removeAttribute('aria-current')});
     const cinematic=root.classList.contains('is-film');
     const currentChapter=Math.round(phase);
-    previous.disabled=phase<.01;next.disabled=phase>5.99;
+    previous.disabled=(destination??phase)<.01;next.disabled=(destination??phase)>5.99;
     if(cinematic&&lastChapter!==currentChapter){lastChapter=currentChapter;status.textContent=`Chapter ${currentChapter+1} of 7. ${chapters[currentChapter]!.querySelector('h1,h2')?.textContent}`}
     chapters.forEach((chapter,i)=>{
       const opacity=1-ease(Math.abs(phase-i),.16,.46),active=!cinematic||opacity>.3;
@@ -80,6 +82,7 @@ export function initCinematicLanding(root:HTMLElement){
   }
   function go(index:number,smooth=true){
     const i=clamp(index,0,6);
+    destination=i;previous.disabled=i===0;next.disabled=i===6;
     const top=root.classList.contains('is-film')?rootTop+i/6*scrollSpan:chapters[i]!.getBoundingClientRect().top+scrollY-96;
     scrollTo({top,behavior:smooth&&!reduced.matches?'smooth':'instant'});
   }
@@ -88,10 +91,15 @@ export function initCinematicLanding(root:HTMLElement){
     if(!link)return;const i=anchors.findIndex(a=>`#${a.dataset.ekAnchorId}`===link.hash);if(i<0)return;
     event.preventDefault();history.replaceState(null,'',link.hash);go(i);
   };
-  const onPrevious=()=>go(Math.max(0,Math.ceil(phaseAt()-.05)-1));
-  const onNext=()=>go(Math.min(6,Math.floor(phaseAt()+.05)+1));
-  const onReading=()=>{readingMode=!readingMode;root.classList.toggle('is-reading',readingMode);reading.setAttribute('aria-pressed',String(readingMode));readingTitle.textContent=readingMode?'Return to the film':'Read the story';readingSubtitle.textContent=readingMode?'Go back to the moving story':'Chapter by chapter, at your pace';void setup();scrollTo({top:0,behavior:'instant'})};
-  // The header nav sits outside the film root but links to the same chapter anchors.
+  const onPrevious=()=>go(Math.max(0,Math.ceil((destination??phaseAt())-.05)-1));
+  const onNext=()=>go(Math.min(6,Math.floor((destination??phaseAt())+.05)+1));
+  const onReading=()=>{destination=undefined;readingMode=!readingMode;root.classList.toggle('is-reading',readingMode);reading.setAttribute('aria-pressed',String(readingMode));readingTitle.textContent=readingMode?'Return to the film':'Read the story';readingSubtitle.textContent=readingMode?'Go back to the moving story':'Chapter by chapter, at your pace';void setup();scrollTo({top:0,behavior:'instant'})};
+  // Track pending destinations so rapid commands replace the in-flight smooth scroll.
+  const cancelDestination=()=>{destination=undefined};
+  window.addEventListener('wheel',cancelDestination,{passive:true});
+  window.addEventListener('touchstart',cancelDestination,{passive:true});
+  const onScrollKey=(event:KeyboardEvent)=>{if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(event.key)&&!(event.target as Element).closest('button,a,input,textarea,select,summary'))cancelDestination()};
+  window.addEventListener('keydown',onScrollKey);
   page.addEventListener('click',onNavigate);previous.addEventListener('click',onPrevious);next.addEventListener('click',onNext);reading.addEventListener('click',onReading);readingReturn.addEventListener('click',onReading);
   const onPointer=(event:PointerEvent)=>{if(event.pointerType==='touch'||reduced.matches)return;pointerX=(event.clientX/innerWidth-.5)*2;pointerY=(event.clientY/innerHeight-.5)*2;schedule()};
   const onMotion=()=>{void setup();schedule()};
@@ -106,6 +114,7 @@ export function initCinematicLanding(root:HTMLElement){
   host.addEventListener('webglcontextlost',lost,true);
   root.classList.add('is-ready');measure();void setup();
   return ()=>{
+    window.removeEventListener('wheel',cancelDestination);window.removeEventListener('touchstart',cancelDestination);window.removeEventListener('keydown',onScrollKey);
     disposed=true;cancelAnimationFrame(frame);observer.disconnect();resizer.disconnect();world?.dispose();world=undefined;
     window.removeEventListener('scroll',schedule);window.removeEventListener('resize',measure);window.removeEventListener('pointermove',onPointer);
     document.removeEventListener('visibilitychange',schedule);reduced.removeEventListener('change',onMotion);shortViewport.removeEventListener('change',onMotion);

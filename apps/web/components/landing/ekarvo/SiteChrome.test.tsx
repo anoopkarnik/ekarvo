@@ -1,4 +1,6 @@
 import React from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { CinematicLanding } from "./CinematicLanding";
 import { readFileSync } from "node:fs";
 import { URL as NodeURL } from "node:url";
 import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
@@ -130,8 +132,8 @@ describe("marketing shell and primitives", () => {
     const { MarketingShell } = await import("./marketing/MarketingShell");
     const { container } = render(<MarketingShell active="Company"><h1>Our company</h1></MarketingShell>);
     expect(container.firstChild).toHaveClass("ek-site", "theme-ekarvo");
-    expect(screen.getByRole("link", { name: "Skip to content" })).toHaveAttribute("href", "#main");
-    expect(screen.getByRole("main")).toHaveAttribute("id", "main");
+    expect(screen.getByRole("main")).toHaveAttribute("id", "main-content");
+    expect(screen.queryByRole("link", { name: "Skip to content" })).not.toBeInTheDocument();
     expect(within(screen.getByRole("main")).getByRole("heading", { level: 1 })).toHaveTextContent("Our company");
     expect(within(screen.getByRole("navigation", { name: "Main navigation" })).getByRole("link", { name: "Company" })).toHaveAttribute("aria-current", "page");
   });
@@ -164,5 +166,29 @@ describe("marketing shell and primitives", () => {
     expect(marketingHref("/")).toBe("/landing");
     expect(marketingHref("products")).toBe("/landing/products");
     expect(marketingHref("/landing/products")).toBe("/landing/products");
+  });
+});
+
+
+describe("complete landing journey", () => {
+  it("restores the source chapter actions and final credits to real marketing routes", () => {
+    const host = document.createElement("div");
+    host.innerHTML = renderToStaticMarkup(<CinematicLanding />);
+    for (const [chapter, label, href] of [
+      ["opening", "Discuss a workflow", "/landing/contact"],
+      ["pulse", "Explore Ekarvo Pulse", "/landing/products/operations-os"],
+      ["authority", "Explore our principles", "/landing/trust"],
+      ["drive", "Explore Ekarvo Drive", "/landing/products/autonomous-execution"],
+      ["outcome", "Explore our approach", "/landing/approach"],
+      ["outcome", "Discuss a workflow", "/landing/contact"],
+    ]) {
+      expect(within(host.querySelector(`#${chapter}`) as HTMLElement).getByRole("link", { name: label })).toHaveAttribute("href", href);
+    }
+    const credits = within(host.querySelector(".ek-film-credits") as HTMLElement);
+    for (const [label, href] of [["Products", "/landing/products"], ["Company", "/landing/company"], ["Privacy", "/landing/legal/privacy-policy"], ["Terms", "/landing/legal/terms-of-service"]]) {
+      expect(credits.getByRole("link", { name: label })).toHaveAttribute("href", href);
+    }
+    expect(credits.getByRole("link", { name: "Overview" })).toHaveAttribute("download");
+    expect(within(host).getAllByRole("link", {name: "Log in"}).length).toBeGreaterThan(0);
   });
 });

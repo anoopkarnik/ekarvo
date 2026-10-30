@@ -1,6 +1,6 @@
 // Copy for the cinematic landing, kept in step with Website/src/components/CinematicLanding.astro.
 
-export const CONTACT_HREF = "/landing/legal/contact-us";
+export const CONTACT_HREF = "/landing/contact";
 
 export type ChapterId = "opening" | "fracture" | "pulse" | "authority" | "drive" | "evidence" | "outcome";
 
@@ -41,12 +41,3 @@ export const readingEvidence: ReadingEvidence[] = [
   { kind: "pair", eyebrow: "ADOPTION IS NOT IMPACT · MCKINSEY 2026", metrics: [{ value: "37%", label: "report some positive earnings effect" }, { value: "6%", label: "meet McKinsey’s high-performer definition" }], text: "McKinsey defines high performers as organizations that attribute at least 5% of EBIT to AI and report value from its use.", scope: "McKinsey research on AI adoption and business impact · 2026", source: "Read the research", url: MCKINSEY_AI },
   { kind: "series", eyebrow: "THE ADOPTION-TO-IMPACT GAP · MCKINSEY 2026", metrics: [{ value: "89%", label: "use AI in at least one function" }, { value: "37%", label: "report some positive earnings effect" }, { value: "6%", label: "are high performers" }], text: "Broad adoption does not guarantee enterprise-level impact.", scope: "High performers attribute at least 5% of EBIT to AI and report value from its use.", source: "Read the research", url: MCKINSEY_AI },
 ];
-
-// The Astro site links to Products, Approach, Platform and Company pages this app does not have,
-// so navigation points at the matching chapters instead.
-export const headerNav = [
-  ["Pulse", "#pulse"],
-  ["Drive", "#drive"],
-  ["Trust", "#authority"],
-  ["Proof", "#evidence"],
-] as const;

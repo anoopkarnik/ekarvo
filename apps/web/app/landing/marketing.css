@@ -47,6 +47,7 @@
 .ek-site .header-login { min-inline-size: 44px; }
 .ek-site :is(a, button) { overflow-wrap: anywhere; }
 .ek-site :is(.desktop-nav a, .mobile-menu a)[aria-current="page"] { color: var(--ek-blue); }
+.ek-site.marketing-site:not(.cinematic-home) :is(.desktop-nav a, .mobile-menu a)[aria-current="page"] { color: #244bd6; }
 .ek-site .mobile-menu nav { max-height: calc(100svh - var(--header-height)); overflow-y: auto; }
 .ek-site .skip-link { position: absolute; top: .5rem; left: var(--page-gutter); z-index: 101; transform: translateY(-200%); padding: .75rem 1rem; background: var(--foreground); color: var(--background); border-radius: .25rem; }
 .ek-site .skip-link:focus { transform: translateY(0); }

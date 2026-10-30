@@ -63,10 +63,13 @@ function Film() {
                       <button type="button" className="ek-link-plain ek-reading-return" data-ek-reading-return><Icon icon={ArrowLeft} /> Return to the film</button>
                     </div>
                   )}
+                  {chapter.id === "pulse" && <Link className="ek-link-plain" href="/landing/products/operations-os">Explore Ekarvo Pulse <Icon icon={ArrowUpRight} /></Link>}
+                  {chapter.id === "authority" && <Link className="ek-link-plain" href="/landing/trust">Explore our principles <Icon icon={ArrowUpRight} /></Link>}
+                  {chapter.id === "drive" && <Link className="ek-link-plain" href="/landing/products/autonomous-execution">Explore Ekarvo Drive <Icon icon={ArrowUpRight} /></Link>}
                   {chapter.id === "outcome" && (
                     <div className="ek-chapter-actions">
                       <Link className="ek-link-primary" href={CONTACT_HREF}>Discuss a workflow <Icon icon={ArrowUpRight} /></Link>
-                      <Link className="ek-link-plain" href="/sign-in">Log in <Icon icon={ArrowUpRight} /></Link>
+                      <Link className="ek-link-plain" href="/landing/approach">Explore our approach <Icon icon={ArrowUpRight} /></Link>
                     </div>
                   )}
                 </div>
@@ -96,7 +99,8 @@ function Film() {
                       <img src="/images/cinematic/film-desktop-6.webp" width={1440} height={804} alt="The blue route passes through the aligned joint and reaches its outlined success condition." loading="lazy" decoding="async" />
                     </picture>
                     <div className="ek-film-credits">
-                      <Link href={CONTACT_HREF}>Contact</Link>
+                      <Link href="/landing/products">Products</Link>
+                      <Link href="/landing/company">Company</Link>
                       <Link href="/landing/legal/privacy-policy">Privacy</Link>
                       <Link href="/landing/legal/terms-of-service">Terms</Link>
                       <a href="/downloads/ekarvo-overview.txt" download>Overview <Icon icon={ArrowDown} /></a>
