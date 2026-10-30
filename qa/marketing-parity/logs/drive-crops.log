@@ -1,0 +1,22 @@
+
+Running 1 test using 1 worker
+
+(node:67389) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:67389) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+source [33m1440[39m before [33m1278[39m
+source [33m1440[39m after [33m1278[39m
+implementation [33m1440[39m before [33m1278[39m
+implementation [33m1440[39m after [33m1278[39m
+source [33m768[39m before [33m686[39m
+source [33m768[39m after [33m686[39m
+implementation [33m768[39m before [33m686[39m
+implementation [33m768[39m after [33m686[39m
+source [33m375[39m before [33m325[39m
+source [33m375[39m after [33m325[39m
+implementation [33m375[39m before [33m325[39m
+implementation [33m375[39m after [33m325[39m
+  ✓  1 [chromium] › e2e/task-12-drive-crop.spec.ts:2:1 › same viewport Drive crops preserve actual source selection (3.9s)
+
+  1 passed (5.0s)

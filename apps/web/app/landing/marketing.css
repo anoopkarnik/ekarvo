@@ -526,3 +526,11 @@
 .ek-site .form-panel .actions > button + button { animation-delay: 40ms; }
 @keyframes ek-brief-field { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @media(prefers-reduced-motion:reduce) { .ek-site .form-panel :is(.field, .actions > button) { animation: none; } }
+
+/* Match source disabled actions while retaining explicit pending feedback. */
+.ek-site.marketing-site .button:disabled { background: #f7f8fa; border-color: var(--border); color: #59616d; cursor: not-allowed; opacity: 1; }
+
+/* Source footer typography must win over editorial paragraph defaults. */
+.ek-site.marketing-site .footer-top .footer-label { color: var(--foreground); }
+.ek-site.marketing-site .footer-bottom { font-size: 12px; line-height: 1.6; color: var(--muted-foreground); }
+.ek-site.marketing-site .footer-bottom p { margin: 0; font-size: 14px; line-height: 1.6; }

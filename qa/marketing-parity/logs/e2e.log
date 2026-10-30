@@ -1,0 +1,59 @@
+
+> web@2.1.1 test:e2e /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web
+> playwright test --config task-12-browser-config.ts
+
+
+Running 35 tests using 1 worker
+
+(node:65555) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:65555) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › e2e/marketing-interactions.spec.ts:5:1 › Products latest commands win, keyboard tab order and exact destinations (2.2s)
+  ✓   2 [chromium] › e2e/marketing-interactions.spec.ts:62:1 › Products without JS keeps both narratives and primary links available (164ms)
+  ✓   3 [chromium] › e2e/marketing-interactions.spec.ts:85:1 › Pulse hash entry, keyboard controls, exception recovery and completed proof (788ms)
+  ✓   4 [chromium] › e2e/marketing-interactions.spec.ts:154:1 › Pulse without JavaScript retains narrative, links and native disclosures (203ms)
+  ✓   5 [chromium] › e2e/marketing-interactions.spec.ts:191:1 › Drive keyboard, pause, rejection, exception, reset, retry and evidence (3.2s)
+  ✓   6 [chromium] › e2e/marketing-interactions.spec.ts:263:1 › Drive without JavaScript retains narrative, download and disclosures (229ms)
+Direct hash heading ms [33m1440[39m operations [33m164[39m
+Direct hash heading ms [33m1440[39m execution [33m116[39m
+Direct hash heading ms [33m768[39m operations [33m124[39m
+Direct hash heading ms [33m768[39m execution [33m352[39m
+Direct hash heading ms [33m375[39m operations [33m107[39m
+Direct hash heading ms [33m375[39m execution [33m116[39m
+Navigation timings { domContentLoadedMs: [33m72.19999998807907[39m, responseMs: [33m68.5[39m }
+  ✓   7 [chromium] › e2e/marketing-interactions.spec.ts:301:1 › Combined demo direct hash entries and hero anchor navigation (1.8s)
+  ✓   8 [chromium] › e2e/marketing-interactions.spec.ts:372:1 › Combined demo Pulse keyboard scenarios, partial evidence and reset (647ms)
+  ✓   9 [chromium] › e2e/marketing-interactions.spec.ts:432:1 › Combined demo Drive preserves approval, blocked recovery, download and reset (2.0s)
+  ✓  10 [chromium] › e2e/marketing-interactions.spec.ts:470:1 › Combined demo normal motion rapid input and pending reset stay deterministic (2.2s)
+  ✓  11 [chromium] › e2e/marketing-interactions.spec.ts:506:1 › workflow query validation pending retry conflict receipt download and real deletion (1.4s)
+  ✓  12 [chromium] › e2e/marketing-interactions.spec.ts:618:1 › every atlas product group and module updates the selected capability (1.6s)
+  ✓  13 [chromium] › e2e/marketing-interactions.spec.ts:646:1 › native disclosures support direct entry keyboard and complete static content (1.3s)
+  ✓  14 [chromium] › e2e/marketing-parity.spec.ts:21:3 › all marketing routes: /landing (886ms)
+  ✓  15 [chromium] › e2e/marketing-parity.spec.ts:21:3 › all marketing routes: /landing/products (905ms)
+  ✓  16 [chromium] › e2e/marketing-parity.spec.ts:21:3 › all marketing routes: /landing/products/operations-os (1.0s)
+  ✓  17 [chromium] › e2e/marketing-parity.spec.ts:21:3 › all marketing routes: /landing/products/autonomous-execution (980ms)
+  ✓  18 [chromium] › e2e/marketing-parity.spec.ts:21:3 › all marketing routes: /landing/approach (958ms)
+  ✓  19 [chromium] › e2e/marketing-parity.spec.ts:21:3 › all marketing routes: /landing/platform (1.3s)
+  ✓  20 [chromium] › e2e/marketing-parity.spec.ts:21:3 › all marketing routes: /landing/trust (1.0s)
+  ✓  21 [chromium] › e2e/marketing-parity.spec.ts:21:3 › all marketing routes: /landing/company (1.1s)
+  ✓  22 [chromium] › e2e/marketing-parity.spec.ts:21:3 › all marketing routes: /landing/contact (919ms)
+  ✓  23 [chromium] › e2e/marketing-parity.spec.ts:21:3 › all marketing routes: /landing/demo (1.0s)
+  ✓  24 [chromium] › e2e/marketing-parity.spec.ts:79:1 › complete deduplicated internal graph metadata hashes queries and downloads (3.6s)
+  ✓  25 [chromium] › e2e/marketing-parity.spec.ts:185:3 › full document accessibility reflow and targets at 1440 (9.2s)
+  ✓  26 [chromium] › e2e/marketing-parity.spec.ts:185:3 › full document accessibility reflow and targets at 768 (8.1s)
+  ✓  27 [chromium] › e2e/marketing-parity.spec.ts:185:3 › full document accessibility reflow and targets at 375 (7.9s)
+  ✓  28 [chromium] › e2e/marketing-parity.spec.ts:240:1 › forced graphics failure leaves complete static story and source artwork (316ms)
+  ✓  29 [chromium] › e2e/marketing-parity.spec.ts:266:1 › JavaScript-disabled full documents keep narrative links and accessible fallbacks (6.5s)
+(node:65924) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:65924) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  30 [chromium] › e2e/marketing-journey.spec.ts:16:1 › rapid story commands honor the latest requested chapter and retain visible focus (6.8s)
+  ✓  31 [chromium] › e2e/marketing-journey.spec.ts:60:1 › homepage banner Products leads to both product pages and preserves auth/legal journeys (2.2s)
+  ✓  32 [chromium] › e2e/marketing-journey.spec.ts:113:1 › marketing pages share a working keyboard skip target and full-document landmarks/contrast (2.8s)
+  ✓  33 [chromium] › e2e/marketing-journey.spec.ts:143:1 › without JavaScript every story chapter and primary product path is available (599ms)
+  ✓  34 [chromium] › e2e/marketing-journey.spec.ts:182:1 › reduced motion exposes the complete story and route actions (297ms)
+  ✓  35 [chromium] › e2e/marketing-journey.spec.ts:207:1 › Home interrupts a pending chapter even while Next keeps focus (4.6s)
+
+  35 passed (1.4m)

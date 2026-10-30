@@ -49,7 +49,7 @@ export function SiteHeader({ active, cinematic = false }: SiteHeaderProps) {
           className="mobile-menu"
           ref={menu}
         >
-          <summary aria-label="Open navigation">Menu <Icon icon={Menu} /></summary>
+          <summary>Menu <Icon icon={Menu} /></summary>
           <nav aria-label="Mobile navigation" onClick={(event) => { if ((event.target as Element).closest("a")) closeMenu(); }}>
             {MARKETING_NAV.map(([label, href]) => <Link key={href} href={href} aria-current={current(label, href)}>{label}</Link>)}
             <MarketingLogin />

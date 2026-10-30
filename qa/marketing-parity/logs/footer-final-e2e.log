@@ -1,0 +1,17 @@
+
+> web@2.1.1 test:e2e /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web
+> playwright test --config task-12-browser-config.ts --grep 'source footer typography|full document accessibility' --output /private/tmp/task12-footer-final-results
+
+
+Running 4 tests using 1 worker
+
+(node:68231) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:68231) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › e2e/marketing-parity.spec.ts:185:3 › full document accessibility reflow and targets at 1440 (10.6s)
+  ✓  2 [chromium] › e2e/marketing-parity.spec.ts:185:3 › full document accessibility reflow and targets at 768 (10.7s)
+  ✓  3 [chromium] › e2e/marketing-parity.spec.ts:185:3 › full document accessibility reflow and targets at 375 (8.7s)
+  ✓  4 [chromium] › e2e/marketing-parity.spec.ts:326:1 › source footer typography survives editorial paragraph defaults (510ms)
+
+  4 passed (32.1s)

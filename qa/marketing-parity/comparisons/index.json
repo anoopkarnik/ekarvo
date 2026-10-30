@@ -1,0 +1,508 @@
+[
+  {
+    "state": "approach-1440",
+    "source": "qa/marketing-parity/source/approach-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/approach-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/approach-1440.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "approach-375",
+    "source": "qa/marketing-parity/source/approach-375.webp",
+    "implementation": "qa/marketing-parity/implementation/approach-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/approach-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "approach-768",
+    "source": "qa/marketing-parity/source/approach-768.webp",
+    "implementation": "qa/marketing-parity/implementation/approach-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/approach-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "atlas-plan-1440",
+    "source": "qa/marketing-parity/source/atlas-plan-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/atlas-plan-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/atlas-plan-1440.webp"
+  },
+  {
+    "state": "atlas-plan-375",
+    "source": "qa/marketing-parity/source/atlas-plan-375.webp",
+    "implementation": "qa/marketing-parity/implementation/atlas-plan-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/atlas-plan-375.webp"
+  },
+  {
+    "state": "atlas-plan-768",
+    "source": "qa/marketing-parity/source/atlas-plan-768.webp",
+    "implementation": "qa/marketing-parity/implementation/atlas-plan-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/atlas-plan-768.webp"
+  },
+  {
+    "state": "company-1440",
+    "source": "qa/marketing-parity/source/company-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/company-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/company-1440.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "company-375",
+    "source": "qa/marketing-parity/source/company-375.webp",
+    "implementation": "qa/marketing-parity/implementation/company-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/company-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "company-768",
+    "source": "qa/marketing-parity/source/company-768.webp",
+    "implementation": "qa/marketing-parity/implementation/company-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/company-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "contact-1440",
+    "source": "qa/marketing-parity/source/contact-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/contact-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/contact-1440.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "contact-375",
+    "source": "qa/marketing-parity/source/contact-375.webp",
+    "implementation": "qa/marketing-parity/implementation/contact-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/contact-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "contact-768",
+    "source": "qa/marketing-parity/source/contact-768.webp",
+    "implementation": "qa/marketing-parity/implementation/contact-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/contact-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "contact-errors-1440",
+    "source": "qa/marketing-parity/source/contact-errors-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/contact-errors-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/contact-errors-1440.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "contact-errors-375",
+    "source": "qa/marketing-parity/source/contact-errors-375.webp",
+    "implementation": "qa/marketing-parity/implementation/contact-errors-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/contact-errors-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "contact-errors-768",
+    "source": "qa/marketing-parity/source/contact-errors-768.webp",
+    "implementation": "qa/marketing-parity/implementation/contact-errors-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/contact-errors-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "contact-pending-1440",
+    "source": "qa/marketing-parity/source/contact-pending-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/contact-pending-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/contact-pending-1440.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "contact-pending-375",
+    "source": "qa/marketing-parity/source/contact-pending-375.webp",
+    "implementation": "qa/marketing-parity/implementation/contact-pending-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/contact-pending-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "contact-pending-768",
+    "source": "qa/marketing-parity/source/contact-pending-768.webp",
+    "implementation": "qa/marketing-parity/implementation/contact-pending-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/contact-pending-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "contact-receipt-1440",
+    "source": "qa/marketing-parity/source/contact-receipt-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/contact-receipt-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/contact-receipt-1440.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "contact-receipt-375",
+    "source": "qa/marketing-parity/source/contact-receipt-375.webp",
+    "implementation": "qa/marketing-parity/implementation/contact-receipt-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/contact-receipt-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "contact-receipt-768",
+    "source": "qa/marketing-parity/source/contact-receipt-768.webp",
+    "implementation": "qa/marketing-parity/implementation/contact-receipt-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/contact-receipt-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "demo-1440",
+    "source": "qa/marketing-parity/source/demo-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/demo-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/demo-1440.webp"
+  },
+  {
+    "state": "demo-375",
+    "source": "qa/marketing-parity/source/demo-375.webp",
+    "implementation": "qa/marketing-parity/implementation/demo-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/demo-375.webp"
+  },
+  {
+    "state": "demo-768",
+    "source": "qa/marketing-parity/source/demo-768.webp",
+    "implementation": "qa/marketing-parity/implementation/demo-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/demo-768.webp"
+  },
+  {
+    "state": "demo-drive-terminal-1440",
+    "source": "qa/marketing-parity/source/demo-drive-terminal-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/demo-drive-terminal-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/demo-drive-terminal-1440.webp"
+  },
+  {
+    "state": "demo-drive-terminal-375",
+    "source": "qa/marketing-parity/source/demo-drive-terminal-375.webp",
+    "implementation": "qa/marketing-parity/implementation/demo-drive-terminal-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/demo-drive-terminal-375.webp"
+  },
+  {
+    "state": "demo-drive-terminal-768",
+    "source": "qa/marketing-parity/source/demo-drive-terminal-768.webp",
+    "implementation": "qa/marketing-parity/implementation/demo-drive-terminal-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/demo-drive-terminal-768.webp"
+  },
+  {
+    "state": "demo-pulse-terminal-1440",
+    "source": "qa/marketing-parity/source/demo-pulse-terminal-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/demo-pulse-terminal-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/demo-pulse-terminal-1440.webp"
+  },
+  {
+    "state": "demo-pulse-terminal-375",
+    "source": "qa/marketing-parity/source/demo-pulse-terminal-375.webp",
+    "implementation": "qa/marketing-parity/implementation/demo-pulse-terminal-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/demo-pulse-terminal-375.webp"
+  },
+  {
+    "state": "demo-pulse-terminal-768",
+    "source": "qa/marketing-parity/source/demo-pulse-terminal-768.webp",
+    "implementation": "qa/marketing-parity/implementation/demo-pulse-terminal-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/demo-pulse-terminal-768.webp"
+  },
+  {
+    "state": "footer-1440",
+    "source": "qa/marketing-parity/source/footer-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/footer-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "footer-375",
+    "source": "qa/marketing-parity/source/footer-375.webp",
+    "implementation": "qa/marketing-parity/implementation/footer-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "footer-768",
+    "source": "qa/marketing-parity/source/footer-768.webp",
+    "implementation": "qa/marketing-parity/implementation/footer-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "home-1440",
+    "source": "qa/marketing-parity/source/home-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/home-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/home-1440.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "home-375",
+    "source": "qa/marketing-parity/source/home-375.webp",
+    "implementation": "qa/marketing-parity/implementation/home-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/home-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "home-768",
+    "source": "qa/marketing-parity/source/home-768.webp",
+    "implementation": "qa/marketing-parity/implementation/home-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/home-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "home-graphics-failure-1440",
+    "source": "qa/marketing-parity/source/home-graphics-failure-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/home-graphics-failure-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/home-graphics-failure-1440.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "home-graphics-failure-375",
+    "source": "qa/marketing-parity/source/home-graphics-failure-375.webp",
+    "implementation": "qa/marketing-parity/implementation/home-graphics-failure-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/home-graphics-failure-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "home-graphics-failure-768",
+    "source": "qa/marketing-parity/source/home-graphics-failure-768.webp",
+    "implementation": "qa/marketing-parity/implementation/home-graphics-failure-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/home-graphics-failure-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "home-nojs-1440",
+    "source": "qa/marketing-parity/source/home-nojs-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/home-nojs-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/home-nojs-1440.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "home-nojs-375",
+    "source": "qa/marketing-parity/source/home-nojs-375.webp",
+    "implementation": "qa/marketing-parity/implementation/home-nojs-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/home-nojs-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "home-nojs-768",
+    "source": "qa/marketing-parity/source/home-nojs-768.webp",
+    "implementation": "qa/marketing-parity/implementation/home-nojs-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/home-nojs-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "menu-open-375",
+    "source": "qa/marketing-parity/source/menu-open-375.webp",
+    "implementation": "qa/marketing-parity/implementation/menu-open-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/menu-open-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "menu-open-768",
+    "source": "qa/marketing-parity/source/menu-open-768.webp",
+    "implementation": "qa/marketing-parity/implementation/menu-open-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/menu-open-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "platform-1440",
+    "source": "qa/marketing-parity/source/platform-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/platform-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/platform-1440.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "platform-375",
+    "source": "qa/marketing-parity/source/platform-375.webp",
+    "implementation": "qa/marketing-parity/implementation/platform-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/platform-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "platform-768",
+    "source": "qa/marketing-parity/source/platform-768.webp",
+    "implementation": "qa/marketing-parity/implementation/platform-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/platform-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "privacy-1440",
+    "source": "qa/marketing-parity/source/privacy-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/privacy-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/privacy-1440.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "privacy-375",
+    "source": "qa/marketing-parity/source/privacy-375.webp",
+    "implementation": "qa/marketing-parity/implementation/privacy-375.png",
+    "comparison": "qa/marketing-parity/comparisons/privacy-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "privacy-768",
+    "source": "qa/marketing-parity/source/privacy-768.webp",
+    "implementation": "qa/marketing-parity/implementation/privacy-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/privacy-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "privacy-delete-1440",
+    "source": "qa/marketing-parity/source/privacy-delete-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/privacy-delete-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/privacy-delete-1440.webp"
+  },
+  {
+    "state": "privacy-delete-375",
+    "source": "qa/marketing-parity/source/privacy-delete-375.webp",
+    "implementation": "qa/marketing-parity/implementation/privacy-delete-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/privacy-delete-375.webp"
+  },
+  {
+    "state": "privacy-delete-768",
+    "source": "qa/marketing-parity/source/privacy-delete-768.webp",
+    "implementation": "qa/marketing-parity/implementation/privacy-delete-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/privacy-delete-768.webp"
+  },
+  {
+    "state": "products-1440",
+    "source": "qa/marketing-parity/source/products-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/products-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/products-1440.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "products-375",
+    "source": "qa/marketing-parity/source/products-375.webp",
+    "implementation": "qa/marketing-parity/implementation/products-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/products-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "products-768",
+    "source": "qa/marketing-parity/source/products-768.webp",
+    "implementation": "qa/marketing-parity/implementation/products-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/products-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "products-autonomous-execution-1440",
+    "source": "qa/marketing-parity/source/products-autonomous-execution-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/products-autonomous-execution-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/products-autonomous-execution-1440.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "products-autonomous-execution-375",
+    "source": "qa/marketing-parity/source/products-autonomous-execution-375.webp",
+    "implementation": "qa/marketing-parity/implementation/products-autonomous-execution-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/products-autonomous-execution-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "products-autonomous-execution-768",
+    "source": "qa/marketing-parity/source/products-autonomous-execution-768.webp",
+    "implementation": "qa/marketing-parity/implementation/products-autonomous-execution-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/products-autonomous-execution-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "products-drive-1440",
+    "source": "qa/marketing-parity/source/products-drive-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/products-drive-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/products-drive-1440.webp",
+    "capture": "same-viewport carousel crop; scroll-snap and scroll-behavior frozen equally only during screenshot"
+  },
+  {
+    "state": "products-drive-375",
+    "source": "qa/marketing-parity/source/products-drive-375.webp",
+    "implementation": "qa/marketing-parity/implementation/products-drive-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/products-drive-375.webp",
+    "capture": "same-viewport carousel crop; scroll-snap and scroll-behavior frozen equally only during screenshot"
+  },
+  {
+    "state": "products-drive-768",
+    "source": "qa/marketing-parity/source/products-drive-768.webp",
+    "implementation": "qa/marketing-parity/implementation/products-drive-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/products-drive-768.webp",
+    "capture": "same-viewport carousel crop; scroll-snap and scroll-behavior frozen equally only during screenshot"
+  },
+  {
+    "state": "products-operations-os-1440",
+    "source": "qa/marketing-parity/source/products-operations-os-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/products-operations-os-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/products-operations-os-1440.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "products-operations-os-375",
+    "source": "qa/marketing-parity/source/products-operations-os-375.webp",
+    "implementation": "qa/marketing-parity/implementation/products-operations-os-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/products-operations-os-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "products-operations-os-768",
+    "source": "qa/marketing-parity/source/products-operations-os-768.webp",
+    "implementation": "qa/marketing-parity/implementation/products-operations-os-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/products-operations-os-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "pulse-nojs-375",
+    "source": "qa/marketing-parity/source/pulse-nojs-375.webp",
+    "implementation": "qa/marketing-parity/implementation/pulse-nojs-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/pulse-nojs-375.webp"
+  },
+  {
+    "state": "terms-1440",
+    "source": "qa/marketing-parity/source/terms-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/terms-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/terms-1440.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "terms-375",
+    "source": "qa/marketing-parity/source/terms-375.webp",
+    "implementation": "qa/marketing-parity/implementation/terms-375.png",
+    "comparison": "qa/marketing-parity/comparisons/terms-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "terms-768",
+    "source": "qa/marketing-parity/source/terms-768.webp",
+    "implementation": "qa/marketing-parity/implementation/terms-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/terms-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "trust-1440",
+    "source": "qa/marketing-parity/source/trust-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/trust-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/trust-1440.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "trust-375",
+    "source": "qa/marketing-parity/source/trust-375.webp",
+    "implementation": "qa/marketing-parity/implementation/trust-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/trust-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "trust-768",
+    "source": "qa/marketing-parity/source/trust-768.webp",
+    "implementation": "qa/marketing-parity/implementation/trust-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/trust-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  },
+  {
+    "state": "trust-open-1440",
+    "source": "qa/marketing-parity/source/trust-open-1440.webp",
+    "implementation": "qa/marketing-parity/implementation/trust-open-1440.webp",
+    "comparison": "qa/marketing-parity/comparisons/trust-open-1440.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-1440.webp"
+  },
+  {
+    "state": "trust-open-375",
+    "source": "qa/marketing-parity/source/trust-open-375.webp",
+    "implementation": "qa/marketing-parity/implementation/trust-open-375.webp",
+    "comparison": "qa/marketing-parity/comparisons/trust-open-375.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-375.webp"
+  },
+  {
+    "state": "trust-open-768",
+    "source": "qa/marketing-parity/source/trust-open-768.webp",
+    "implementation": "qa/marketing-parity/implementation/trust-open-768.webp",
+    "comparison": "qa/marketing-parity/comparisons/trust-open-768.webp",
+    "sharedFooterFinalEvidence": "qa/marketing-parity/comparisons/footer-768.webp"
+  }
+]

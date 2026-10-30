@@ -93,12 +93,13 @@ test("Home interrupts a pending chapter even while Next keeps focus", async ({ p
   await page.goto("/landing", { waitUntil: "domcontentloaded" });
   const film = page.locator("[data-ek-film]");
   await expect(film).toHaveClass(/is-film/, { timeout: 45_000 });
-  await page.locator("[data-ek-next]").focus();
+  await expect(film).toHaveClass(/is-webgl/, { timeout: 45_000 });
+  // Establish an intermediate chapter first. Observing a tiny animation window
+  // races the compositor on a fast production build and software WebGL.
+  await page.locator('[data-ek-rail="1"]').evaluate((link: HTMLAnchorElement) => link.click());
+  await expect(page.locator('[data-ek-rail="1"]')).toHaveAttribute("aria-current", "location");
+  await page.locator("[data-ek-next]").evaluate((button: HTMLButtonElement) => button.focus({ preventScroll: true }));
   await page.locator('[data-ek-rail="5"]').evaluate((link: HTMLAnchorElement) => link.click());
-  await page.waitForFunction(() => {
-    const phase = Number(document.querySelector<HTMLElement>("[data-ek-film]")?.dataset.phase);
-    return phase > .25 && phase < 2;
-  });
   await page.keyboard.press("Home");
   // Allow the native key's scroll/cancellation to settle before requesting the next chapter.
   await page.waitForTimeout(250);

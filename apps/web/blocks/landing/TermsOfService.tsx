@@ -26,7 +26,7 @@ const TermsOfService = () => {
             lastUpdated={data.termsOfService.lastUpdated}
             tableOfContents={tableOfContents}
         >
-            <p className="mb-4 text-xs opacity-50">Version {data.termsOfService.version}</p>
+            <p className="mb-4 text-xs text-muted-foreground">Version {data.termsOfService.version}</p>
             <p className="mb-4">
                 The {data.termsOfService.siteName} website located at <a href={data.termsOfService.websiteUrl} className="text-primary underline hover:text-primary/80">
                     {data.termsOfService.websiteUrl}

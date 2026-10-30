@@ -253,3 +253,6 @@
 
 .ek-site .operations-demo .muted { color: var(--muted-foreground); }
 .ek-site .operations-demo .signal-list dd { font-size: .875rem; }
+
+/* Before hydration all stage labels stay readable without a disabled scroll trap. */
+.ek-site .proof-shell:disabled .proof-stages { flex-wrap: wrap; overflow: visible; }

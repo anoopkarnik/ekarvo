@@ -1,0 +1,309 @@
+
+Running 26 tests using 1 worker
+
+(node:60210) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:60210) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › e2e/marketing-interactions.spec.ts:5:1 › Products latest commands win, keyboard tab order and exact destinations (1.2s)
+  ✓   2 [chromium] › e2e/marketing-interactions.spec.ts:36:1 › Products without JS keeps both narratives and primary links available (175ms)
+  ✓   3 [chromium] › e2e/marketing-interactions.spec.ts:50:1 › Pulse hash entry, keyboard controls, exception recovery and completed proof (786ms)
+  ✓   4 [chromium] › e2e/marketing-interactions.spec.ts:93:1 › Pulse without JavaScript retains narrative, links and native disclosures (225ms)
+  ✓   5 [chromium] › e2e/marketing-interactions.spec.ts:109:1 › Drive keyboard, pause, rejection, exception, reset, retry and evidence (3.2s)
+  ✓   6 [chromium] › e2e/marketing-interactions.spec.ts:150:1 › Drive without JavaScript retains narrative, download and disclosures (244ms)
+Direct hash heading ms [33m1440[39m operations [33m150[39m
+Direct hash heading ms [33m1440[39m execution [33m144[39m
+Direct hash heading ms [33m768[39m operations [33m121[39m
+Direct hash heading ms [33m768[39m execution [33m121[39m
+Direct hash heading ms [33m375[39m operations [33m90[39m
+Direct hash heading ms [33m375[39m execution [33m116[39m
+Navigation timings {
+  domContentLoadedMs: [33m84.40000000596046[39m,
+  responseMs: [33m74.10000002384186[39m
+}
+  ✓   7 [chromium] › e2e/marketing-interactions.spec.ts:163:1 › Combined demo direct hash entries and hero anchor navigation (1.6s)
+  ✓   8 [chromium] › e2e/marketing-interactions.spec.ts:198:1 › Combined demo Pulse keyboard scenarios, partial evidence and reset (664ms)
+  ✓   9 [chromium] › e2e/marketing-interactions.spec.ts:234:1 › Combined demo Drive preserves approval, blocked recovery, download and reset (2.0s)
+  ✓  10 [chromium] › e2e/marketing-interactions.spec.ts:259:1 › Combined demo normal motion rapid input and pending reset stay deterministic (2.4s)
+  ✓  11 [chromium] › e2e/marketing-interactions.spec.ts:281:1 › workflow query validation pending retry conflict receipt download and real deletion (1.3s)
+  ✓  12 [chromium] › e2e/marketing-parity.spec.ts:20:3 › all marketing routes: /landing (835ms)
+  ✓  13 [chromium] › e2e/marketing-parity.spec.ts:20:3 › all marketing routes: /landing/products (924ms)
+  ✓  14 [chromium] › e2e/marketing-parity.spec.ts:20:3 › all marketing routes: /landing/products/operations-os (921ms)
+  ✓  15 [chromium] › e2e/marketing-parity.spec.ts:20:3 › all marketing routes: /landing/products/autonomous-execution (892ms)
+  ✓  16 [chromium] › e2e/marketing-parity.spec.ts:20:3 › all marketing routes: /landing/approach (961ms)
+  ✓  17 [chromium] › e2e/marketing-parity.spec.ts:20:3 › all marketing routes: /landing/platform (883ms)
+  ✓  18 [chromium] › e2e/marketing-parity.spec.ts:20:3 › all marketing routes: /landing/trust (913ms)
+  ✓  19 [chromium] › e2e/marketing-parity.spec.ts:20:3 › all marketing routes: /landing/company (919ms)
+  ✓  20 [chromium] › e2e/marketing-parity.spec.ts:20:3 › all marketing routes: /landing/contact (944ms)
+  ✓  21 [chromium] › e2e/marketing-parity.spec.ts:20:3 › all marketing routes: /landing/demo (902ms)
+  ✓  22 [chromium] › e2e/marketing-parity.spec.ts:71:1 › complete deduplicated internal graph metadata hashes queries and downloads (3.4s)
+  ✘  23 [chromium] › e2e/marketing-parity.spec.ts:82:35 › full document accessibility reflow and targets at 1440 (6.9s)
+(node:60291) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:60291) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  24 [chromium] › e2e/marketing-parity.spec.ts:82:35 › full document accessibility reflow and targets at 768 (601ms)
+(node:60303) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:60303) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  25 [chromium] › e2e/marketing-parity.spec.ts:82:35 › full document accessibility reflow and targets at 375 (552ms)
+(node:60388) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:60388) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  26 [chromium] › e2e/marketing-parity.spec.ts:91:1 › forced graphics failure leaves complete static story and source artwork (377ms)
+
+
+  1) [chromium] › e2e/marketing-parity.spec.ts:82:35 › full document accessibility reflow and targets at 1440 
+
+    Error: /landing/legal/terms-of-service: [{"id":"color-contrast","nodes":[[".text-xs"]]}]
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  -  1[39m
+    [31m+ Received  + 59[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   Object {[39m
+    [31m+     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",[39m
+    [31m+     "help": "Elements must meet minimum color contrast ratio thresholds",[39m
+    [31m+     "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",[39m
+    [31m+     "id": "color-contrast",[39m
+    [31m+     "impact": "serious",[39m
+    [31m+     "nodes": Array [[39m
+    [31m+       Object {[39m
+    [31m+         "all": Array [],[39m
+    [31m+         "any": Array [[39m
+    [31m+           Object {[39m
+    [31m+             "data": Object {[39m
+    [31m+               "bgColor": "#eef2f6",[39m
+    [31m+               "contrastRatio": 2.08,[39m
+    [31m+               "expectedContrastRatio": "4.5:1",[39m
+    [31m+               "fgColor": "#a3aab2",[39m
+    [31m+               "fontSize": "9.8pt (13px)",[39m
+    [31m+               "fontWeight": "normal",[39m
+    [31m+               "messageKey": null,[39m
+    [31m+             },[39m
+    [31m+             "id": "color-contrast",[39m
+    [31m+             "impact": "serious",[39m
+    [31m+             "message": "Element has insufficient color contrast of 2.08 (foreground color: #a3aab2, background color: #eef2f6, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+             "relatedNodes": Array [[39m
+    [31m+               Object {[39m
+    [31m+                 "html": "<div class=\"ek-site theme-ekarvo\">",[39m
+    [31m+                 "target": Array [[39m
+    [31m+                   ".ek-site",[39m
+    [31m+                 ],[39m
+    [31m+               },[39m
+    [31m+             ],[39m
+    [31m+           },[39m
+    [31m+         ],[39m
+    [31m+         "failureSummary": "Fix any of the following:[39m
+    [31m+   Element has insufficient color contrast of 2.08 (foreground color: #a3aab2, background color: #eef2f6, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+         "html": "<p class=\"mb-4 text-xs opacity-50\">Version <!-- -->v1[39m
+    [31m+ </p>",[39m
+    [31m+         "impact": "serious",[39m
+    [31m+         "none": Array [],[39m
+    [31m+         "target": Array [[39m
+    [31m+           ".text-xs",[39m
+    [31m+         ],[39m
+    [31m+       },[39m
+    [31m+     ],[39m
+    [31m+     "tags": Array [[39m
+    [31m+       "cat.color",[39m
+    [31m+       "wcag2aa",[39m
+    [31m+       "wcag143",[39m
+    [31m+       "TTv5",[39m
+    [31m+       "TT13.c",[39m
+    [31m+       "EN-301-549",[39m
+    [31m+       "EN-9.1.4.3",[39m
+    [31m+       "ACT",[39m
+    [31m+       "RGAAv4",[39m
+    [31m+       "RGAA-3.2.1",[39m
+    [31m+     ],[39m
+    [31m+   },[39m
+    [31m+ ][39m
+
+      83 |  test.setTimeout(240000);await page.setViewportSize({width,height:width===375?812:900});
+      84 |  for(const route of PUBLIC_ROUTES){await page.goto(route);await page.getByRole('heading',{level:1}).waitFor();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),route).toBe(true);
+    > 85 |  const axe=await new AxeBuilder({page}).analyze();expect(axe.violations,`${route}: ${JSON.stringify(axe.violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)})))}`).toEqual([]);
+         |                                                                                                                                                                           ^
+      86 |  for(const target of await page.locator('.site-header a,.site-header summary,.site-footer a,main button,main summary,.product-anchor-nav a').all()){if(await target.isVisible()){const box=await target.boundingBox();expect(box!.width,`${route}: ${await target.textContent()}`).toBeGreaterThanOrEqual(44);expect(box!.height,`${route}: ${await target.textContent()}`).toBeGreaterThanOrEqual(44)}}
+      87 |  }
+      88 |  if(width<1000){await page.goto('/landing/products');const summary=page.locator('.mobile-menu summary');await summary.focus();await page.keyboard.press('Enter');await expect(page.locator('.mobile-menu')).toHaveAttribute('open','');await page.getByRole('navigation',{name:'Mobile navigation'}).getByRole('link',{name:'Products',exact:true}).focus();await page.keyboard.press('Escape');await expect(summary).toBeFocused();await expect(page.locator('.mobile-menu')).not.toHaveAttribute('open');await expect(summary).toHaveCSS('outline-style','solid');await expect(summary).toHaveCSS('font-size','14px')}
+        at /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web/e2e/marketing-parity.spec.ts:85:171
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../playwright/test-results/marketing-parity-full-docu-01f73--reflow-and-targets-at-1440-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../playwright/test-results/marketing-parity-full-docu-01f73--reflow-and-targets-at-1440-chromium/error-context.md
+
+  2) [chromium] › e2e/marketing-parity.spec.ts:82:35 › full document accessibility reflow and targets at 768 
+
+    Error: /landing: [{"id":"label-content-name-mismatch","nodes":[["summary"]]}]
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  -  1[39m
+    [31m+ Received  + 40[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   Object {[39m
+    [31m+     "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",[39m
+    [31m+     "help": "Elements must have their visible text as part of their accessible name",[39m
+    [31m+     "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",[39m
+    [31m+     "id": "label-content-name-mismatch",[39m
+    [31m+     "impact": "serious",[39m
+    [31m+     "nodes": Array [[39m
+    [31m+       Object {[39m
+    [31m+         "all": Array [],[39m
+    [31m+         "any": Array [[39m
+    [31m+           Object {[39m
+    [31m+             "data": null,[39m
+    [31m+             "id": "label-content-name-mismatch",[39m
+    [31m+             "impact": "serious",[39m
+    [31m+             "message": "Text inside the element is not included in the accessible name",[39m
+    [31m+             "relatedNodes": Array [],[39m
+    [31m+           },[39m
+    [31m+         ],[39m
+    [31m+         "failureSummary": "Fix any of the following:[39m
+    [31m+   Text inside the element is not included in the accessible name",[39m
+    [31m+         "html": "<summary aria-label=\"Open navigation\">",[39m
+    [31m+         "impact": "serious",[39m
+    [31m+         "none": Array [],[39m
+    [31m+         "target": Array [[39m
+    [31m+           "summary",[39m
+    [31m+         ],[39m
+    [31m+       },[39m
+    [31m+     ],[39m
+    [31m+     "tags": Array [[39m
+    [31m+       "cat.semantics",[39m
+    [31m+       "wcag21a",[39m
+    [31m+       "wcag253",[39m
+    [31m+       "EN-301-549",[39m
+    [31m+       "EN-9.2.5.3",[39m
+    [31m+       "RGAAv4",[39m
+    [31m+       "RGAA-6.1.5",[39m
+    [31m+     ],[39m
+    [31m+   },[39m
+    [31m+ ][39m
+
+      83 |  test.setTimeout(240000);await page.setViewportSize({width,height:width===375?812:900});
+      84 |  for(const route of PUBLIC_ROUTES){await page.goto(route);await page.getByRole('heading',{level:1}).waitFor();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),route).toBe(true);
+    > 85 |  const axe=await new AxeBuilder({page}).analyze();expect(axe.violations,`${route}: ${JSON.stringify(axe.violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)})))}`).toEqual([]);
+         |                                                                                                                                                                           ^
+      86 |  for(const target of await page.locator('.site-header a,.site-header summary,.site-footer a,main button,main summary,.product-anchor-nav a').all()){if(await target.isVisible()){const box=await target.boundingBox();expect(box!.width,`${route}: ${await target.textContent()}`).toBeGreaterThanOrEqual(44);expect(box!.height,`${route}: ${await target.textContent()}`).toBeGreaterThanOrEqual(44)}}
+      87 |  }
+      88 |  if(width<1000){await page.goto('/landing/products');const summary=page.locator('.mobile-menu summary');await summary.focus();await page.keyboard.press('Enter');await expect(page.locator('.mobile-menu')).toHaveAttribute('open','');await page.getByRole('navigation',{name:'Mobile navigation'}).getByRole('link',{name:'Products',exact:true}).focus();await page.keyboard.press('Escape');await expect(summary).toBeFocused();await expect(page.locator('.mobile-menu')).not.toHaveAttribute('open');await expect(summary).toHaveCSS('outline-style','solid');await expect(summary).toHaveCSS('font-size','14px')}
+        at /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web/e2e/marketing-parity.spec.ts:85:171
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../playwright/test-results/marketing-parity-full-docu-44d77-y-reflow-and-targets-at-768-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../playwright/test-results/marketing-parity-full-docu-44d77-y-reflow-and-targets-at-768-chromium/error-context.md
+
+  3) [chromium] › e2e/marketing-parity.spec.ts:82:35 › full document accessibility reflow and targets at 375 
+
+    Error: /landing: [{"id":"label-content-name-mismatch","nodes":[["summary"]]}]
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  -  1[39m
+    [31m+ Received  + 40[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   Object {[39m
+    [31m+     "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",[39m
+    [31m+     "help": "Elements must have their visible text as part of their accessible name",[39m
+    [31m+     "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",[39m
+    [31m+     "id": "label-content-name-mismatch",[39m
+    [31m+     "impact": "serious",[39m
+    [31m+     "nodes": Array [[39m
+    [31m+       Object {[39m
+    [31m+         "all": Array [],[39m
+    [31m+         "any": Array [[39m
+    [31m+           Object {[39m
+    [31m+             "data": null,[39m
+    [31m+             "id": "label-content-name-mismatch",[39m
+    [31m+             "impact": "serious",[39m
+    [31m+             "message": "Text inside the element is not included in the accessible name",[39m
+    [31m+             "relatedNodes": Array [],[39m
+    [31m+           },[39m
+    [31m+         ],[39m
+    [31m+         "failureSummary": "Fix any of the following:[39m
+    [31m+   Text inside the element is not included in the accessible name",[39m
+    [31m+         "html": "<summary aria-label=\"Open navigation\">",[39m
+    [31m+         "impact": "serious",[39m
+    [31m+         "none": Array [],[39m
+    [31m+         "target": Array [[39m
+    [31m+           "summary",[39m
+    [31m+         ],[39m
+    [31m+       },[39m
+    [31m+     ],[39m
+    [31m+     "tags": Array [[39m
+    [31m+       "cat.semantics",[39m
+    [31m+       "wcag21a",[39m
+    [31m+       "wcag253",[39m
+    [31m+       "EN-301-549",[39m
+    [31m+       "EN-9.2.5.3",[39m
+    [31m+       "RGAAv4",[39m
+    [31m+       "RGAA-6.1.5",[39m
+    [31m+     ],[39m
+    [31m+   },[39m
+    [31m+ ][39m
+
+      83 |  test.setTimeout(240000);await page.setViewportSize({width,height:width===375?812:900});
+      84 |  for(const route of PUBLIC_ROUTES){await page.goto(route);await page.getByRole('heading',{level:1}).waitFor();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),route).toBe(true);
+    > 85 |  const axe=await new AxeBuilder({page}).analyze();expect(axe.violations,`${route}: ${JSON.stringify(axe.violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)})))}`).toEqual([]);
+         |                                                                                                                                                                           ^
+      86 |  for(const target of await page.locator('.site-header a,.site-header summary,.site-footer a,main button,main summary,.product-anchor-nav a').all()){if(await target.isVisible()){const box=await target.boundingBox();expect(box!.width,`${route}: ${await target.textContent()}`).toBeGreaterThanOrEqual(44);expect(box!.height,`${route}: ${await target.textContent()}`).toBeGreaterThanOrEqual(44)}}
+      87 |  }
+      88 |  if(width<1000){await page.goto('/landing/products');const summary=page.locator('.mobile-menu summary');await summary.focus();await page.keyboard.press('Enter');await expect(page.locator('.mobile-menu')).toHaveAttribute('open','');await page.getByRole('navigation',{name:'Mobile navigation'}).getByRole('link',{name:'Products',exact:true}).focus();await page.keyboard.press('Escape');await expect(summary).toBeFocused();await expect(page.locator('.mobile-menu')).not.toHaveAttribute('open');await expect(summary).toHaveCSS('outline-style','solid');await expect(summary).toHaveCSS('font-size','14px')}
+        at /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web/e2e/marketing-parity.spec.ts:85:171
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../playwright/test-results/marketing-parity-full-docu-55b65-y-reflow-and-targets-at-375-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../playwright/test-results/marketing-parity-full-docu-55b65-y-reflow-and-targets-at-375-chromium/error-context.md
+
+  4) [chromium] › e2e/marketing-parity.spec.ts:91:1 › forced graphics failure leaves complete static story and source artwork 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: locator('.film-study-poster')
+    Expected: visible
+    Error: strict mode violation: locator('.film-study-poster') resolved to 2 elements:
+        1) <picture aria-hidden="true" class="film-study-poster">…</picture> aka getByRole('figure', { name: 'A connected signal links' }).locator('picture')
+        2) <picture aria-hidden="true" class="film-study-poster">…</picture> aka getByRole('figure', { name: 'The connected signal appears' }).locator('picture')
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for locator('.film-study-poster')[22m
+
+
+      90 |
+      91 | test('forced graphics failure leaves complete static story and source artwork',async({page})=>{
+    > 92 |  await page.emulateMedia({reducedMotion:'no-preference'});await page.addInitScript(()=>{HTMLCanvasElement.prototype.getContext=()=>null});await page.goto('/landing');await expect(page.locator('[data-ek-film]')).not.toHaveClass(/is-film/);for(const id of ['opening','fracture','pulse','authority','drive','evidence','outcome'])await expect(page.locator(`#${id} h1,#${id} h2`)).toBeVisible();await page.goto('/landing/products/operations-os');await expect(page.locator('.film-study-poster')).toBeVisible();await expect(page.getByRole('heading',{name:'See the whole operation.'})).toBeVisible();
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ^
+      93 | });
+      94 |
+        at /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web/e2e/marketing-parity.spec.ts:92:491
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../playwright/test-results/marketing-parity-forced-gr-6fa75-ic-story-and-source-artwork-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../playwright/test-results/marketing-parity-forced-gr-6fa75-ic-story-and-source-artwork-chromium/error-context.md
+
+  4 failed
+    [chromium] › e2e/marketing-parity.spec.ts:82:35 › full document accessibility reflow and targets at 1440 
+    [chromium] › e2e/marketing-parity.spec.ts:82:35 › full document accessibility reflow and targets at 768 
+    [chromium] › e2e/marketing-parity.spec.ts:82:35 › full document accessibility reflow and targets at 375 
+    [chromium] › e2e/marketing-parity.spec.ts:91:1 › forced graphics failure leaves complete static story and source artwork 
+  22 passed (39.0s)

@@ -1,0 +1,165 @@
+
+ RUN  v4.0.18 /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web
+
+ ✓ app/api/contact/route.test.ts (33 tests) 418ms
+ ✓ tests/integration/modifyAvatarRoute.test.ts (8 tests) 453ms
+stderr | tests/integration/webhookRoute.test.ts > Dodo Webhook Route - Unconfigured > should return 503 when payment gateway is not configured
+BetterStack logging disabled (missing env variables)
+
+ ✓ components/landing/ekarvo/marketing/ContactWorkflowForm.test.tsx (10 tests) 368ms
+ ✓ tests/integration/webhookRoute.test.ts (1 test) 1358ms
+     ✓ should return 503 when payment gateway is not configured  1357ms
+ ✓ components/landing/ekarvo/marketing/ProductCarousel.test.tsx (13 tests) 233ms
+ ✓ components/landing/ekarvo/marketing/Disclosure.test.tsx (15 tests) 259ms
+ ✓ components/landing/ekarvo/marketing/SpatialScene.test.tsx (19 tests) 1059ms
+ ✓ components/landing/ekarvo/film/cinematicLanding.test.tsx (17 tests) 1337ms
+ ✓ components/landing/ekarvo/marketing/ExecutionDemo.test.tsx (6 tests) 237ms
+ ✓ app/api/delete-request/route.test.ts (33 tests) 283ms
+ ✓ components/landing/ekarvo/marketing/DecisionProof.test.tsx (3 tests) 240ms
+ ✓ components/landing/ekarvo/marketing/OperationsDemo.test.tsx (5 tests) 296ms
+ ✓ components/landing/ekarvo/SiteChrome.test.tsx (17 tests) 397ms
+ ✓ components/landing/ekarvo/components/EkarvoWorkstreamMap.test.tsx (5 tests) 173ms
+ ✓ tests/integration/middleware.test.ts (13 tests) 77ms
+ ✓ lib/marketing/request-store.test.ts (22 tests) 3334ms
+     ✓ bounds waiting without stealing an unreleased filesystem lock  2500ms
+ ✓ lib/utils/formatAmount.test.ts (4 tests) 26ms
+ ✓ components/landing/ekarvo/marketing/CapabilityAtlas.test.tsx (5 tests) 176ms
+stderr | lib/jobs/__tests__/inngest.test.ts
+BetterStack logging disabled (missing env variables)
+
+stderr | lib/jobs/__tests__/inngest.test.ts
+[backend/client] BACKEND_HMAC_SECRET is not set
+
+ ✓ components/landing/ekarvo/marketing/DeleteRequestForm.test.tsx (9 tests) 206ms
+ ✓ lib/jobs/__tests__/inngest.test.ts (2 tests) 52ms
+ ✓ tests/integration/routePolicy.test.ts (51 tests) 99ms
+stdout | tests/integration/webhookRouteConfigured.test.ts > Dodo Webhook Route - Configured > should handle onPaymentSucceeded with valid payload
+[Dodo Webhook] Payment: pay_123, User: user_1, Credits: 100
+
+stdout | tests/integration/webhookRouteConfigured.test.ts > Dodo Webhook Route - Configured > should handle onPaymentSucceeded with valid payload
+[Dodo Webhook] Credits +100 for user user_1 (payment: pay_123)
+
+ ✓ tests/integration/webhookRouteConfigured.test.ts (3 tests) 88ms
+ ✓ lib/ai-jobs/__tests__/functions.test.ts (2 tests) 56ms
+stderr | lib/site-config/__tests__/site-config.test.ts
+BetterStack logging disabled (missing env variables)
+
+stdout | lib/site-config/__tests__/site-config.test.ts > getSiteConfig > keeps rendering from env when the database is unreachable
+[33mwarn[39m: [Oct-30-2026 11:56:10] 	Site config read failed; using env
+
+ ✓ lib/site-config/__tests__/site-config.test.ts (15 tests) 14ms
+ ✓ tests/integration/authRoute.test.ts (5 tests) 41ms
+ ✓ components/landing/ekarvo/marketing/PrivacyPolicy.static.test.tsx (1 test) 10ms
+ ✓ lib/ai-jobs/__tests__/stream.test.ts (4 tests) 30ms
+ ✓ hooks/__tests__/useChangeLocale.test.tsx (3 tests) 30ms
+ ✓ components/home/BreadcrumbsHeader.test.tsx (1 test) 42ms
+ ✓ tests/integration/billingProcedures.test.ts (5 tests) 7ms
+ ✓ components/onboarding/OnboardingPanel.test.tsx (1 test) 57ms
+stderr | tests/integration/aiChatRoute.test.ts
+[Upstash Redis] The 'url' property is missing or undefined in your Redis config.
+[Upstash Redis] The 'token' property is missing or undefined in your Redis config.
+
+stderr | tests/integration/aiChatRoute.test.ts
+BetterStack logging disabled (missing env variables)
+
+ ✓ components/landing/__tests__/NavbarSection.test.tsx (1 test) 66ms
+ ✓ lib/utils/formatDate.test.ts (4 tests) 34ms
+stdout | tests/integration/aiChatRoute.test.ts > AI chat route > answers without MCP tools when AI_MCP_SERVERS is invalid
+[31merror[39m: [Oct-30-2026 11:56:11] 	ai.mcp_config_invalid {"error":"Error: AI_MCP_SERVERS is invalid"}
+
+ ✓ tests/integration/aiChatRoute.test.ts (17 tests) 24ms
+ ✓ trpc/routers/__tests__/apiKeys.test.ts (5 tests) 12ms
+ ✓ server/__tests__/authenticateApiKey.test.ts (9 tests) 8ms
+ ✓ trpc/routers/__tests__/organizationProcedures.test.ts (21 tests) 61ms
+stderr | tests/integration/aiSpeechRoute.test.ts
+[Upstash Redis] The 'url' property is missing or undefined in your Redis config.
+[Upstash Redis] The 'token' property is missing or undefined in your Redis config.
+
+ ✓ tests/integration/aiSpeechRoute.test.ts (10 tests) 9ms
+ ✓ lib/onboarding/__tests__/onboarding.test.ts (9 tests) 6ms
+ ✓ trpc/routers/__tests__/orgProcedure.test.ts (6 tests) 10ms
+ ✓ tests/integration/aiProcedures.test.ts (21 tests) 10ms
+ ✓ tests/integration/homeProcedures.test.ts (5 tests) 6ms
+stderr | tests/integration/supportProcedures.test.ts > Support Router Integration Tests > subscribeToNewsletter > should throw when N8N_SUBSCRIBE_NEWSLETTER_WEBHOOK_URL is missing
+Missing N8N_SUBSCRIBE_NEWSLETTER_WEBHOOK_URL
+
+stderr | tests/integration/supportProcedures.test.ts > Support Router Integration Tests > subscribeToNewsletter > should throw when n8n returns an error response
+n8n error { error: 'Bad request' }
+
+stderr | tests/integration/supportProcedures.test.ts > Support Router Integration Tests > chatWithSaaSAssistant > should throw when N8N_SAAS_ASSISTANT_WEBHOOK_URL is missing
+Missing N8N_SAAS_ASSISTANT_WEBHOOK_URL
+
+stderr | tests/integration/supportProcedures.test.ts > Support Router Integration Tests > chatWithSaaSAssistant > should throw when n8n chat returns an error response
+n8n error { error: 'Internal error' }
+
+ ✓ tests/integration/supportProcedures.test.ts (12 tests) 19ms
+stderr | lib/usage/__tests__/usage.test.ts
+BetterStack logging disabled (missing env variables)
+
+stdout | lib/usage/__tests__/usage.test.ts > recordUsage > announces alerts through notifications
+[32minfo[39m: [Oct-30-2026 11:56:11] 	Usage threshold reached
+
+ ✓ lib/usage/__tests__/usage.test.ts (9 tests) 23ms
+ ✓ tests/integration/publicContent.test.ts (3 tests) 8ms
+stderr | lib/notifications/__tests__/notifications.test.ts
+BetterStack logging disabled (missing env variables)
+
+ ✓ components/landing/ekarvo/marketing/models/journey.test.ts (7 tests) 6ms
+ ✓ lib/notifications/__tests__/notifications.test.ts (8 tests) 9ms
+ ✓ lib/__tests__/env.test.ts (20 tests) 9ms
+ ✓ trpc/routers/__tests__/aiJobs.test.ts (3 tests) 11ms
+ ✓ lib/ai-jobs/__tests__/service.test.ts (8 tests) 6ms
+ ✓ components/landing/ekarvo/utils/workstream.test.ts (8 tests) 3ms
+ ✓ components/landing/ekarvo/marketing/models/decisionProof.test.ts (7 tests) 7ms
+stderr | lib/jobs/__tests__/jobs.test.ts
+BetterStack logging disabled (missing env variables)
+
+stderr | lib/jobs/__tests__/jobs.test.ts
+[backend/client] BACKEND_HMAC_SECRET is not set
+
+ ✓ lib/jobs/__tests__/jobs.test.ts (4 tests) 7ms
+stderr | app/api/ai/agents/__tests__/stream.test.ts
+[Upstash Redis] The 'url' property is missing or undefined in your Redis config.
+[Upstash Redis] The 'token' property is missing or undefined in your Redis config.
+
+ ✓ app/api/ai/agents/__tests__/stream.test.ts (3 tests) 5ms
+ ✓ app/api/demo-login/__tests__/route.test.ts (3 tests) 7ms
+ ✓ i18n/__tests__/request.test.ts (4 tests) 4ms
+ ✓ components/landing/ekarvo/utils/scrollScene.test.ts (4 tests) 2ms
+ ✓ components/landing/ekarvo/utils/sceneEngine.test.ts (6 tests) 2ms
+ ✓ lib/__tests__/env-files.test.ts (4 tests) 3ms
+ ✓ trpc/routers/__tests__/admin.test.ts (6 tests) 6ms
+stderr | trpc/routers/__tests__/guestGuard.test.ts
+2026-10-30T06:26:13.546Z WARN [Better Auth]: Social provider github is missing clientId or clientSecret
+2026-10-30T06:26:13.547Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-10-30T06:26:13.547Z WARN [Better Auth]: Social provider linkedin is missing clientId or clientSecret
+
+stderr | trpc/routers/__tests__/guestReadableAdmin.test.ts
+2026-10-30T06:26:13.546Z WARN [Better Auth]: Social provider github is missing clientId or clientSecret
+2026-10-30T06:26:13.547Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-10-30T06:26:13.547Z WARN [Better Auth]: Social provider linkedin is missing clientId or clientSecret
+
+ ✓ trpc/routers/__tests__/guestGuard.test.ts (4 tests) 3ms
+ ✓ trpc/routers/__tests__/guestReadableAdmin.test.ts (5 tests) 3ms
+stderr | trpc/routers/__tests__/apiRegistry.test.ts
+2026-10-30T06:26:13.681Z WARN [Better Auth]: Social provider github is missing clientId or clientSecret
+2026-10-30T06:26:13.682Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-10-30T06:26:13.682Z WARN [Better Auth]: Social provider linkedin is missing clientId or clientSecret
+
+stderr | trpc/routers/__tests__/apiRegistry.test.ts
+[Upstash Redis] The 'url' property is missing or undefined in your Redis config.
+[Upstash Redis] The 'token' property is missing or undefined in your Redis config.
+
+stderr | trpc/routers/__tests__/apiRegistry.test.ts
+BetterStack logging disabled (missing env variables)
+
+stderr | trpc/routers/__tests__/apiRegistry.test.ts
+[backend/client] BACKEND_HMAC_SECRET is not set
+
+ ✓ trpc/routers/__tests__/apiRegistry.test.ts (3 tests) 1ms
+
+ Test Files  63 passed (63)
+      Tests  570 passed (570)
+   Start at  11:56:05
+   Duration  8.36s (transform 3.29s, setup 3.26s, import 17.92s, tests 11.85s, environment 10.64s)
+

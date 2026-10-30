@@ -10,7 +10,7 @@ export default function AuthGroupLayout({
   children: ReactNode;
 }>): ReactElement {
   return (
-    <div className="ek-site theme-ekarvo dark relative isolate [--auth-top-offset:var(--header-height)]">
+    <div className="ek-site ek-auth theme-ekarvo dark relative isolate [--auth-top-offset:var(--header-height)]">
       <SiteHeader />
       {children}
     </div>

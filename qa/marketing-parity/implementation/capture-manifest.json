@@ -1,0 +1,342 @@
+[
+  {
+    "name": "home",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/home-1440.webp"
+  },
+  {
+    "name": "products",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/products-1440.webp"
+  },
+  {
+    "name": "products-drive",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/products-drive-1440.webp"
+  },
+  {
+    "name": "products-operations-os",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/products-operations-os-1440.webp"
+  },
+  {
+    "name": "atlas-plan",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/atlas-plan-1440.webp"
+  },
+  {
+    "name": "products-autonomous-execution",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/products-autonomous-execution-1440.webp"
+  },
+  {
+    "name": "approach",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/approach-1440.webp"
+  },
+  {
+    "name": "platform",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/platform-1440.webp"
+  },
+  {
+    "name": "trust",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/trust-1440.webp"
+  },
+  {
+    "name": "trust-open",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/trust-open-1440.webp"
+  },
+  {
+    "name": "company",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/company-1440.webp"
+  },
+  {
+    "name": "contact",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/contact-1440.webp"
+  },
+  {
+    "name": "demo",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/demo-1440.webp"
+  },
+  {
+    "name": "demo-pulse-terminal",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/demo-pulse-terminal-1440.webp"
+  },
+  {
+    "name": "demo-drive-terminal",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/demo-drive-terminal-1440.webp"
+  },
+  {
+    "name": "privacy",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/privacy-1440.webp"
+  },
+  {
+    "name": "terms",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/terms-1440.webp"
+  },
+  {
+    "name": "contact-errors",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/contact-errors-1440.webp"
+  },
+  {
+    "name": "contact-pending",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/contact-pending-1440.webp"
+  },
+  {
+    "name": "contact-receipt",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/contact-receipt-1440.webp"
+  },
+  {
+    "name": "privacy-delete",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/privacy-delete-1440.webp"
+  },
+  {
+    "name": "home-graphics-failure",
+    "width": 1440,
+    "path": "qa/marketing-parity/implementation/home-graphics-failure-1440.webp"
+  },
+  {
+    "name": "home",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/home-768.webp"
+  },
+  {
+    "name": "products",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/products-768.webp"
+  },
+  {
+    "name": "products-drive",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/products-drive-768.webp"
+  },
+  {
+    "name": "products-operations-os",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/products-operations-os-768.webp"
+  },
+  {
+    "name": "atlas-plan",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/atlas-plan-768.webp"
+  },
+  {
+    "name": "products-autonomous-execution",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/products-autonomous-execution-768.webp"
+  },
+  {
+    "name": "approach",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/approach-768.webp"
+  },
+  {
+    "name": "platform",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/platform-768.webp"
+  },
+  {
+    "name": "trust",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/trust-768.webp"
+  },
+  {
+    "name": "trust-open",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/trust-open-768.webp"
+  },
+  {
+    "name": "company",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/company-768.webp"
+  },
+  {
+    "name": "contact",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/contact-768.webp"
+  },
+  {
+    "name": "demo",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/demo-768.webp"
+  },
+  {
+    "name": "demo-pulse-terminal",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/demo-pulse-terminal-768.webp"
+  },
+  {
+    "name": "demo-drive-terminal",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/demo-drive-terminal-768.webp"
+  },
+  {
+    "name": "privacy",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/privacy-768.webp"
+  },
+  {
+    "name": "terms",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/terms-768.webp"
+  },
+  {
+    "name": "menu-open",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/menu-open-768.webp"
+  },
+  {
+    "name": "contact-errors",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/contact-errors-768.webp"
+  },
+  {
+    "name": "contact-pending",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/contact-pending-768.webp"
+  },
+  {
+    "name": "contact-receipt",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/contact-receipt-768.webp"
+  },
+  {
+    "name": "privacy-delete",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/privacy-delete-768.webp"
+  },
+  {
+    "name": "home-graphics-failure",
+    "width": 768,
+    "path": "qa/marketing-parity/implementation/home-graphics-failure-768.webp"
+  },
+  {
+    "name": "home",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/home-375.webp"
+  },
+  {
+    "name": "products",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/products-375.webp"
+  },
+  {
+    "name": "products-drive",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/products-drive-375.webp"
+  },
+  {
+    "name": "products-operations-os",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/products-operations-os-375.webp"
+  },
+  {
+    "name": "atlas-plan",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/atlas-plan-375.webp"
+  },
+  {
+    "name": "products-autonomous-execution",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/products-autonomous-execution-375.webp"
+  },
+  {
+    "name": "approach",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/approach-375.webp"
+  },
+  {
+    "name": "platform",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/platform-375.webp"
+  },
+  {
+    "name": "trust",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/trust-375.webp"
+  },
+  {
+    "name": "trust-open",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/trust-open-375.webp"
+  },
+  {
+    "name": "company",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/company-375.webp"
+  },
+  {
+    "name": "contact",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/contact-375.webp"
+  },
+  {
+    "name": "demo",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/demo-375.webp"
+  },
+  {
+    "name": "demo-pulse-terminal",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/demo-pulse-terminal-375.webp"
+  },
+  {
+    "name": "demo-drive-terminal",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/demo-drive-terminal-375.webp"
+  },
+  {
+    "name": "privacy",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/privacy-375.png"
+  },
+  {
+    "name": "terms",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/terms-375.png"
+  },
+  {
+    "name": "menu-open",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/menu-open-375.webp"
+  },
+  {
+    "name": "contact-errors",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/contact-errors-375.webp"
+  },
+  {
+    "name": "contact-pending",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/contact-pending-375.webp"
+  },
+  {
+    "name": "contact-receipt",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/contact-receipt-375.webp"
+  },
+  {
+    "name": "privacy-delete",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/privacy-delete-375.webp"
+  },
+  {
+    "name": "home-graphics-failure",
+    "width": 375,
+    "path": "qa/marketing-parity/implementation/home-graphics-failure-375.webp"
+  }
+]

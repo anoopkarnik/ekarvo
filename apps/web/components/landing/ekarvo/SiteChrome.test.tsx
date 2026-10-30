@@ -78,6 +78,7 @@ describe("marketing navigation", () => {
     const { container } = render(<SiteHeader />);
     const menu = openMenu(container);
     const summary = container.querySelector("summary")!;
+    expect(summary).toHaveAccessibleName("Menu");
     const link = within(screen.getByRole("navigation", { name: "Mobile navigation" })).getByRole("link", { name: "Products" });
     link.focus();
     fireEvent.keyDown(link, { key: "Escape" });

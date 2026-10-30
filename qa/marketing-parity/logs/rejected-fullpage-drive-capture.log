@@ -1,0 +1,12 @@
+
+Running 1 test using 1 worker
+
+(node:67096) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:67096) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[33m375[39m { x: [33m325[39m, w: [33m325[39m, status: [32m'Ekarvo Drive, 2 of 2'[39m }
+AFTER FULL { x: [33m0[39m, w: [33m325[39m, index: [1mnull[22m }
+  ✓  1 [chromium] › e2e/task-12-slide.spec.ts:2:1 › source settled product slides (1.7s)
+
+  1 passed (2.9s)

@@ -1,0 +1,932 @@
+{
+  "captured": "2026-10-30",
+  "deviceScaleFactor": 1,
+  "encoding": "Lossless WebP, decoded-pixel identity checked against PNG before removal. Images exceeding16383px remain original PNG.",
+  "images": [
+    {
+      "path": "qa/marketing-parity/source/approach-1440.webp",
+      "width": 1440,
+      "height": 4826,
+      "sha256": "5b21144013ae09f080afe8f6bf34707edaa2fba4d8a818ec0018681b473592a6"
+    },
+    {
+      "path": "qa/marketing-parity/source/approach-375.webp",
+      "width": 375,
+      "height": 5667,
+      "sha256": "9848988b1909a4435d04cd6690919602cee4b35867db6bf2f61e3de7c96557ac"
+    },
+    {
+      "path": "qa/marketing-parity/source/approach-768.webp",
+      "width": 768,
+      "height": 5505,
+      "sha256": "d734d58aaa3ab9b544bff8e2632f3a1a8958a621acb028b3ec7649443357e33b"
+    },
+    {
+      "path": "qa/marketing-parity/source/atlas-plan-1440.webp",
+      "width": 1280,
+      "height": 724,
+      "sha256": "84af3754a31f7a2768439ab0b97ae67718e4c462a5911f90778cf7ec8dfc1879"
+    },
+    {
+      "path": "qa/marketing-parity/source/atlas-plan-375.webp",
+      "width": 327,
+      "height": 1198,
+      "sha256": "1dffbfdd3ac2a0f6780b323a8daa9a7f253c968ca91b3c26712ed723f2fe678b"
+    },
+    {
+      "path": "qa/marketing-parity/source/atlas-plan-768.webp",
+      "width": 688,
+      "height": 1072,
+      "sha256": "c0662282ad7f4144352777ae0274127819a77875921f0d7071bed180a925a526"
+    },
+    {
+      "path": "qa/marketing-parity/source/company-1440.webp",
+      "width": 1440,
+      "height": 5247,
+      "sha256": "5c43a20c1bf7bcff38ac36aee7491eb795dab48b449226353ae3fb5b2772bc4a"
+    },
+    {
+      "path": "qa/marketing-parity/source/company-375.webp",
+      "width": 375,
+      "height": 5457,
+      "sha256": "3d6f57ea909f6d4cc2f486545ac927824e0a030455917a09b9a6c64969c59334"
+    },
+    {
+      "path": "qa/marketing-parity/source/company-768.webp",
+      "width": 768,
+      "height": 5501,
+      "sha256": "7ce0ce6795b4322bd58e32c439f5342fb387af977e1d825513116692d85faa0f"
+    },
+    {
+      "path": "qa/marketing-parity/source/contact-1440.webp",
+      "width": 1440,
+      "height": 1971,
+      "sha256": "74a50c23d698a2c18facaa63ef2d0e995ed1e75f085fc7dfe342cf69e9da3c11"
+    },
+    {
+      "path": "qa/marketing-parity/source/contact-375.webp",
+      "width": 375,
+      "height": 3392,
+      "sha256": "9e025649037406c2e8c808a736425309cef3c207b41a32c5061cd1794427bad1"
+    },
+    {
+      "path": "qa/marketing-parity/source/contact-768.webp",
+      "width": 768,
+      "height": 2737,
+      "sha256": "ebaf7c8a02723c40b898fc79dabb0af7a547c7f2b6b4faf30883e64555ea3019"
+    },
+    {
+      "path": "qa/marketing-parity/source/contact-errors-1440.webp",
+      "width": 1440,
+      "height": 2321,
+      "sha256": "5e760d9641145602a7b1c9cdff3c6dfea4f7cbbf48711714362ee756d986a495"
+    },
+    {
+      "path": "qa/marketing-parity/source/contact-errors-375.webp",
+      "width": 375,
+      "height": 3769,
+      "sha256": "7cdd864c4714cca2d3259702d8df9d997337d0fb1e8c9170c0e45a0000b7d3ee"
+    },
+    {
+      "path": "qa/marketing-parity/source/contact-errors-768.webp",
+      "width": 768,
+      "height": 3087,
+      "sha256": "05052badaa128f981e7f58c55784ce412491546b16839fd4562474d1956f2d43"
+    },
+    {
+      "path": "qa/marketing-parity/source/contact-pending-1440.webp",
+      "width": 1440,
+      "height": 2000,
+      "sha256": "4b9671afacd21c3051aaadc4b32022a0c562a1da3cd3c2dd601668ab9b653772"
+    },
+    {
+      "path": "qa/marketing-parity/source/contact-pending-375.webp",
+      "width": 375,
+      "height": 3443,
+      "sha256": "2f5190b9b8c0cf4e5c6f5bc0742f1d684a4adcd41cfa16f37afda9451c2748d6"
+    },
+    {
+      "path": "qa/marketing-parity/source/contact-pending-768.webp",
+      "width": 768,
+      "height": 2766,
+      "sha256": "fb754a597ce09bddd3786f7980a5672b99b3c1228d79f9bc0151c99a0a72d0e9"
+    },
+    {
+      "path": "qa/marketing-parity/source/contact-receipt-1440.webp",
+      "width": 1440,
+      "height": 1534,
+      "sha256": "235e0a700e46922c3b8497878f0f8982e89d837f781eab2851c75ca3e09a40d2"
+    },
+    {
+      "path": "qa/marketing-parity/source/contact-receipt-375.webp",
+      "width": 375,
+      "height": 2515,
+      "sha256": "492ad506be2a69e43931dab2bc00219de96917990a957bbe61ef11b0e5ced5b3"
+    },
+    {
+      "path": "qa/marketing-parity/source/contact-receipt-768.webp",
+      "width": 768,
+      "height": 2151,
+      "sha256": "c33b841343fc21538cfaf6ae28a4afaefcc35003b9b4db8b21f82cf6fc9dab88"
+    },
+    {
+      "path": "qa/marketing-parity/source/demo-1440.webp",
+      "width": 1440,
+      "height": 4762,
+      "sha256": "76121443286497dfa15fd62126534c514f7ad55bc0be38011693bb24f9e388a7"
+    },
+    {
+      "path": "qa/marketing-parity/source/demo-375.webp",
+      "width": 375,
+      "height": 5086,
+      "sha256": "79e0e7bee71ec591aad2f4e87e8170c3d0a0089351459c073beac6520125720d"
+    },
+    {
+      "path": "qa/marketing-parity/source/demo-768.webp",
+      "width": 768,
+      "height": 4807,
+      "sha256": "e627376288c17633b70771aa1cc81834207696f35af94864e54b8b1a8607a594"
+    },
+    {
+      "path": "qa/marketing-parity/source/demo-drive-terminal-1440.webp",
+      "width": 1280,
+      "height": 581,
+      "sha256": "c666bef15d3cec2fe90f5a90588c922061b66313633096636463a36d845c81ba"
+    },
+    {
+      "path": "qa/marketing-parity/source/demo-drive-terminal-375.webp",
+      "width": 327,
+      "height": 768,
+      "sha256": "34c4b49bf36cd7e58bf800fcb50c4975ae89ef8af3989b5d58a45d8fb0c910e7"
+    },
+    {
+      "path": "qa/marketing-parity/source/demo-drive-terminal-768.webp",
+      "width": 688,
+      "height": 584,
+      "sha256": "70442ac57f1946c009318da8d3a908c37cc0290c3ae6a4771c1a8a5eb341b871"
+    },
+    {
+      "path": "qa/marketing-parity/source/demo-pulse-terminal-1440.webp",
+      "width": 1280,
+      "height": 616,
+      "sha256": "af2849cdddbbcf8f5c2307c7b318dfc5abfeda87d6e2b5d5fe52c9b9f576bb35"
+    },
+    {
+      "path": "qa/marketing-parity/source/demo-pulse-terminal-375.webp",
+      "width": 327,
+      "height": 850,
+      "sha256": "f677d5aea289cc53b570e0b2f635b1f99835fa5686a90040ed374d134d7e6779"
+    },
+    {
+      "path": "qa/marketing-parity/source/demo-pulse-terminal-768.webp",
+      "width": 688,
+      "height": 622,
+      "sha256": "3e6aa72a9983728e9c6f356299f255354b6c45138d2663a83a723c0dcce0b4cd"
+    },
+    {
+      "path": "qa/marketing-parity/source/footer-1440.webp",
+      "width": 1440,
+      "height": 590,
+      "sha256": "308f4d41e58bddc30f85101a693c713b3c0590bc6f8962462eeebd757a63de44"
+    },
+    {
+      "path": "qa/marketing-parity/source/footer-375.webp",
+      "width": 375,
+      "height": 1038,
+      "sha256": "d29ef914dc40dede4d224e7723f1d52ea8cd835b5ec1e2ec3271d59aad37de2a"
+    },
+    {
+      "path": "qa/marketing-parity/source/footer-768.webp",
+      "width": 768,
+      "height": 817,
+      "sha256": "1b8fb5ba5ba1cd333ad213d34f4503e9b825db4c51b69d2c3736e6dae419a71a"
+    },
+    {
+      "path": "qa/marketing-parity/source/home-1440.webp",
+      "width": 1440,
+      "height": 7403,
+      "sha256": "1be1e83c5b222e1405377a2f61d15a820f5ad2ecf1cdd738171007d7884d7eac"
+    },
+    {
+      "path": "qa/marketing-parity/source/home-375.webp",
+      "width": 375,
+      "height": 6794,
+      "sha256": "1ef238a91bc73456d3974e640fc52d07f88082bf4244128c003d4f0936f004dc"
+    },
+    {
+      "path": "qa/marketing-parity/source/home-768.webp",
+      "width": 768,
+      "height": 7333,
+      "sha256": "d45c8f77c1679f9497136c6987a613f5989d21da0e9632ccb779ce7ba5dc69e0"
+    },
+    {
+      "path": "qa/marketing-parity/source/home-graphics-failure-1440.webp",
+      "width": 1440,
+      "height": 7403,
+      "sha256": "1be1e83c5b222e1405377a2f61d15a820f5ad2ecf1cdd738171007d7884d7eac"
+    },
+    {
+      "path": "qa/marketing-parity/source/home-graphics-failure-375.webp",
+      "width": 375,
+      "height": 6794,
+      "sha256": "1ef238a91bc73456d3974e640fc52d07f88082bf4244128c003d4f0936f004dc"
+    },
+    {
+      "path": "qa/marketing-parity/source/home-graphics-failure-768.webp",
+      "width": 768,
+      "height": 7333,
+      "sha256": "d45c8f77c1679f9497136c6987a613f5989d21da0e9632ccb779ce7ba5dc69e0"
+    },
+    {
+      "path": "qa/marketing-parity/source/home-nojs-1440.webp",
+      "width": 1440,
+      "height": 7437,
+      "sha256": "758c8dee325d9ab44cfee215b0ecbf7272517315f8ff338121d82e5d88ccd28a"
+    },
+    {
+      "path": "qa/marketing-parity/source/home-nojs-375.webp",
+      "width": 375,
+      "height": 7184,
+      "sha256": "5a267817eada7528e09cf434f46252844845a53daeea8eef652a720515208ada"
+    },
+    {
+      "path": "qa/marketing-parity/source/home-nojs-768.webp",
+      "width": 768,
+      "height": 7348,
+      "sha256": "b587b977d67f7b0ef97a5c47cb5b5ddbdb60f070bd4ea092e3356e962069a833"
+    },
+    {
+      "path": "qa/marketing-parity/source/menu-open-375.webp",
+      "width": 375,
+      "height": 6169,
+      "sha256": "84babe76bff02546502c29e4f070b645889eea6dd9ad36b8a6e98f23f14e09fe"
+    },
+    {
+      "path": "qa/marketing-parity/source/menu-open-768.webp",
+      "width": 768,
+      "height": 5577,
+      "sha256": "5bf5f16dbc3f87c278f73c79359d0856391337dafe056f90e17146d53489fba3"
+    },
+    {
+      "path": "qa/marketing-parity/source/platform-1440.webp",
+      "width": 1440,
+      "height": 4029,
+      "sha256": "d92ea4676f4920d02d13dad03194e04ec33b7df1edb8462277654d57f5525f09"
+    },
+    {
+      "path": "qa/marketing-parity/source/platform-375.webp",
+      "width": 375,
+      "height": 4611,
+      "sha256": "bd03deb292bd7cc8f8407bd17f02da42ffdb15b9414360ec91bfa8e40c5c7de1"
+    },
+    {
+      "path": "qa/marketing-parity/source/platform-768.webp",
+      "width": 768,
+      "height": 4453,
+      "sha256": "878386fd0d9c97924a455d1dfd9a3a5bec6e3fbad725e997562d1545a840fd2d"
+    },
+    {
+      "path": "qa/marketing-parity/source/privacy-1440.webp",
+      "width": 1440,
+      "height": 4748,
+      "sha256": "9aade84b6e9f9a4aab4b8a732a94d304b23685023a7762c0901e94ac1a7e6968"
+    },
+    {
+      "path": "qa/marketing-parity/source/privacy-375.webp",
+      "width": 375,
+      "height": 5942,
+      "sha256": "4e73c3d8ebc236fee575d21c02c6169f4e0b70ce1200811b1780fa2d072e7bb1"
+    },
+    {
+      "path": "qa/marketing-parity/source/privacy-768.webp",
+      "width": 768,
+      "height": 4823,
+      "sha256": "850dd69f5e0d823f195baddf1eb269d44fd4e270a02e12577c1507fe03e90bb0"
+    },
+    {
+      "path": "qa/marketing-parity/source/privacy-delete-1440.webp",
+      "width": 672,
+      "height": 595,
+      "sha256": "3a52514aa7ee69619d8e9e444e10924862fbe178ea6b665413fcdc8cc56cda75"
+    },
+    {
+      "path": "qa/marketing-parity/source/privacy-delete-375.webp",
+      "width": 327,
+      "height": 681,
+      "sha256": "97f82ff8723e80bf4d9b778a83e1743601cabbcaea2c409289fbbfdb8f395f94"
+    },
+    {
+      "path": "qa/marketing-parity/source/privacy-delete-768.webp",
+      "width": 672,
+      "height": 595,
+      "sha256": "20c8928736961b3e6324466614ec7d020338178e41233f68de294e6a45409462"
+    },
+    {
+      "path": "qa/marketing-parity/source/products-1440.webp",
+      "width": 1440,
+      "height": 4581,
+      "sha256": "a35a220fce61317bf18afa6dfe192217549d6bdb282567bcd5a4e1bb25970169"
+    },
+    {
+      "path": "qa/marketing-parity/source/products-375.webp",
+      "width": 375,
+      "height": 6169,
+      "sha256": "02a6f2ea40a401d1780e9696e1e1a65446b38d00e56bcb652b6460104a53ba1c"
+    },
+    {
+      "path": "qa/marketing-parity/source/products-768.webp",
+      "width": 768,
+      "height": 5577,
+      "sha256": "d8395185e210e2c9c9d1a955a85034bc5e3ae07de2cbf7ce3ee3702a1ceb2931"
+    },
+    {
+      "path": "qa/marketing-parity/source/products-autonomous-execution-1440.webp",
+      "width": 1440,
+      "height": 6865,
+      "sha256": "5a9084256ed7a637eecbf0fff83028d79303c877e9d8c6b08042bd4dd67b3416"
+    },
+    {
+      "path": "qa/marketing-parity/source/products-autonomous-execution-375.webp",
+      "width": 375,
+      "height": 8128,
+      "sha256": "ab11f22f385bac5cd97920d3b895ed9f1a12cc3c226cb3b83fd5bf3a58af7c77"
+    },
+    {
+      "path": "qa/marketing-parity/source/products-autonomous-execution-768.webp",
+      "width": 768,
+      "height": 7614,
+      "sha256": "6b8f5bddcd4eed9528f47b958e9f053a29557b9f6812243fe7f71d3b4aaa0200"
+    },
+    {
+      "path": "qa/marketing-parity/source/products-drive-1440.webp",
+      "width": 1278,
+      "height": 560,
+      "sha256": "cececac0e1dda4b078462b802a0a526eaab434a1cc9670156d447c64f5ae943d"
+    },
+    {
+      "path": "qa/marketing-parity/source/products-drive-375.webp",
+      "width": 325,
+      "height": 712,
+      "sha256": "66ee2bd60b5173e0b1757882d225496fa0669c3acfdd71625580eadc2a5a3a61"
+    },
+    {
+      "path": "qa/marketing-parity/source/products-drive-768.webp",
+      "width": 686,
+      "height": 747,
+      "sha256": "3dd709c434f2e84f49ec7e25c3e334d03f80168c6743d2dcd2b751954097c8be"
+    },
+    {
+      "path": "qa/marketing-parity/source/products-operations-os-1440.webp",
+      "width": 1440,
+      "height": 7262,
+      "sha256": "55a61461468a7fe020fa66565b95ffc0517d6d0458d991b3aebaf28118bb2a4b"
+    },
+    {
+      "path": "qa/marketing-parity/source/products-operations-os-375.webp",
+      "width": 375,
+      "height": 8552,
+      "sha256": "3898c01263104f88e61ec85da23d1fc70ec9f5cf70b8da61eb7acdc0ca169287"
+    },
+    {
+      "path": "qa/marketing-parity/source/products-operations-os-768.webp",
+      "width": 768,
+      "height": 8289,
+      "sha256": "8e134d8f8b5fff18d3761252a95ae58e12a4989846ccc037f05c822d25f24d7b"
+    },
+    {
+      "path": "qa/marketing-parity/source/pulse-nojs-375.webp",
+      "width": 375,
+      "height": 7930,
+      "sha256": "28d439ecee0e0875a6264f28282477037ddd2fb5dd8a8a74844a6be0de93a307"
+    },
+    {
+      "path": "qa/marketing-parity/source/terms-1440.webp",
+      "width": 1440,
+      "height": 4803,
+      "sha256": "5616cedf7a257ef9f148f7f54fcd4c9f4641641bd68f8027a55b51f1767f60ce"
+    },
+    {
+      "path": "qa/marketing-parity/source/terms-375.webp",
+      "width": 375,
+      "height": 6272,
+      "sha256": "874f095ccf9a51c8fa189c7134fa67ad75e73beaad4af91817ac9e5a23b3dfbe"
+    },
+    {
+      "path": "qa/marketing-parity/source/terms-768.webp",
+      "width": 768,
+      "height": 4833,
+      "sha256": "557e4b37b8ea6b6dc4e75c9d9427e766644cb80acca8c4db33b1b01238ab3300"
+    },
+    {
+      "path": "qa/marketing-parity/source/trust-1440.webp",
+      "width": 1440,
+      "height": 4865,
+      "sha256": "d8a845db08b6ed182c8d0676ffbf6006be667e63df501c3cbcad356448d982e7"
+    },
+    {
+      "path": "qa/marketing-parity/source/trust-375.webp",
+      "width": 375,
+      "height": 6109,
+      "sha256": "982dbedef074e99bccc5c7698c72f5a65979186fa3d3d01c1acbe0e0f85172d4"
+    },
+    {
+      "path": "qa/marketing-parity/source/trust-768.webp",
+      "width": 768,
+      "height": 5604,
+      "sha256": "8020370786361dc34a03e3434212d09e94b2bb2e68aa3a73dcfad14d826c2188"
+    },
+    {
+      "path": "qa/marketing-parity/source/trust-open-1440.webp",
+      "width": 1440,
+      "height": 4963,
+      "sha256": "96e4dffba0c8dcf56e2707081a92272bfb26a05942504481b03acc0d61cc623e"
+    },
+    {
+      "path": "qa/marketing-parity/source/trust-open-375.webp",
+      "width": 375,
+      "height": 6251,
+      "sha256": "9fe4d71c9a3ccc998fb3f660fed1db6a01f8dbb2a10fd7e912272149647e389c"
+    },
+    {
+      "path": "qa/marketing-parity/source/trust-open-768.webp",
+      "width": 768,
+      "height": 5701,
+      "sha256": "bfc0915d03269f83998a963a747db69b79513a623238d03906403b93950e145b"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/approach-1440.webp",
+      "width": 1440,
+      "height": 4860,
+      "sha256": "5482ae99b3a9384a7bfab92c781e29b92d754a2f874b662008b86b16a87c6a23"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/approach-375.webp",
+      "width": 375,
+      "height": 5712,
+      "sha256": "ae210a9ea8f359407ba2650acbf6f08a05629039bb95ddb2a1e2aeb637a69c31"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/approach-768.webp",
+      "width": 768,
+      "height": 5568,
+      "sha256": "ecbecc00e7145cb117038777b67f34353a57d10126f211f67bb1731578784b71"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/atlas-plan-1440.webp",
+      "width": 1280,
+      "height": 724,
+      "sha256": "1ce15888c66654ab9d1facd9b4f996a5a2a3ea36f0567b65140007e00e4c91e7"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/atlas-plan-375.webp",
+      "width": 327,
+      "height": 1198,
+      "sha256": "48a88d169e7f02671969a84545eab94c035c0027e77edcff65eb2dde219f7b5b"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/atlas-plan-768.webp",
+      "width": 688,
+      "height": 1072,
+      "sha256": "00bd82e2b0e8725c7325cfb0bc99be5b79618ad3455a27d09f8db85789f33557"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/auth-1440.webp",
+      "width": 1440,
+      "height": 901,
+      "sha256": "2822130959fd28895831ad0b13b356d30469dc01d9675c3fa62434b73338aa04"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/auth-375.webp",
+      "width": 375,
+      "height": 813,
+      "sha256": "5a1b77364c7cd9cba15df39896b826e4646bdb415b2c85503c04bd5de549b7ad"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/auth-768.webp",
+      "width": 768,
+      "height": 901,
+      "sha256": "e2c527fc1d6080927ee4cd035eb3530e6b53c01a033697330ca4b41353591e3e"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/company-1440.webp",
+      "width": 1440,
+      "height": 5304,
+      "sha256": "6edcd4be57441e9a614c1b96c9898afaf246843aeb79c7d585c2e1a04ffd411c"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/company-375.webp",
+      "width": 375,
+      "height": 5526,
+      "sha256": "93a2b5b1feb5f76476a83ba7738830c6f79784b07c826c4ee587751f1368e3bf"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/company-768.webp",
+      "width": 768,
+      "height": 5587,
+      "sha256": "f20a44b04b3cc4fce08b5fb693a621f82bbc8bbef4fe3510cf5997a02b520d5c"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/contact-1440.webp",
+      "width": 1440,
+      "height": 2004,
+      "sha256": "25f794de4327b56ddf35f1a834bc868d54ddfd991d0a2f5f20c81331ba03a154"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/contact-375.webp",
+      "width": 375,
+      "height": 3438,
+      "sha256": "bffa9fc28e3866ef6943825f56e2cc167848434caa2c5e4b46196b0b4573988f"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/contact-768.webp",
+      "width": 768,
+      "height": 2799,
+      "sha256": "3a86cf3d7a03e84e6875b1c7c701d42d871bdb63de63650ef89b3dd229b4f351"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/contact-errors-1440.webp",
+      "width": 1440,
+      "height": 2354,
+      "sha256": "bd7061aaf3392b19905148d188c806f78ae10e0bdbef5121c8f15bd5c7a37fa4"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/contact-errors-375.webp",
+      "width": 375,
+      "height": 3815,
+      "sha256": "698617ebe8bd839aa09a01c0b5d082e13d1773506cb419dc0a31ce0ccc4767c1"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/contact-errors-768.webp",
+      "width": 768,
+      "height": 3149,
+      "sha256": "c0b66613f0b60762f18dc48ee3a96d1b301d05883380b3b363c755c37324f2c2"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/contact-pending-1440.webp",
+      "width": 1440,
+      "height": 2033,
+      "sha256": "160ae7cc9497db75ec56b7e40b746c8d63206b999f70c2b5b19058f56f331f45"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/contact-pending-375.webp",
+      "width": 375,
+      "height": 3489,
+      "sha256": "61e08e428afdb49dcdaa23a5af4aa5c6d1919b562dd3dd6181960022fc49a4c3"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/contact-pending-768.webp",
+      "width": 768,
+      "height": 2828,
+      "sha256": "3bdcd126e12afdd00f3a29d20f94caa5ab2899394633c00400943cbf80e0e8f1"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/contact-receipt-1440.webp",
+      "width": 1440,
+      "height": 1568,
+      "sha256": "3d315d08d29432e05b65a0c0b5dc427cba0bdce9b4bfa07ad55da30b972d82a3"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/contact-receipt-375.webp",
+      "width": 375,
+      "height": 2560,
+      "sha256": "1a3e327ad238cf2b41ece96fd35c6950278bf3be9dd58fe6de8173d0cf83125d"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/contact-receipt-768.webp",
+      "width": 768,
+      "height": 2213,
+      "sha256": "4974725395125c6d977c03195ac6d077f2d31cdd0226b4825f04d56049bd35f2"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/demo-1440.webp",
+      "width": 1440,
+      "height": 4796,
+      "sha256": "dd0cff8cadd0351c44d8bd449cd5aedc2c2e9714ea7908b0e3e3a80928196672"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/demo-375.webp",
+      "width": 375,
+      "height": 5132,
+      "sha256": "498abc1aad483a239adaee79c5ba776f2906a44246778d14ee2b36c480927d92"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/demo-768.webp",
+      "width": 768,
+      "height": 4869,
+      "sha256": "1b55a3415be62a1a6ea9b63a23426038d1648fbac9dd7c31a1c07a34242e1195"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/demo-drive-terminal-1440.webp",
+      "width": 1280,
+      "height": 581,
+      "sha256": "6a534f3febbc6a5666c6312dbf6ee1c1958a67ec8f843fe25b8100b13c7fb8a9"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/demo-drive-terminal-375.webp",
+      "width": 327,
+      "height": 769,
+      "sha256": "a3246fb9befa4fc6bf26005d4af50e9e23f5fcef91916d113b9fb2abb109abf6"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/demo-drive-terminal-768.webp",
+      "width": 688,
+      "height": 584,
+      "sha256": "b11590525d8f896b6882b88f86ad4397d719e5b3def32f5e64e732179fc71c75"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/demo-pulse-terminal-1440.webp",
+      "width": 1280,
+      "height": 616,
+      "sha256": "d3fc1daa0fa80f0e8fec0f24277b8c5463342d77b05c2d753fe0d2ed48285a3b"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/demo-pulse-terminal-375.webp",
+      "width": 327,
+      "height": 859,
+      "sha256": "11d228a7eef0a2d321a3b70e47c9a13a0c28a748516a661d241110236ae476f7"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/demo-pulse-terminal-768.webp",
+      "width": 688,
+      "height": 622,
+      "sha256": "4910a809524b5a757c7c68931c84d00345908577b0a54ed5ba725930bf5bb1ed"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/footer-1440.webp",
+      "width": 1440,
+      "height": 590,
+      "sha256": "6c9e6c39314c1a0749f6203e1055bee1a2b2e6cd3aa8ec33053ad28b72d89cb1"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/footer-375.webp",
+      "width": 375,
+      "height": 1074,
+      "sha256": "2bb200c3bf2f343fc0dd0c0d5489e22e7dba52bc8569eff2d7a3224a3af31581"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/footer-768.webp",
+      "width": 768,
+      "height": 817,
+      "sha256": "084a36885f97f93299f94de0ce82f56582f42b54225d874ebb690cb57dc317d3"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/home-1440.webp",
+      "width": 1440,
+      "height": 7399,
+      "sha256": "6048c6033ede738bbdbc69ae03cb324b5ae59b6d190929f721eb0b3ea332810b"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/home-375.webp",
+      "width": 375,
+      "height": 6842,
+      "sha256": "72788213c43183cb216993b1e3cd0dcc17134bf179e65767a0668cc9442e51d8"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/home-768.webp",
+      "width": 768,
+      "height": 7330,
+      "sha256": "3d405910cfbebbaa055f2394c5d3c5cd92c5ae27718420a419c062fd8107a6cf"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/home-graphics-failure-1440.webp",
+      "width": 1440,
+      "height": 7399,
+      "sha256": "6048c6033ede738bbdbc69ae03cb324b5ae59b6d190929f721eb0b3ea332810b"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/home-graphics-failure-375.webp",
+      "width": 375,
+      "height": 6842,
+      "sha256": "72788213c43183cb216993b1e3cd0dcc17134bf179e65767a0668cc9442e51d8"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/home-graphics-failure-768.webp",
+      "width": 768,
+      "height": 7330,
+      "sha256": "3d405910cfbebbaa055f2394c5d3c5cd92c5ae27718420a419c062fd8107a6cf"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/home-nojs-1440.webp",
+      "width": 1440,
+      "height": 7399,
+      "sha256": "3237c5e138476c4427ef5e961d7cb2029bd4b580fba6f4b8b4f04347dab22223"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/home-nojs-375.webp",
+      "width": 375,
+      "height": 7240,
+      "sha256": "4acace75649119e2cd87ee9aa66afbdfb862cc305172f2006a8947bc67ceab6b"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/home-nojs-768.webp",
+      "width": 768,
+      "height": 7330,
+      "sha256": "6b0210f9bda933112b5ded5e3d85aef30ac72b9c4b2f3881b12c23b9145e045c"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/menu-open-375.webp",
+      "width": 375,
+      "height": 6216,
+      "sha256": "cd3ed7f7cc88a6b4f82e63f681eca4d93534b2a55bc6bc4528825bcbfd881704"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/menu-open-768.webp",
+      "width": 768,
+      "height": 5640,
+      "sha256": "5932905a0a192654cafd8265b2b713147a78439097985a1d92e19ac73a94895f"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/platform-1440.webp",
+      "width": 1440,
+      "height": 4063,
+      "sha256": "ba01dbee6da9b9a544b986cca1adee51fb39d9f4ffac907b44656a3d4e35c43b"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/platform-375.webp",
+      "width": 375,
+      "height": 4657,
+      "sha256": "38b1adf946cdcd0e9a98194fd8f7a7a6a12814977477ae6e7458e6a4c8dd29dc"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/platform-768.webp",
+      "width": 768,
+      "height": 4515,
+      "sha256": "66a10d09034fc8eaad67896ccfa0bb2d423b923eda49c36f90ce075eb97d4fbb"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/privacy-1440.webp",
+      "width": 1440,
+      "height": 10319,
+      "sha256": "01167cf858b5c629687b3488342ad5736733a87e1f41d43103f66f76b7ca1c46"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/privacy-375.png",
+      "width": 375,
+      "height": 16444,
+      "sha256": "648024a24820ec74ebd346a98c895a2eb95867afe816b5c2918cfbdae92f3378"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/privacy-768.webp",
+      "width": 768,
+      "height": 10430,
+      "sha256": "8ab0ae006e65fb7c5dab12dfd4d9c43ebfbe568e61d24a51da6232b49b4c978e"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/privacy-delete-1440.webp",
+      "width": 672,
+      "height": 539,
+      "sha256": "16bc97f9cb407d8b75794684656bb6221dbc84b4c56f363179d2ae9fce2e413c"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/privacy-delete-375.webp",
+      "width": 327,
+      "height": 625,
+      "sha256": "44ff80e0eab9d6eb72c478318735e943d83712fcb511cde66f81b2d0a895b3f9"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/privacy-delete-768.webp",
+      "width": 672,
+      "height": 539,
+      "sha256": "e4ca9beb849829db6f48dfc8c37054bbcfaffb070b5cf0e64fce7f82f727eb67"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/products-1440.webp",
+      "width": 1440,
+      "height": 4614,
+      "sha256": "94ac69a73cefd488ef777bccc1ea704adc8aebb21fd5ee529da06328b57d637f"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/products-375.webp",
+      "width": 375,
+      "height": 6216,
+      "sha256": "76beb93dba98fd944db7b03310fa07303e8f7035d8ed23724097618c97caa6d7"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/products-768.webp",
+      "width": 768,
+      "height": 5640,
+      "sha256": "721772ab1cdfd139de24e1a41da9ade9b0eeaeecfcf039f2c8d82e58b9159075"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/products-autonomous-execution-1440.webp",
+      "width": 1440,
+      "height": 8701,
+      "sha256": "8d963ad017a1cad38721f6690d42edd69e5260b422f2d745111fe6d3cbd10162"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/products-autonomous-execution-375.webp",
+      "width": 375,
+      "height": 9856,
+      "sha256": "a09a3c98bdc268178e051aa665a3b12a2512b1567a786762727862db1747e273"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/products-autonomous-execution-768.webp",
+      "width": 768,
+      "height": 9427,
+      "sha256": "6ba2b4b2d5b6e8ea3b3b7df2b828b7bba3f789ba2b22269911d21e34d40350db"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/products-drive-1440.webp",
+      "width": 1278,
+      "height": 560,
+      "sha256": "1a1ccdeca7f8f22782dbff47252b390de32dcb2fd176aa6b4c182309db988fa9"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/products-drive-375.webp",
+      "width": 325,
+      "height": 712,
+      "sha256": "900f80e16b8af7ab4f0e3abb5da9804f08b7f54e9d345885daf9f2139cb053a7"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/products-drive-768.webp",
+      "width": 686,
+      "height": 747,
+      "sha256": "cd2a85b4bdce0a7626a258bd29efd9c3c19aedb08d355399f5242eed9553e1c3"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/products-operations-os-1440.webp",
+      "width": 1440,
+      "height": 8483,
+      "sha256": "c35946ab9db7e0fcc5098a725bdf427debc32bf09f1c3e46bc3f364f485b248f"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/products-operations-os-375.webp",
+      "width": 375,
+      "height": 10357,
+      "sha256": "08a2d08308c79055a29e14e0000b76e16e52e681419765e402f8bb7781d57fb5"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/products-operations-os-768.webp",
+      "width": 768,
+      "height": 9865,
+      "sha256": "8693bdb90a77f653f63f27d362faddcd6c9f5a32af44a9dd5c5ccb51ad83a44c"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/proof-nojs-375.webp",
+      "width": 327,
+      "height": 1565,
+      "sha256": "eccbc7c0fd2871a2afa02b901981794c6d27e05aef14ef7e7adcbc5f13e5fc34"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/pulse-nojs-375.webp",
+      "width": 375,
+      "height": 10885,
+      "sha256": "23c468350cbacea14670dbe6d813c93451a27b549f0e2b3aa26cbc6261d6a54d"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/terms-1440.webp",
+      "width": 1440,
+      "height": 12269,
+      "sha256": "c48fa72ec962ed81e137e201c2d7301f49bf5532434d2dd3c98e4cec3822f93e"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/terms-375.png",
+      "width": 375,
+      "height": 22048,
+      "sha256": "709e7e07d260035de8749c5bfead4a9fdf16e8bd5810d1ad2236e0fb7a47c8b1"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/terms-768.webp",
+      "width": 768,
+      "height": 12380,
+      "sha256": "3c6fc163f525c92c8bfc6ab99efa9e5974f21c35060319bc75afee6a07ae03c0"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/trust-1440.webp",
+      "width": 1440,
+      "height": 4922,
+      "sha256": "95fe38829e8223585d5cec3a915bbf15239802dd8a07f02c6ed6608627200c0c"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/trust-375.webp",
+      "width": 375,
+      "height": 6185,
+      "sha256": "1c5293350f9c3a6a4f94a488944322124afa1318cd1071fb361a8bba92e1b599"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/trust-768.webp",
+      "width": 768,
+      "height": 5768,
+      "sha256": "29cc178eb76aab5bf4cf9ce69cb1c7c0862e25cd832ee61c4fe40e3fcd56139d"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/trust-open-1440.webp",
+      "width": 1440,
+      "height": 5003,
+      "sha256": "6217be66851f4265919597df8492fa7e4ded247f4a1781d31fac87036a3531cb"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/trust-open-375.webp",
+      "width": 375,
+      "height": 6312,
+      "sha256": "d413d0b13c6ab6407015fd1068f5f54a8337ff2b1d0691e4ea040f4b22058cb4"
+    },
+    {
+      "path": "qa/marketing-parity/implementation/trust-open-768.webp",
+      "width": 768,
+      "height": 5849,
+      "sha256": "4be96381d6be0d3b487fed771337ab4dafbbd8ddf2d36676ca3257568c4ad3b2"
+    }
+  ],
+  "finalFooterEvidence": "footer-{1440,768,375}; these supersede earlier full-page footer regions after the final footer-only CSS correction."
+}

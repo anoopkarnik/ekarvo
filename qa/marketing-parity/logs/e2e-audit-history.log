@@ -1,0 +1,343 @@
+
+Running 4 tests using 1 worker
+
+(node:63257) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:63257) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › e2e/marketing-parity.spec.ts:185:3 › full document accessibility reflow and targets at 1440 (9.6s)
+(node:63288) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:63288) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › e2e/marketing-parity.spec.ts:185:3 › full document accessibility reflow and targets at 768 (8.8s)
+(node:63312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:63312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 [chromium] › e2e/marketing-parity.spec.ts:185:3 › full document accessibility reflow and targets at 375 (1.2s)
+(node:63324) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:63324) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 [chromium] › e2e/marketing-parity.spec.ts:266:1 › JavaScript-disabled full documents keep narrative links and accessible fallbacks (552ms)
+
+
+  1) [chromium] › e2e/marketing-parity.spec.ts:185:3 › full document accessibility reflow and targets at 1440 
+
+    Error: /sign-in: [{"id":"color-contrast","nodes":[[".text-primary.hover\\:underline[type=\"button\"]"],[".text-primary.hover\\:underline.transition-all"]]}]
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  -   1[39m
+    [31m+ Received  + 105[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   Object {[39m
+    [31m+     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",[39m
+    [31m+     "help": "Elements must meet minimum color contrast ratio thresholds",[39m
+    [31m+     "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",[39m
+    [31m+     "id": "color-contrast",[39m
+    [31m+     "impact": "serious",[39m
+    [31m+     "nodes": Array [[39m
+    [31m+       Object {[39m
+    [31m+         "all": Array [],[39m
+    [31m+         "any": Array [[39m
+    [31m+           Object {[39m
+    [31m+             "data": Object {[39m
+    [31m+               "bgColor": "#0e141c",[39m
+    [31m+               "contrastRatio": 3.5,[39m
+    [31m+               "expectedContrastRatio": "4.5:1",[39m
+    [31m+               "fgColor": "#315cf5",[39m
+    [31m+               "fontSize": "9.0pt (12px)",[39m
+    [31m+               "fontWeight": "normal",[39m
+    [31m+               "messageKey": null,[39m
+    [31m+             },[39m
+    [31m+             "id": "color-contrast",[39m
+    [31m+             "impact": "serious",[39m
+    [31m+             "message": "Element has insufficient color contrast of 3.5 (foreground color: #315cf5, background color: #0e141c, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+             "relatedNodes": Array [[39m
+    [31m+               Object {[39m
+    [31m+                 "html": "<div data-slot=\"card\" class=\"text-card-foreground flex flex-col gap-6 rounded-xl border py-6 w-full max-w-md border-border/50 shadow-xl bg-card/50 backdrop-blur-sm\">",[39m
+    [31m+                 "target": Array [[39m
+    [31m+                   ".text-card-foreground",[39m
+    [31m+                 ],[39m
+    [31m+               },[39m
+    [31m+               Object {[39m
+    [31m+                 "html": "<div class=\"flex items-center justify-center bg-background p-4 sm:p-8 overflow-y-auto flex-1\">",[39m
+    [31m+                 "target": Array [[39m
+    [31m+                   ".p-4",[39m
+    [31m+                 ],[39m
+    [31m+               },[39m
+    [31m+             ],[39m
+    [31m+           },[39m
+    [31m+         ],[39m
+    [31m+         "failureSummary": "Fix any of the following:[39m
+    [31m+   Element has insufficient color contrast of 3.5 (foreground color: #315cf5, background color: #0e141c, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+         "html": "<button type=\"button\" class=\"text-xs font-medium text-primary hover:underline cursor-pointer\">Forgot password?</button>",[39m
+    [31m+         "impact": "serious",[39m
+    [31m+         "none": Array [],[39m
+    [31m+         "target": Array [[39m
+    [31m+           ".text-primary.hover\\:underline[type=\"button\"]",[39m
+    [31m+         ],[39m
+    [31m+       },[39m
+    [31m+       Object {[39m
+    [31m+         "all": Array [],[39m
+    [31m+         "any": Array [[39m
+    [31m+           Object {[39m
+    [31m+             "data": Object {[39m
+    [31m+               "bgColor": "#0e141c",[39m
+    [31m+               "contrastRatio": 3.5,[39m
+    [31m+               "expectedContrastRatio": "4.5:1",[39m
+    [31m+               "fgColor": "#315cf5",[39m
+    [31m+               "fontSize": "10.5pt (14px)",[39m
+    [31m+               "fontWeight": "normal",[39m
+    [31m+               "messageKey": null,[39m
+    [31m+             },[39m
+    [31m+             "id": "color-contrast",[39m
+    [31m+             "impact": "serious",[39m
+    [31m+             "message": "Element has insufficient color contrast of 3.5 (foreground color: #315cf5, background color: #0e141c, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+             "relatedNodes": Array [[39m
+    [31m+               Object {[39m
+    [31m+                 "html": "<div data-slot=\"card\" class=\"text-card-foreground flex flex-col gap-6 rounded-xl border py-6 w-full max-w-md border-border/50 shadow-xl bg-card/50 backdrop-blur-sm\">",[39m
+    [31m+                 "target": Array [[39m
+    [31m+                   ".text-card-foreground",[39m
+    [31m+                 ],[39m
+    [31m+               },[39m
+    [31m+               Object {[39m
+    [31m+                 "html": "<div class=\"flex items-center justify-center bg-background p-4 sm:p-8 overflow-y-auto flex-1\">",[39m
+    [31m+                 "target": Array [[39m
+    [31m+                   ".p-4",[39m
+    [31m+                 ],[39m
+    [31m+               },[39m
+    [31m+             ],[39m
+    [31m+           },[39m
+    [31m+         ],[39m
+    [31m+         "failureSummary": "Fix any of the following:[39m
+    [31m+   Element has insufficient color contrast of 3.5 (foreground color: #315cf5, background color: #0e141c, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+         "html": "<button class=\"font-medium text-primary hover:underline transition-all cursor-pointer\">Sign up</button>",[39m
+    [31m+         "impact": "serious",[39m
+    [31m+         "none": Array [],[39m
+    [31m+         "target": Array [[39m
+    [31m+           ".text-primary.hover\\:underline.transition-all",[39m
+    [31m+         ],[39m
+    [31m+       },[39m
+    [31m+     ],[39m
+    [31m+     "tags": Array [[39m
+    [31m+       "cat.color",[39m
+    [31m+       "wcag2aa",[39m
+    [31m+       "wcag143",[39m
+    [31m+       "TTv5",[39m
+    [31m+       "TT13.c",[39m
+    [31m+       "EN-301-549",[39m
+    [31m+       "EN-9.1.4.3",[39m
+    [31m+       "ACT",[39m
+    [31m+       "RGAAv4",[39m
+    [31m+       "RGAA-3.2.1",[39m
+    [31m+     ],[39m
+    [31m+   },[39m
+    [31m+ ][39m
+
+      201 |         axe.violations,
+      202 |         `${route}: ${JSON.stringify(axe.violations.map((v) => ({ id: v.id, nodes: v.nodes.map((n) => n.target) })))}`,
+    > 203 |       ).toEqual([]);
+          |         ^
+      204 |       for (const target of await page
+      205 |         .locator(
+      206 |           ".site-header a,.site-header summary,.site-footer a,main button,main summary,.product-anchor-nav a",
+        at /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web/e2e/marketing-parity.spec.ts:203:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../../../../../private/tmp/task12-focused-results/marketing-parity-full-docu-01f73--reflow-and-targets-at-1440-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../../../../../../../private/tmp/task12-focused-results/marketing-parity-full-docu-01f73--reflow-and-targets-at-1440-chromium/error-context.md
+
+  2) [chromium] › e2e/marketing-parity.spec.ts:185:3 › full document accessibility reflow and targets at 768 
+
+    Error: /sign-in: [{"id":"color-contrast","nodes":[[".text-primary.hover\\:underline[type=\"button\"]"],[".text-primary.hover\\:underline.transition-all"]]}]
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  -   1[39m
+    [31m+ Received  + 105[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   Object {[39m
+    [31m+     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",[39m
+    [31m+     "help": "Elements must meet minimum color contrast ratio thresholds",[39m
+    [31m+     "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",[39m
+    [31m+     "id": "color-contrast",[39m
+    [31m+     "impact": "serious",[39m
+    [31m+     "nodes": Array [[39m
+    [31m+       Object {[39m
+    [31m+         "all": Array [],[39m
+    [31m+         "any": Array [[39m
+    [31m+           Object {[39m
+    [31m+             "data": Object {[39m
+    [31m+               "bgColor": "#0e141c",[39m
+    [31m+               "contrastRatio": 3.5,[39m
+    [31m+               "expectedContrastRatio": "4.5:1",[39m
+    [31m+               "fgColor": "#315cf5",[39m
+    [31m+               "fontSize": "9.0pt (12px)",[39m
+    [31m+               "fontWeight": "normal",[39m
+    [31m+               "messageKey": null,[39m
+    [31m+             },[39m
+    [31m+             "id": "color-contrast",[39m
+    [31m+             "impact": "serious",[39m
+    [31m+             "message": "Element has insufficient color contrast of 3.5 (foreground color: #315cf5, background color: #0e141c, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+             "relatedNodes": Array [[39m
+    [31m+               Object {[39m
+    [31m+                 "html": "<div data-slot=\"card\" class=\"text-card-foreground flex flex-col gap-6 rounded-xl border py-6 w-full max-w-md border-border/50 shadow-xl bg-card/50 backdrop-blur-sm\">",[39m
+    [31m+                 "target": Array [[39m
+    [31m+                   ".text-card-foreground",[39m
+    [31m+                 ],[39m
+    [31m+               },[39m
+    [31m+               Object {[39m
+    [31m+                 "html": "<div class=\"flex items-center justify-center bg-background p-4 sm:p-8 overflow-y-auto flex-1\">",[39m
+    [31m+                 "target": Array [[39m
+    [31m+                   ".p-4",[39m
+    [31m+                 ],[39m
+    [31m+               },[39m
+    [31m+             ],[39m
+    [31m+           },[39m
+    [31m+         ],[39m
+    [31m+         "failureSummary": "Fix any of the following:[39m
+    [31m+   Element has insufficient color contrast of 3.5 (foreground color: #315cf5, background color: #0e141c, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+         "html": "<button type=\"button\" class=\"text-xs font-medium text-primary hover:underline cursor-pointer\">Forgot password?</button>",[39m
+    [31m+         "impact": "serious",[39m
+    [31m+         "none": Array [],[39m
+    [31m+         "target": Array [[39m
+    [31m+           ".text-primary.hover\\:underline[type=\"button\"]",[39m
+    [31m+         ],[39m
+    [31m+       },[39m
+    [31m+       Object {[39m
+    [31m+         "all": Array [],[39m
+    [31m+         "any": Array [[39m
+    [31m+           Object {[39m
+    [31m+             "data": Object {[39m
+    [31m+               "bgColor": "#0e141c",[39m
+    [31m+               "contrastRatio": 3.5,[39m
+    [31m+               "expectedContrastRatio": "4.5:1",[39m
+    [31m+               "fgColor": "#315cf5",[39m
+    [31m+               "fontSize": "10.5pt (14px)",[39m
+    [31m+               "fontWeight": "normal",[39m
+    [31m+               "messageKey": null,[39m
+    [31m+             },[39m
+    [31m+             "id": "color-contrast",[39m
+    [31m+             "impact": "serious",[39m
+    [31m+             "message": "Element has insufficient color contrast of 3.5 (foreground color: #315cf5, background color: #0e141c, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+             "relatedNodes": Array [[39m
+    [31m+               Object {[39m
+    [31m+                 "html": "<div data-slot=\"card\" class=\"text-card-foreground flex flex-col gap-6 rounded-xl border py-6 w-full max-w-md border-border/50 shadow-xl bg-card/50 backdrop-blur-sm\">",[39m
+    [31m+                 "target": Array [[39m
+    [31m+                   ".text-card-foreground",[39m
+    [31m+                 ],[39m
+    [31m+               },[39m
+    [31m+               Object {[39m
+    [31m+                 "html": "<div class=\"flex items-center justify-center bg-background p-4 sm:p-8 overflow-y-auto flex-1\">",[39m
+    [31m+                 "target": Array [[39m
+    [31m+                   ".p-4",[39m
+    [31m+                 ],[39m
+    [31m+               },[39m
+    [31m+             ],[39m
+    [31m+           },[39m
+    [31m+         ],[39m
+    [31m+         "failureSummary": "Fix any of the following:[39m
+    [31m+   Element has insufficient color contrast of 3.5 (foreground color: #315cf5, background color: #0e141c, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",[39m
+    [31m+         "html": "<button class=\"font-medium text-primary hover:underline transition-all cursor-pointer\">Sign up</button>",[39m
+    [31m+         "impact": "serious",[39m
+    [31m+         "none": Array [],[39m
+    [31m+         "target": Array [[39m
+    [31m+           ".text-primary.hover\\:underline.transition-all",[39m
+    [31m+         ],[39m
+    [31m+       },[39m
+    [31m+     ],[39m
+    [31m+     "tags": Array [[39m
+    [31m+       "cat.color",[39m
+    [31m+       "wcag2aa",[39m
+    [31m+       "wcag143",[39m
+    [31m+       "TTv5",[39m
+    [31m+       "TT13.c",[39m
+    [31m+       "EN-301-549",[39m
+    [31m+       "EN-9.1.4.3",[39m
+    [31m+       "ACT",[39m
+    [31m+       "RGAAv4",[39m
+    [31m+       "RGAA-3.2.1",[39m
+    [31m+     ],[39m
+    [31m+   },[39m
+    [31m+ ][39m
+
+      201 |         axe.violations,
+      202 |         `${route}: ${JSON.stringify(axe.violations.map((v) => ({ id: v.id, nodes: v.nodes.map((n) => n.target) })))}`,
+    > 203 |       ).toEqual([]);
+          |         ^
+      204 |       for (const target of await page
+      205 |         .locator(
+      206 |           ".site-header a,.site-header summary,.site-footer a,main button,main summary,.product-anchor-nav a",
+        at /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web/e2e/marketing-parity.spec.ts:203:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../../../../../private/tmp/task12-focused-results/marketing-parity-full-docu-44d77-y-reflow-and-targets-at-768-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../../../../../../../private/tmp/task12-focused-results/marketing-parity-full-docu-44d77-y-reflow-and-targets-at-768-chromium/error-context.md
+
+  3) [chromium] › e2e/marketing-parity.spec.ts:185:3 › full document accessibility reflow and targets at 375 
+
+    Error: /landing/products: Log in
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: >= [32m44[39m
+    Received:    [31m40.5[39m
+
+      212 |             box!.width,
+      213 |             `${route}: ${await target.textContent()}`,
+    > 214 |           ).toBeGreaterThanOrEqual(44);
+          |             ^
+      215 |           expect(
+      216 |             box!.height,
+      217 |             `${route}: ${await target.textContent()}`,
+        at /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web/e2e/marketing-parity.spec.ts:214:13
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../../../../../private/tmp/task12-focused-results/marketing-parity-full-docu-55b65-y-reflow-and-targets-at-375-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../../../../../../../private/tmp/task12-focused-results/marketing-parity-full-docu-55b65-y-reflow-and-targets-at-375-chromium/error-context.md
+
+  4) [chromium] › e2e/marketing-parity.spec.ts:266:1 › JavaScript-disabled full documents keep narrative links and accessible fallbacks 
+
+    Error: Please use browser.newContext()
+     Please check out https://github.com/dequelabs/axe-core-npm/blob/develop/packages/playwright/error-handling.md
+
+      312 |         );
+      313 |         await audit.evaluate(() => document.fonts.ready);
+    > 314 |         const results = await new AxeBuilder({ page: audit }).analyze();
+          |                         ^
+      315 |         expect(results.violations, route).toEqual([]);
+      316 |       } finally {
+      317 |         await audit.close();
+        at AxeBuilder.analyze (/Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/node_modules/.pnpm/@axe-core+playwright@4.14.0_playwright-core@1.58.2/node_modules/@axe-core/playwright/dist/index.mjs:219:13)
+        at /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web/e2e/marketing-parity.spec.ts:314:25
+    [cause]: Error: Please use browser.newContext()
+        at AxeBuilder.finishRun (/Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/node_modules/.pnpm/@axe-core+playwright@4.14.0_playwright-core@1.58.2/node_modules/@axe-core/playwright/dist/index.mjs:315:37)
+        at AxeBuilder.analyze (/Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/node_modules/.pnpm/@axe-core+playwright@4.14.0_playwright-core@1.58.2/node_modules/@axe-core/playwright/dist/index.mjs:217:25)
+        at /Users/arahaelion/EKARVO/ekarvo/.worktrees/marketing-site-parity/apps/web/e2e/marketing-parity.spec.ts:314:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../../../../../private/tmp/task12-focused-results/marketing-parity-JavaScrip-03603-ks-and-accessible-fallbacks-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../../../../../private/tmp/task12-focused-results/marketing-parity-JavaScrip-03603-ks-and-accessible-fallbacks-chromium/test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [chromium] › e2e/marketing-parity.spec.ts:185:3 › full document accessibility reflow and targets at 1440 
+    [chromium] › e2e/marketing-parity.spec.ts:185:3 › full document accessibility reflow and targets at 768 
+    [chromium] › e2e/marketing-parity.spec.ts:185:3 › full document accessibility reflow and targets at 375 
+    [chromium] › e2e/marketing-parity.spec.ts:266:1 › JavaScript-disabled full documents keep narrative links and accessible fallbacks 

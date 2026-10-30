@@ -1,0 +1,195 @@
+{
+  "routes": [
+    "/landing",
+    "/landing/products",
+    "/landing/products/operations-os",
+    "/landing/products/autonomous-execution",
+    "/landing/approach",
+    "/landing/platform",
+    "/landing/trust",
+    "/landing/company",
+    "/landing/contact",
+    "/landing/demo",
+    "/landing/legal/privacy-policy",
+    "/landing/legal/terms-of-service",
+    "/landing/legal/cancellation-refund-policies",
+    "/landing/legal/contact-us",
+    "/sign-in"
+  ],
+  "links": [
+    "http://127.0.0.1:3011/downloads/ekarvo-overview.txt",
+    "http://127.0.0.1:3011/downloads/outcome-contract.txt",
+    "http://127.0.0.1:3011/downloads/workflow-brief.txt",
+    "http://127.0.0.1:3011/landing",
+    "http://127.0.0.1:3011/landing#authority",
+    "http://127.0.0.1:3011/landing#drive",
+    "http://127.0.0.1:3011/landing#evidence",
+    "http://127.0.0.1:3011/landing#fracture",
+    "http://127.0.0.1:3011/landing#main-content",
+    "http://127.0.0.1:3011/landing#opening",
+    "http://127.0.0.1:3011/landing#outcome",
+    "http://127.0.0.1:3011/landing#pulse",
+    "http://127.0.0.1:3011/landing/approach",
+    "http://127.0.0.1:3011/landing/approach#main-content",
+    "http://127.0.0.1:3011/landing/approach#outcome-contract",
+    "http://127.0.0.1:3011/landing/company",
+    "http://127.0.0.1:3011/landing/company#main-content",
+    "http://127.0.0.1:3011/landing/contact",
+    "http://127.0.0.1:3011/landing/contact#main-content",
+    "http://127.0.0.1:3011/landing/contact?product=autonomous-execution",
+    "http://127.0.0.1:3011/landing/contact?product=operations-os",
+    "http://127.0.0.1:3011/landing/demo#execution",
+    "http://127.0.0.1:3011/landing/demo#main-content",
+    "http://127.0.0.1:3011/landing/demo#operations",
+    "http://127.0.0.1:3011/landing/legal/cancellation-refund-policies",
+    "http://127.0.0.1:3011/landing/legal/cancellation-refund-policies#account-termination",
+    "http://127.0.0.1:3011/landing/legal/cancellation-refund-policies#contact-us",
+    "http://127.0.0.1:3011/landing/legal/cancellation-refund-policies#definitions",
+    "http://127.0.0.1:3011/landing/legal/cancellation-refund-policies#exceptions",
+    "http://127.0.0.1:3011/landing/legal/cancellation-refund-policies#interpretation",
+    "http://127.0.0.1:3011/landing/legal/cancellation-refund-policies#main-content",
+    "http://127.0.0.1:3011/landing/legal/cancellation-refund-policies#nature-of-credits",
+    "http://127.0.0.1:3011/landing/legal/cancellation-refund-policies#no-refund-policy",
+    "http://127.0.0.1:3011/landing/legal/cancellation-refund-policies#payment-issues",
+    "http://127.0.0.1:3011/landing/legal/contact-us#main-content",
+    "http://127.0.0.1:3011/landing/legal/privacy-policy",
+    "http://127.0.0.1:3011/landing/legal/privacy-policy#changes-policy",
+    "http://127.0.0.1:3011/landing/legal/privacy-policy#childrens-privacy",
+    "http://127.0.0.1:3011/landing/legal/privacy-policy#collecting-data",
+    "http://127.0.0.1:3011/landing/legal/privacy-policy#contact-us",
+    "http://127.0.0.1:3011/landing/legal/privacy-policy#delete-data",
+    "http://127.0.0.1:3011/landing/legal/privacy-policy#disclosure-data",
+    "http://127.0.0.1:3011/landing/legal/privacy-policy#interpretation-definitions",
+    "http://127.0.0.1:3011/landing/legal/privacy-policy#links-other-websites",
+    "http://127.0.0.1:3011/landing/legal/privacy-policy#main-content",
+    "http://127.0.0.1:3011/landing/legal/privacy-policy#retention-data",
+    "http://127.0.0.1:3011/landing/legal/privacy-policy#security-data",
+    "http://127.0.0.1:3011/landing/legal/privacy-policy#transfer-data",
+    "http://127.0.0.1:3011/landing/legal/terms-of-service",
+    "http://127.0.0.1:3011/landing/legal/terms-of-service#access-site",
+    "http://127.0.0.1:3011/landing/legal/terms-of-service#contact",
+    "http://127.0.0.1:3011/landing/legal/terms-of-service#copyright-policy",
+    "http://127.0.0.1:3011/landing/legal/terms-of-service#disclaimers",
+    "http://127.0.0.1:3011/landing/legal/terms-of-service#general",
+    "http://127.0.0.1:3011/landing/legal/terms-of-service#limitation-liability",
+    "http://127.0.0.1:3011/landing/legal/terms-of-service#main-content",
+    "http://127.0.0.1:3011/landing/legal/terms-of-service#term-termination",
+    "http://127.0.0.1:3011/landing/legal/terms-of-service#third-party-links",
+    "http://127.0.0.1:3011/landing/legal/terms-of-service#user-content",
+    "http://127.0.0.1:3011/landing/platform",
+    "http://127.0.0.1:3011/landing/platform#main-content",
+    "http://127.0.0.1:3011/landing/products",
+    "http://127.0.0.1:3011/landing/products#main-content",
+    "http://127.0.0.1:3011/landing/products/autonomous-execution",
+    "http://127.0.0.1:3011/landing/products/autonomous-execution#journey",
+    "http://127.0.0.1:3011/landing/products/autonomous-execution#main-content",
+    "http://127.0.0.1:3011/landing/products/operations-os",
+    "http://127.0.0.1:3011/landing/products/operations-os#capabilities",
+    "http://127.0.0.1:3011/landing/products/operations-os#how-it-connects",
+    "http://127.0.0.1:3011/landing/products/operations-os#main-content",
+    "http://127.0.0.1:3011/landing/products/operations-os#pulse-develop",
+    "http://127.0.0.1:3011/landing/products/operations-os#pulse-operate",
+    "http://127.0.0.1:3011/landing/products/operations-os#pulse-optimize",
+    "http://127.0.0.1:3011/landing/products/operations-os#pulse-plan",
+    "http://127.0.0.1:3011/landing/products/operations-os#workflow-example",
+    "http://127.0.0.1:3011/landing/trust",
+    "http://127.0.0.1:3011/landing/trust#main-content",
+    "http://127.0.0.1:3011/sign-in",
+    "http://127.0.0.1:3011/sign-in#main-content"
+  ],
+  "documents": 20,
+  "timings": [
+    {
+      "route": "/landing",
+      "headingVisibleMs": 131,
+      "dclMs": 88.7,
+      "responseMs": 65.2
+    },
+    {
+      "route": "/landing/products",
+      "headingVisibleMs": 124,
+      "dclMs": 91,
+      "responseMs": 88.3
+    },
+    {
+      "route": "/landing/products/operations-os",
+      "headingVisibleMs": 102,
+      "dclMs": 66.4,
+      "responseMs": 63.7
+    },
+    {
+      "route": "/landing/products/autonomous-execution",
+      "headingVisibleMs": 103,
+      "dclMs": 74.7,
+      "responseMs": 73.5
+    },
+    {
+      "route": "/landing/approach",
+      "headingVisibleMs": 88,
+      "dclMs": 71.1,
+      "responseMs": 61.7
+    },
+    {
+      "route": "/landing/platform",
+      "headingVisibleMs": 110,
+      "dclMs": 98.2,
+      "responseMs": 91.5
+    },
+    {
+      "route": "/landing/trust",
+      "headingVisibleMs": 102,
+      "dclMs": 85.6,
+      "responseMs": 75.4
+    },
+    {
+      "route": "/landing/company",
+      "headingVisibleMs": 123,
+      "dclMs": 105.7,
+      "responseMs": 95.9
+    },
+    {
+      "route": "/landing/contact",
+      "headingVisibleMs": 110,
+      "dclMs": 82.3,
+      "responseMs": 76.6
+    },
+    {
+      "route": "/landing/demo",
+      "headingVisibleMs": 106,
+      "dclMs": 80.4,
+      "responseMs": 76
+    },
+    {
+      "route": "/landing/legal/privacy-policy",
+      "headingVisibleMs": 118,
+      "dclMs": 104.3,
+      "responseMs": 99.5
+    },
+    {
+      "route": "/landing/legal/terms-of-service",
+      "headingVisibleMs": 95,
+      "dclMs": 78.5,
+      "responseMs": 65.8
+    },
+    {
+      "route": "/landing/legal/cancellation-refund-policies",
+      "headingVisibleMs": 133,
+      "dclMs": 111.4,
+      "responseMs": 107
+    },
+    {
+      "route": "/landing/legal/contact-us",
+      "headingVisibleMs": 97,
+      "dclMs": 86.4,
+      "responseMs": 74.3
+    },
+    {
+      "route": "/sign-in",
+      "headingVisibleMs": 151,
+      "dclMs": 110.7,
+      "responseMs": 106.2
+    }
+  ],
+  "errors": [],
+  "failed": []
+}
