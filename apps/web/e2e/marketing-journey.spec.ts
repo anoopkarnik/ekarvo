@@ -87,3 +87,29 @@ test("reduced motion exposes the complete story and route actions", async ({ pag
   await expect(page.getByRole("link", { name: "Explore Ekarvo Pulse", exact: true })).toHaveAttribute("tabindex", "0");
   await expect(page.getByRole("link", { name: "Explore Ekarvo Drive", exact: true })).toHaveAttribute("tabindex", "0");
 });
+
+test("Home interrupts a pending chapter even while Next keeps focus", async ({ page }, testInfo) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.goto("/landing", { waitUntil: "domcontentloaded" });
+  const film = page.locator("[data-ek-film]");
+  await expect(film).toHaveClass(/is-film/, { timeout: 45_000 });
+  await page.locator("[data-ek-next]").focus();
+  await page.locator('[data-ek-rail="5"]').evaluate((link: HTMLAnchorElement) => link.click());
+  await page.waitForFunction(() => {
+    const phase = Number(document.querySelector<HTMLElement>("[data-ek-film]")?.dataset.phase);
+    return phase > .25 && phase < 2;
+  });
+  await page.keyboard.press("Home");
+  // Allow the native key's scroll/cancellation to settle before requesting the next chapter.
+  await page.waitForTimeout(250);
+  const interruptedPhase = Number(await film.getAttribute("data-phase"));
+  expect(interruptedPhase).toBeLessThan(4);
+  const nextChapter = Math.floor(interruptedPhase) + 1;
+  await page.keyboard.press("Enter");
+  await expect(page.locator(`[data-ek-rail="${nextChapter}"]`)).toHaveAttribute("aria-current", "location");
+  await expect(page.locator("[data-ek-next]")).toBeFocused();
+  await testInfo.attach("keyboard-interruption", {
+    body: JSON.stringify({ interruptedPhase, nextChapter, finalPhase: await film.getAttribute("data-phase") }),
+    contentType: "application/json",
+  });
+});

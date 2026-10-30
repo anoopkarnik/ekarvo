@@ -98,7 +98,24 @@ export function initCinematicLanding(root:HTMLElement){
   const cancelDestination=()=>{destination=undefined};
   window.addEventListener('wheel',cancelDestination,{passive:true});
   window.addEventListener('touchstart',cancelDestination,{passive:true});
-  const onScrollKey=(event:KeyboardEvent)=>{if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(event.key)&&!(event.target as Element).closest('button,a,input,textarea,select,summary'))cancelDestination()};
+  const onScrollKey=(event:KeyboardEvent)=>{
+    const {key}=event;
+    if(event.defaultPrevented||!['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(key))return;
+    const target=event.target instanceof Element?event.target:document.activeElement;
+    const editable=target?.closest('[contenteditable]');
+    if(editable&&editable.getAttribute('contenteditable')!=='false')return;
+    const control=target?.closest('input,textarea,select,button,summary');
+    if(control?.matches('textarea,select'))return;
+    if(control instanceof HTMLInputElement){
+      const {type}=control;
+      if(!['button','submit','reset','checkbox','radio','range'].includes(type)&&key!=='PageUp'&&key!=='PageDown')return;
+      if(type==='range'&&['Home','End','ArrowUp','ArrowDown'].includes(key))return;
+      if(type==='radio'&&['ArrowUp','ArrowDown'].includes(key))return;
+      if(['button','submit','reset','checkbox','radio'].includes(type)&&key===' ')return;
+    }
+    if(key===' '&&target?.closest('button,summary,[role="button"]'))return;
+    cancelDestination();
+  };
   window.addEventListener('keydown',onScrollKey);
   page.addEventListener('click',onNavigate);previous.addEventListener('click',onPrevious);next.addEventListener('click',onNext);reading.addEventListener('click',onReading);readingReturn.addEventListener('click',onReading);
   const onPointer=(event:PointerEvent)=>{if(event.pointerType==='touch'||reduced.matches)return;pointerX=(event.clientX/innerWidth-.5)*2;pointerY=(event.clientY/innerHeight-.5)*2;schedule()};
