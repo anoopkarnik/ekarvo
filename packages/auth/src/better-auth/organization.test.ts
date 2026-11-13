@@ -4,7 +4,7 @@ const { db, sendOrganizationInvitationEmail } = vi.hoisted(() => ({
   db: {
     member: { findFirst: vi.fn(), count: vi.fn() },
     organization: { create: vi.fn() },
-    organizationInvitation: { count: vi.fn() },
+    organizationInvitation: { count: vi.fn(), findFirst: vi.fn() },
   },
   sendOrganizationInvitationEmail: vi.fn(),
 }));

@@ -1,46 +1,32 @@
-"use client";
-
-import { useQuery } from "@tanstack/react-query";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@workspace/ui/components/shadcn/card";
-import { useFlag } from "@/components/flags/FlagsProvider";
-import { useTRPC } from "@/trpc/client";
-import { useLocale, useTranslations } from "next-intl";
-import type { Locale } from "@workspace/i18n/config";
-import { formatNumber } from "@workspace/i18n/format";
-import { OnboardingPanel } from "@/components/onboarding/OnboardingPanel";
-
-/** An example of a flagged feature: visible, and its data served, only while beta.dashboardWidgets is on. */
-function BetaWidgets() {
-  const trpc = useTRPC();
-  const t = useTranslations("home");
-  const locale = useLocale() as Locale;
-  const { data } = useQuery(trpc.home.betaWidgets.queryOptions());
-  if (!data) return null;
-  return (
-    <div className="grid gap-4 sm:grid-cols-2">
-      <Card>
-        <CardHeader>
-          <CardDescription>{t("memberFor")}</CardDescription>
-          <CardTitle className="text-3xl">{t("days", { count: data.memberSinceDays })}</CardTitle>
-        </CardHeader>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardDescription>{t("creditsRemaining")}</CardDescription>
-          <CardTitle className="text-3xl">{formatNumber(data.creditsRemaining, locale)}</CardTitle>
-        </CardHeader>
-        <CardContent className="text-xs text-muted-foreground">{t("betaWidget")}</CardContent>
-      </Card>
-    </div>
-  );
-}
-
-export default function Page() {
-  const showBetaWidgets = useFlag("beta.dashboardWidgets");
-  return (
-    <div className="flex flex-1 flex-col gap-6 p-6">
-      <OnboardingPanel />
-      {showBetaWidgets ? <BetaWidgets /> : null}
-    </div>
-  );
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
+import { auth } from "@workspace/auth/better-auth/auth";
+import db from "@workspace/database/client";
+import { getActiveOrganizationId } from "@/trpc/org";
+import StarterHome from "@/components/home/StarterHome";
+export const dynamic = "force-dynamic";
+export default async function Page() {
+  const session = await auth.api.getSession({ headers: await headers() });
+  if (!session) redirect("/landing");
+  if (session.user.role === "guest") return <StarterHome />;
+  if (session.user.role === "admin") redirect("/admin/bpos");
+  const activeId = await getActiveOrganizationId(session.session.id);
+  const member = activeId
+    ? await db.member.findUnique({
+        where: {
+          organizationId_userId: {
+            organizationId: activeId,
+            userId: session.user.id,
+          },
+        },
+        include: { bpoAdmin: true, organization: { include: { bpo: true } } },
+      })
+    : null;
+  if (
+    member?.bpoAdmin &&
+    member.organization.bpo &&
+    !member.organization.bpo.suspended
+  )
+    redirect("/pulse/admin");
+  redirect("/pulse");
 }

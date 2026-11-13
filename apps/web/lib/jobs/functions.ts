@@ -1,3 +1,4 @@
+import "@/lib/pulse/imports";
 import "@workspace/email/jobs";
 import "@/lib/jobs/cleanup";
 import "@/lib/notifications/deliver";

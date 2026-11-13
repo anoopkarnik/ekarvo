@@ -15,7 +15,8 @@
     "backfill:orgs": "tsx scripts/backfill-organizations.ts",
     "backfill:onboarding": "tsx scripts/backfill-onboarding.ts",
     "typecheck": "tsc --noEmit",
-    "test:coverage": "vitest run --coverage --passWithNoTests"
+    "test:coverage": "vitest run --coverage --passWithNoTests",
+    "seed:pulse": "tsx scripts/seed-pulse.ts"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +28,7 @@
     "tsx": "^4.21.0"
   },
   "exports": {
+    "./managed-credentials": "./src/managedCredentials.ts",
     "./client": "./src/client.ts",
     "./prisma": "./src/generated/prisma/client.ts",
     "./constants": "./src/constants/index.ts"
@@ -34,6 +36,7 @@
   "dependencies": {
     "@prisma/adapter-pg": "^7.10.0",
     "@prisma/client": "^7.10.0",
+    "better-auth": "1.5.5",
     "dotenv": "^17.2.3",
     "vitest": "^4.0.18"
   }

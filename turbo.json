@@ -26,6 +26,7 @@
       ]
     },
     "test": {
+      "env": ["PULSE_LIVE_TESTS"],
       "dependsOn": [
         "^test"
       ],

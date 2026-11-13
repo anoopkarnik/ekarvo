@@ -14,28 +14,40 @@ declare module "use-intl" {
   }
 }
 
-const catalogues: Record<Locale, unknown> = { en, es };
-const cache = new Map<Locale, Messages>();
+const cache = new Map<
+  Locale,
+  { english: Messages; catalogue: unknown; messages: Messages }
+>();
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-function mergeOver(base: Record<string, unknown>, override: Record<string, unknown>): Record<string, unknown> {
+function mergeOver(
+  base: Record<string, unknown>,
+  override: Record<string, unknown>,
+): Record<string, unknown> {
   const merged: Record<string, unknown> = { ...base };
   for (const [key, value] of Object.entries(override)) {
     const current = merged[key];
-    merged[key] = isRecord(current) && isRecord(value) ? mergeOver(current, value) : value;
+    merged[key] =
+      isRecord(current) && isRecord(value) ? mergeOver(current, value) : value;
   }
   return merged;
 }
 
 /** A locale's catalogue over English, so a missing translation shows English, never a key. */
 export function getMessages(locale: Locale): Messages {
-  let messages = cache.get(locale);
-  if (!messages) {
-    messages = (locale === "en" ? en : mergeOver(en, catalogues[locale] as Record<string, unknown>)) as Messages;
-    cache.set(locale, messages);
+  const catalogue = locale === "en" ? en : es;
+  let cached = cache.get(locale);
+  // Translation modules can be replaced by HMR while this module stays loaded.
+  // Cache only while both source identities still match.
+  if (!cached || cached.english !== en || cached.catalogue !== catalogue) {
+    const messages = (
+      locale === "en" ? en : mergeOver(en, catalogue as Record<string, unknown>)
+    ) as Messages;
+    cached = { english: en, catalogue, messages };
+    cache.set(locale, cached);
   }
-  return messages;
+  return cached.messages;
 }

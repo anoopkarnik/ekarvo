@@ -1,3 +1,4 @@
+import { pulseRouter, adminBpoRouter } from './pulseProcedures';
 import { supportRouter } from './supportProcedures';
 import {  createTRPCRouter } from '../init';
 import { landingRouter } from './landingProcedures';
@@ -17,6 +18,8 @@ import { aiJobsRouter } from './aiJobsProcedures';
 import { organizationRouter } from './organizationProcedures';
 
 export const appRouter = createTRPCRouter({
+    pulse: pulseRouter,
+    adminBpo: adminBpoRouter,
     support: supportRouter,
     landing: landingRouter,
     documentation: documentationRouter,

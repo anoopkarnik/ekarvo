@@ -1,0 +1,336 @@
+// Pulse tenants reuse Better Auth organizations. Platform roles are unchanged.
+enum PulseRole {
+ COO_EXECUTIVE
+ OPS_MANAGER
+ TEAM_LEAD
+ @@schema("pulse_schema")
+}
+enum PulseRecordKind {
+ SHIFT
+ TIME_ENTRY
+ WORK_ITEM
+ WORK_EVENT
+ QA
+ FINANCE
+ CERTIFICATION
+ ASSIGNMENT
+ CONTRACT
+ HANDOVER
+ COACHING
+ AUTOMATION
+ @@schema("pulse_schema")
+}
+model BpoProfile {
+ organizationId String @id
+ organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+ timezone String @default("Asia/Kolkata")
+ suspended Boolean @default(false)
+ seeded Boolean @default(false)
+ seedAnchor DateTime?
+ createdAt DateTime @default(now())
+ accounts ClientAccount[]
+ admins BpoAdminGrant[]
+ @@schema("pulse_schema")
+}
+model BpoAdminGrant {
+ memberId String @id
+ organizationId String
+ member Member @relation(fields: [memberId], references: [id], onDelete: Cascade)
+ bpo BpoProfile @relation(fields: [organizationId], references: [organizationId], onDelete: Cascade)
+ @@index([organizationId])
+ @@schema("pulse_schema")
+}
+model PulseAccountGrant {
+ id String @id @default(cuid())
+ memberId String
+ organizationId String
+ accountId String
+ role PulseRole
+ member Member @relation(fields: [memberId], references: [id], onDelete: Cascade)
+ account ClientAccount @relation(fields: [organizationId, accountId], references: [organizationId, id], onDelete: Cascade)
+ teams PulseTeamGrant[]
+ @@unique([memberId, accountId])
+ @@schema("pulse_schema")
+}
+model PulseTeamGrant {
+ grantId String
+ teamId String
+ grant PulseAccountGrant @relation(fields: [grantId], references: [id], onDelete: Cascade)
+ team PulseTeam @relation(fields: [teamId], references: [id], onDelete: Cascade)
+ @@id([grantId, teamId])
+ @@schema("pulse_schema")
+}
+model PulseInvitationGrant {
+ id String @id @default(cuid())
+ invitationId String
+ organizationId String
+ accountId String
+ role PulseRole
+ teamIds String[]
+ invitation OrganizationInvitation @relation(fields: [invitationId], references: [id], onDelete: Cascade)
+ account ClientAccount @relation(fields: [organizationId, accountId], references: [organizationId, id], onDelete: Cascade)
+ @@unique([invitationId, accountId])
+ @@schema("pulse_schema")
+}
+model ClientAccount {
+ id String @id @default(cuid())
+ organizationId String
+ bpo BpoProfile @relation(fields: [organizationId], references: [organizationId], onDelete: Cascade)
+ code String
+ name String
+ vertical String
+ archived Boolean @default(false)
+ fenced Boolean @default(false)
+ targetSla Float @default(96)
+ targetMargin Float @default(28)
+ approvalLimits Json @default("{\"TEAM_LEAD\":40,\"OPS_MANAGER\":140,\"COO_EXECUTIVE\":220}")
+ revision Int @default(1)
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ grants PulseAccountGrant[]
+ invitationGrants PulseInvitationGrant[]
+ sites PulseSite[]
+ processes PulseProcess[]
+ teams PulseTeam[]
+ workers PulseWorker[]
+ workTypes PulseWorkType[]
+ records PulseRecord[]
+ scenarios PulseScenario[]
+ interventions PulseIntervention[]
+ imports PulseImportBatch[]
+ mappings PulseMapping[]
+ @@unique([organizationId, code])
+ @@unique([organizationId, id])
+ @@schema("pulse_schema")
+}
+model PulseSite {
+ id String @id @default(cuid())
+ organizationId String
+ accountId String
+ externalId String
+ account ClientAccount @relation(fields: [organizationId, accountId], references: [organizationId, id], onDelete: Cascade)
+ name String
+ 
+ @@unique([organizationId, accountId, externalId])
+ @@index([organizationId, accountId])
+ @@schema("pulse_schema")
+ teams PulseTeam[]
+ @@unique([organizationId, accountId, id])
+}
+model PulseProcess {
+ id String @id @default(cuid())
+ organizationId String
+ accountId String
+ externalId String
+ account ClientAccount @relation(fields: [organizationId, accountId], references: [organizationId, id], onDelete: Cascade)
+ name String
+ 
+ @@unique([organizationId, accountId, externalId])
+ @@index([organizationId, accountId])
+ @@schema("pulse_schema")
+ teams PulseTeam[]
+ workTypes PulseWorkType[]
+ @@unique([organizationId, accountId, id])
+}
+model PulseTeam {
+ id String @id @default(cuid())
+ organizationId String
+ accountId String
+ externalId String
+ account ClientAccount @relation(fields: [organizationId, accountId], references: [organizationId, id], onDelete: Cascade)
+ name String
+ processId String
+ siteId String?
+ grants PulseTeamGrant[]
+ @@unique([organizationId, accountId, externalId])
+ @@index([organizationId, accountId])
+ @@schema("pulse_schema")
+ process PulseProcess @relation(fields: [organizationId, accountId, processId], references: [organizationId, accountId, id])
+ site PulseSite? @relation(fields: [organizationId, accountId, siteId], references: [organizationId, accountId, id])
+ workers PulseWorker[]
+ records PulseRecord[]
+ @@unique([organizationId, accountId, id])
+}
+model PulseWorker {
+ id String @id @default(cuid())
+ organizationId String
+ accountId String
+ externalId String
+ account ClientAccount @relation(fields: [organizationId, accountId], references: [organizationId, id], onDelete: Cascade)
+ name String
+ teamId String
+ fte Float @default(1)
+ hourlyRate Decimal @db.Decimal(12, 4)
+ overtimeMultiplier Float @default(1.5)
+ active Boolean @default(true)
+ 
+ @@unique([organizationId, accountId, externalId])
+ @@index([organizationId, accountId])
+ @@schema("pulse_schema")
+ team PulseTeam @relation(fields: [organizationId, accountId, teamId], references: [organizationId, accountId, id])
+ records PulseRecord[]
+ @@unique([organizationId, accountId, id])
+}
+model PulseWorkType {
+ id String @id @default(cuid())
+ organizationId String
+ accountId String
+ externalId String
+ account ClientAccount @relation(fields: [organizationId, accountId], references: [organizationId, id], onDelete: Cascade)
+ name String
+ processId String
+ standardMinutes Float
+ complexity Float @default(1)
+ slaHours Float @default(24)
+ requiredSkill String?
+ automationEligible Boolean @default(false)
+ 
+ @@unique([organizationId, accountId, externalId])
+ @@index([organizationId, accountId])
+ @@schema("pulse_schema")
+ process PulseProcess @relation(fields: [organizationId, accountId, processId], references: [organizationId, accountId, id])
+ @@unique([organizationId, accountId, id])
+}
+// Append/revise canonical raw source records. Kind-specific Zod schemas validate
+// payloads before publication; no summaries or dashboard values are stored here.
+model PulseRecord {
+ id String @id @default(cuid())
+ organizationId String
+ accountId String
+ account ClientAccount @relation(fields: [organizationId, accountId], references: [organizationId, id], onDelete: Cascade)
+ kind PulseRecordKind
+ source String
+ externalId String
+ teamId String?
+ workerId String?
+ occurredAt DateTime
+ payload Json
+ revision Int @default(1)
+ fingerprint String
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ revisions PulseRecordRevision[]
+ @@unique([organizationId, accountId, kind, source, externalId])
+ @@index([organizationId, accountId, kind, occurredAt])
+ @@index([organizationId, accountId, teamId, occurredAt])
+ @@schema("pulse_schema")
+ team PulseTeam? @relation(fields: [organizationId, accountId, teamId], references: [organizationId, accountId, id])
+ worker PulseWorker? @relation(fields: [organizationId, accountId, workerId], references: [organizationId, accountId, id])
+}
+model PulseRecordRevision {
+ id String @id @default(cuid())
+ recordId String
+ record PulseRecord @relation(fields: [recordId], references: [id], onDelete: Cascade)
+ revision Int
+ payload Json
+ actorId String
+ createdAt DateTime @default(now())
+ @@unique([recordId, revision])
+ @@schema("pulse_schema")
+}
+model PulseScenario {
+ id String @id @default(cuid())
+ organizationId String
+ accountId String
+ account ClientAccount @relation(fields: [organizationId, accountId], references: [organizationId, id], onDelete: Cascade)
+ creatorId String
+ teamIds String[]
+ name String
+ workflow String
+ version Int @default(1)
+ calculatorVersion String
+ accountRevision Int
+ start DateTime
+ end DateTime
+ parameters Json
+ baseline Json
+ result Json
+ createdAt DateTime @default(now())
+ interventions PulseIntervention[]
+ @@index([organizationId, accountId])
+ @@schema("pulse_schema")
+}
+model PulseIntervention {
+ id String @id @default(cuid())
+ organizationId String
+ accountId String
+ account ClientAccount @relation(fields: [organizationId, accountId], references: [organizationId, id], onDelete: Cascade)
+ scenarioId String @unique
+ scenario PulseScenario @relation(fields: [scenarioId], references: [id])
+ ownerId String
+ status String @default("PROPOSED")
+ version Int @default(1)
+ start DateTime
+ end DateTime
+ observation Json?
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ reservations PulseReservation[]
+ @@index([organizationId, accountId, status])
+ @@schema("pulse_schema")
+}
+model PulseReservation {
+ id String @id @default(cuid())
+ interventionId String
+ intervention PulseIntervention @relation(fields: [interventionId], references: [id], onDelete: Cascade)
+ organizationId String
+ accountId String
+ teamId String?
+ week DateTime
+ overtimeHours Float @default(0)
+ redeployFte Float @default(0)
+ released Boolean @default(false)
+ @@index([organizationId, accountId, week, released])
+ @@schema("pulse_schema")
+}
+model PulseAuditEvent {
+ id String @id @default(cuid())
+ organizationId String
+ accountId String?
+ actorId String
+ action String
+ entityId String
+ detail Json
+ createdAt DateTime @default(now())
+ @@index([organizationId, accountId, createdAt])
+ @@schema("pulse_schema")
+}
+model PulseImportBatch {
+ id String @id @default(cuid())
+ organizationId String
+ accountId String
+ account ClientAccount @relation(fields: [organizationId, accountId], references: [organizationId, id], onDelete: Cascade)
+ actorId String
+ source String
+ kind String
+ status String @default("VALIDATED")
+ rowCount Int
+ errorCount Int @default(0)
+ result Json?
+ createdAt DateTime @default(now())
+ committedAt DateTime?
+ rows PulseImportRow[]
+ @@index([organizationId, accountId, createdAt])
+ @@schema("pulse_schema")
+}
+model PulseImportRow {
+ batchId String
+ row Int
+ batch PulseImportBatch @relation(fields: [batchId], references: [id], onDelete: Cascade)
+ payload Json
+ error String?
+ @@id([batchId, row])
+ @@schema("pulse_schema")
+}
+model PulseMapping {
+ id String @id @default(cuid())
+ organizationId String
+ accountId String
+ account ClientAccount @relation(fields: [organizationId, accountId], references: [organizationId, id], onDelete: Cascade)
+ name String
+ kind String
+ fields Json
+ connected Boolean @default(false)
+ @@unique([organizationId, accountId, name])
+ @@schema("pulse_schema")
+}

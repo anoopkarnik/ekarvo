@@ -24,6 +24,7 @@
  * it at runtime.
  */
 
+import { PULSE_API_GROUPS } from "./apiRegistry.pulse";
 import { ORGANIZATION_API_GROUPS } from "./apiRegistry.organization";
 
 export type Access = "public" | "authenticated" | "admin" | "adminGuestRead";
@@ -43,6 +44,7 @@ export type ApiGroup = {
 };
 
 export const API_REGISTRY: ApiGroup[] = [
+  ...PULSE_API_GROUPS,
   {
     group: "support",
     label: "Support",

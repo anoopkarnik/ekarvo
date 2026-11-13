@@ -1,3 +1,4 @@
+import pulse from "./pulse.json";
 import auth from "./auth.json";
 import common from "./common.json";
 import email from "./email.json";
@@ -13,6 +14,7 @@ import notifications from "./notifications.json";
 
 /** English is the source catalogue; its shape is the `Messages` type. */
 const messages = {
+  pulse,
   auth,
   common,
   email,

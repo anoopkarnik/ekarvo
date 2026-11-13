@@ -15,13 +15,13 @@ import {
 import { useTheme } from "next-themes";
 import { cn } from "@workspace/ui/lib/utils";
 import { HomeIcon, Settings, Timer, Users } from "lucide-react";
-import { Gauge } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { navbarSectionData } from "@workspace/database/constants";
 import { useSession } from "@workspace/auth/better-auth/auth-client";
 import SidebarUser, { SidebarUserProvider } from "@/blocks/home/SidebarUser";
+import { PulseNavigation } from "@/components/pulse/PulseNavigation";
 import WorkspaceSlot from "@/components/organizations/WorkspaceSlot";
 
 export function AppSidebar() {
@@ -31,7 +31,7 @@ export function AppSidebar() {
   const { data: session } = useSession();
   const isAdmin = session?.user?.role === "admin";
   const t = useTranslations("nav");
-  const tBilling = useTranslations("billing");
+  const tPulse = useTranslations("pulse");
   const tJobs = useTranslations("jobs");
 
   const { theme, resolvedTheme } = useTheme();
@@ -45,132 +45,129 @@ export function AppSidebar() {
 
   return (
     <SidebarUserProvider>
-    <Sidebar>
-      <SidebarHeader className="p-4 pb-0">
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <Link
-              role="button"
-              href="/"
-              className="flex cursor-pointer items-center gap-3 px-2 font-cyberdyne"
-            >
-              <img
-                src={isDark ? landingInfo?.navbarSection.darkLogo : landingInfo?.navbarSection.logo}
-                alt={landingInfo?.navbarSection.title}
-                width={32}
-                height={32}
-                className="h-8 w-8 object-contain"
-              />
-              <div className="hidden bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-lg font-bold tracking-tight text-transparent lg:flex lg:flex-col lg:items-start">
-                {landingInfo?.navbarSection.title}
-              </div>
-            </Link>
-          </SidebarMenuItem>
-        </SidebarMenu>
-        <div className="pt-3">
-          <WorkspaceSlot />
-        </div>
-      </SidebarHeader>
-      <SidebarContent className="p-3">
-        <SidebarGroup>
-          <SidebarGroupLabel className="mb-2 px-2 text-xs font-medium uppercase tracking-wider text-muted-foreground/70">
-            {t("application")}
-          </SidebarGroupLabel>
-          <SidebarMenu className="gap-1">
+      <Sidebar>
+        <SidebarHeader className="p-4 pb-0">
+          <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton
-                tooltip={t("home")}
-                className={cn(
-                  "h-10 cursor-pointer transition-all duration-200 ease-in-out hover:pl-3",
-                  pathname === "/" && "bg-sidebar-accent font-medium text-sidebar-accent-foreground shadow-sm"
-                )}
-                onClick={() => router.push("/")}
+              <Link
+                role="button"
+                href="/"
+                className="flex cursor-pointer items-center gap-3 px-2 font-cyberdyne"
               >
-                <div className="flex items-center gap-3">
-                  <HomeIcon className="h-5 w-5 text-emerald-500" />
-                  <div className="text-xs">{t("home")}</div>
+                <img
+                  src={
+                    isDark
+                      ? landingInfo?.navbarSection.darkLogo
+                      : landingInfo?.navbarSection.logo
+                  }
+                  alt={landingInfo?.navbarSection.title}
+                  width={32}
+                  height={32}
+                  className="h-8 w-8 object-contain"
+                />
+                <div className="hidden bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-lg font-bold tracking-tight text-transparent lg:flex lg:flex-col lg:items-start">
+                  {landingInfo?.navbarSection.title}
                 </div>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton
-                tooltip={tBilling("nav.usage")}
-                className={cn(
-                  "h-10 cursor-pointer transition-all duration-200 ease-in-out hover:pl-3",
-                  pathname === "/usage" && "bg-sidebar-accent font-medium text-sidebar-accent-foreground shadow-sm"
-                )}
-                onClick={() => router.push("/usage")}
-              >
-                <div className="flex items-center gap-3">
-                  <Gauge className="h-5 w-5 text-cyan-500" />
-                  <div className="text-xs">{tBilling("nav.usage")}</div>
-                </div>
-              </SidebarMenuButton>
+              </Link>
             </SidebarMenuItem>
           </SidebarMenu>
-        </SidebarGroup>
+          <div className="pt-3">
+            <WorkspaceSlot />
+          </div>
+        </SidebarHeader>
+        <SidebarContent className="p-3">
+          {session?.user?.role === "user" && <PulseNavigation />}
+          {session?.user?.role === "guest" && (
+            <SidebarGroup>
+              <SidebarMenu>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild>
+                    <Link href="/">
+                      <HomeIcon />
+                      <span>{t("home")}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroup>
+          )}
 
-        {isAdmin && (
-          <SidebarGroup>
-            <SidebarGroupLabel className="mb-2 px-2 text-xs font-medium uppercase tracking-wider text-muted-foreground/70">
-              {t("admin")}
-            </SidebarGroupLabel>
-            <SidebarMenu className="gap-1">
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  tooltip={t("manageUsers")}
-                  className={cn(
-                    "h-10 cursor-pointer transition-all duration-200 ease-in-out hover:pl-3",
-                    pathname === "/admin/users" && "bg-sidebar-accent font-medium text-sidebar-accent-foreground shadow-sm"
-                  )}
-                  onClick={() => router.push("/admin/users")}
-                >
-                  <div className="flex items-center gap-3">
-                    <Users className="h-5 w-5 text-blue-500" />
-                    <div className="text-xs">{t("userManagement")}</div>
-                  </div>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  tooltip={tJobs("nav.title")}
-                  className={cn(
-                    "h-10 cursor-pointer transition-all duration-200 ease-in-out hover:pl-3",
-                    pathname === "/admin/jobs" && "bg-sidebar-accent font-medium text-sidebar-accent-foreground shadow-sm"
-                  )}
-                  onClick={() => router.push("/admin/jobs")}
-                >
-                  <div className="flex items-center gap-3">
-                    <Timer className="h-5 w-5 text-sky-500" />
-                    <div className="text-xs">{tJobs("nav.title")}</div>
-                  </div>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  tooltip={t("settings")}
-                  className={cn(
-                    "h-10 cursor-pointer transition-all duration-200 ease-in-out hover:pl-3",
-                    pathname === "/admin/settings" && "bg-sidebar-accent font-medium text-sidebar-accent-foreground shadow-sm"
-                  )}
-                  onClick={() => router.push("/admin/settings")}
-                >
-                  <div className="flex items-center gap-3">
-                    <Settings className="h-5 w-5 text-slate-500" />
-                    <div className="text-xs">{t("settings")}</div>
-                  </div>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroup>
-        )}
-      </SidebarContent>
-      <SidebarFooter className="border-t border-sidebar-border/40 bg-sidebar-footer/5 p-4">
-        <div className="space-y-4">
-          <SidebarUser />
-        </div>
-      </SidebarFooter>
-    </Sidebar>
+          {isAdmin && (
+            <SidebarGroup>
+              <SidebarGroupLabel className="mb-2 px-2 text-xs font-medium uppercase tracking-wider text-muted-foreground/70">
+                {t("admin")}
+              </SidebarGroupLabel>
+              <SidebarMenu className="gap-1">
+                <SidebarMenuItem>
+                  <SidebarMenuButton
+                    asChild
+                    tooltip={tPulse("platform")}
+                    isActive={pathname.startsWith("/admin/bpos")}
+                  >
+                    <Link href="/admin/bpos">
+                      <Users className="h-5 w-5" />
+                      <span>{tPulse("platform")}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton
+                    tooltip={t("manageUsers")}
+                    className={cn(
+                      "h-10 cursor-pointer transition-all duration-200 ease-in-out hover:pl-3",
+                      pathname === "/admin/users" &&
+                        "bg-sidebar-accent font-medium text-sidebar-accent-foreground shadow-sm",
+                    )}
+                    onClick={() => router.push("/admin/users")}
+                  >
+                    <div className="flex items-center gap-3">
+                      <Users className="h-5 w-5 text-blue-500" />
+                      <div className="text-xs">{t("userManagement")}</div>
+                    </div>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton
+                    tooltip={tJobs("nav.title")}
+                    className={cn(
+                      "h-10 cursor-pointer transition-all duration-200 ease-in-out hover:pl-3",
+                      pathname === "/admin/jobs" &&
+                        "bg-sidebar-accent font-medium text-sidebar-accent-foreground shadow-sm",
+                    )}
+                    onClick={() => router.push("/admin/jobs")}
+                  >
+                    <div className="flex items-center gap-3">
+                      <Timer className="h-5 w-5 text-sky-500" />
+                      <div className="text-xs">{tJobs("nav.title")}</div>
+                    </div>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton
+                    tooltip={t("settings")}
+                    className={cn(
+                      "h-10 cursor-pointer transition-all duration-200 ease-in-out hover:pl-3",
+                      pathname === "/admin/settings" &&
+                        "bg-sidebar-accent font-medium text-sidebar-accent-foreground shadow-sm",
+                    )}
+                    onClick={() => router.push("/admin/settings")}
+                  >
+                    <div className="flex items-center gap-3">
+                      <Settings className="h-5 w-5 text-slate-500" />
+                      <div className="text-xs">{t("settings")}</div>
+                    </div>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroup>
+          )}
+        </SidebarContent>
+        <SidebarFooter className="border-t border-sidebar-border/40 bg-sidebar-footer/5 p-4">
+          <div className="space-y-4">
+            <SidebarUser />
+          </div>
+        </SidebarFooter>
+      </Sidebar>
     </SidebarUserProvider>
   );
 }

@@ -91,6 +91,7 @@ export default [
       "app/landing/page.tsx",
       "components/home/**/*.tsx",
       "components/i18n/**/*.tsx",
+      "components/pulse/**/*.tsx",
       "components/analytics/**/*.tsx",
       "blocks/Support.tsx",
       "blocks/home/**/*.tsx",
@@ -99,7 +100,7 @@ export default [
     ],
     ignores: ["**/*.test.tsx"],
     rules: {
-      "react/jsx-no-literals": ["error", { noStrings: false, ignoreProps: true, allowedStrings: ["/", "•", "*", "·", "|", "-", "\"", "🚀", "✨"] }],
+      "react/jsx-no-literals": ["error", { noStrings: false, ignoreProps: true, allowedStrings: ["—", "→", "/", "•", "*", "·", "|", "-", "\"", "🚀", "✨"] }],
     },
   },
 ]

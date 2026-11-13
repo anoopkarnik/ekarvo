@@ -373,6 +373,11 @@ export const organizationRouter = createTRPCRouter({
   acceptInvitation: protectedProcedure
     .input(z.object({ invitationId: z.string().min(1) }))
     .mutation(async ({ ctx, input }) => {
+      const bpoInvitation = await db.organizationInvitation.findUnique({ where: { id: input.invitationId }, include: { organization: { include: { bpo: true } } } });
+      if (bpoInvitation?.organization.bpo) {
+        const { acceptBpoInvitation } = await import('@/lib/pulse/membership');
+        return acceptBpoInvitation(ctx.session.user.id, ctx.session.session.id, input.invitationId);
+      }
       const result: any = await callAuth(() =>
         auth.api.acceptInvitation({
           headers: ctx.headers,
@@ -387,6 +392,12 @@ export const organizationRouter = createTRPCRouter({
   rejectInvitation: protectedProcedure
     .input(z.object({ invitationId: z.string().min(1) }))
     .mutation(async ({ ctx, input }) => {
+      const invitation = await db.organizationInvitation.findUnique({where:{id:input.invitationId},include:{organization:{include:{bpo:true}}}});
+      if(invitation?.organization.bpo){
+        const result=await db.organizationInvitation.updateMany({where:{id:input.invitationId,email:ctx.session.user.email.toLowerCase(),status:'pending'},data:{status:'rejected'}});
+        if(!result.count)throw new TRPCError({code:'FORBIDDEN'});
+        return {success:true};
+      }
       await callAuth(() =>
         auth.api.rejectInvitation({
           headers: ctx.headers,

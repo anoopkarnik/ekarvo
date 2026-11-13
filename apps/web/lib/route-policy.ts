@@ -101,6 +101,11 @@ export const routePolicies = [
   // Inngest runs jobs and schedules through here; the SDK verifies its signature.
   { path: "/api/inngest", match: "exact", auth: "webhook", rateLimit: "none", maxBodyBytes: 4 * MB, input: "provider" },
 
+  { path: "/pulse", match: "prefix", auth: "session", allowGuest: false, rateLimit: "none", input: "none" },
+  { path: "/admin/bpos", match: "prefix", auth: "session", roles: ["admin"], rateLimit: "none", input: "none" },
+  { path: "/api/pulse/imports", match: "exact", auth: "session", allowGuest: false, rateLimit: "default", maxBodyBytes: 11 * MB, input: "form-data" },
+  { path: "/api/pulse/intelligence", match: "exact", auth: "session", allowGuest: false, rateLimit: "chat", maxBodyBytes: 64 * KB, input: "zod" },
+  { path: "/api/pulse/export", match: "exact", auth: "session", allowGuest: false, rateLimit: "default", input: "zod" },
   // Session routes
   { path: "/api/settings/modifyAvatar", match: "exact", auth: "session", rateLimit: "default", maxBodyBytes: 6 * MB, input: "image-upload" },
   { path: "/api/ai/chat", match: "exact", auth: "session", rateLimit: "none", maxBodyBytes: 1 * MB, input: "zod" },

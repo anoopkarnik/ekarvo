@@ -6,6 +6,7 @@
 // exports an empty plugin list and no-op helpers, so auth.ts never changes.
 import { toLocale } from "@workspace/i18n/config";
 import { randomBytes } from "node:crypto";
+import { APIError } from "better-auth/api";
 import { organization } from "better-auth/plugins";
 import { createAccessControl } from "better-auth/plugins/access";
 import {
@@ -53,11 +54,29 @@ export const sendInvitationEmail = async (data: InvitationEmailData) => {
     });
 };
 
+// BPO access has additional account/team grants and must be changed atomically
+// through the Pulse service, never through generic organization endpoints.
+async function protectBpo(data: { organization: { id: string } }) {
+    if (await db.bpoProfile.findUnique({ where: { organizationId: data.organization.id } })) {
+        throw new APIError("FORBIDDEN", { message: "Manage BPO access through Pulse." });
+    }
+}
 export const organizationPlugins = [
     organization({
         ac,
         roles,
         creatorRole: "owner",
+        organizationHooks: {
+            beforeUpdateOrganization: ({ member }) => protectBpo({ organization: { id: member.organizationId } }),
+            beforeDeleteOrganization: protectBpo,
+            beforeAddMember: protectBpo,
+            beforeRemoveMember: protectBpo,
+            beforeUpdateMemberRole: protectBpo,
+            beforeCreateInvitation: protectBpo,
+            beforeAcceptInvitation: protectBpo,
+            beforeRejectInvitation: protectBpo,
+            beforeCancelInvitation: protectBpo,
+        },
         invitationExpiresIn: INVITATION_EXPIRES_IN_SECONDS,
         schema: {
             invitation: { modelName: "organizationInvitation" },
@@ -72,6 +91,11 @@ export async function createPersonalOrganization(user: {
     email: string;
 }): Promise<void> {
     try {
+        const bpoInvite = await db.organizationInvitation.findFirst({ where: {
+            email: user.email.toLowerCase(), status: "pending", expiresAt: { gt: new Date() },
+            organization: { bpo: { isNot: null } },
+        }});
+        if (bpoInvite) return;
         const existing = await db.member.count({ where: { userId: user.id } });
         if (existing > 0) return;
 

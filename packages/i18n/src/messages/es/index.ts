@@ -1,3 +1,4 @@
+import pulse from "./pulse.json";
 import auth from "./auth.json";
 import common from "./common.json";
 import email from "./email.json";
@@ -12,6 +13,7 @@ import jobs from "./jobs.json";
 import notifications from "./notifications.json";
 
 const messages = {
+  pulse,
   auth,
   common,
   email,

@@ -11,6 +11,7 @@ model Organization {
     metadata    String?
     createdAt   DateTime @default(now())
 
+    bpo BpoProfile?
     members     Member[]
     invitations OrganizationInvitation[]
 
@@ -24,6 +25,8 @@ model Member {
     role           String       @default("member")
     createdAt      DateTime     @default(now())
 
+    bpoAdmin BpoAdminGrant?
+    pulseGrants PulseAccountGrant[]
     organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
     user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -43,6 +46,8 @@ model OrganizationInvitation {
     createdAt      DateTime     @default(now())
 
     organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+    pulseGrants PulseInvitationGrant[]
+    bpoAdminInvite Boolean @default(false)
     inviter        User         @relation("OrganizationInvitationInviter", fields: [inviterId], references: [id], onDelete: Cascade)
 
     @@index([organizationId])

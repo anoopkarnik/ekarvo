@@ -98,3 +98,14 @@ export const organizationInvited = defineNotification<{ organizationName: string
   }),
 });
 
+
+export const pulseActionUpdated = defineNotification<{ status: string; locale?: string }>({
+  type: "pulse.action.updated",
+  label: "Pulse intervention updates",
+  defaults: { in_app: true, email: false },
+  render: ({ status, locale }) => ({
+    title: locale === "es" ? "Intervención de Pulse actualizada" : "Pulse intervention updated",
+    body: locale === "es" ? `Estado: ${status}. Abre Pulse para revisar la decisión y su evidencia.` : `Status: ${status}. Open Pulse to review the decision and its evidence.`,
+    link: "/pulse",
+  }),
+});
